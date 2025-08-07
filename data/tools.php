@@ -33,6 +33,30 @@ $tools = [
         'url' => 'https://whois.com',
         'tags' => ['free', 'whois', 'domain', 'registration']
     ],
+    [
+        'id' => 'nslookup',
+        'name' => 'NSLookup.io',
+        'category' => 'DNS Tools',
+        'description' => 'Online DNS lookup tool to find DNS records and IP addresses.',
+        'url' => 'https://nslookup.io',
+        'tags' => ['free', 'dns', 'lookup', 'records']
+    ],
+    [
+        'id' => 'dig-web',
+        'name' => 'Dig (Web Interface)',
+        'category' => 'DNS Tools',
+        'description' => 'Web-based DNS lookup tool similar to the dig command line utility.',
+        'url' => 'https://toolbox.googleapps.com/apps/dig/',
+        'tags' => ['free', 'dns', 'dig', 'google']
+    ],
+    [
+        'id' => 'dns-stuff',
+        'name' => 'DNS Stuff',
+        'category' => 'DNS Tools',
+        'description' => 'Complete DNS analysis and network tools for domain troubleshooting.',
+        'url' => 'https://dnsstuff.com',
+        'tags' => ['dns', 'analysis', 'network', 'troubleshooting']
+    ],
 
     // Performance & Speed Testing
     [
@@ -66,6 +90,38 @@ $tools = [
         'description' => 'Website monitoring service checking availability and performance globally.',
         'url' => 'https://pingdom.com',
         'tags' => ['monitoring', 'uptime', 'performance', 'alerts']
+    ],
+    [
+        'id' => 'google-speed-test',
+        'name' => 'Google Speed Test',
+        'category' => 'Performance Testing',
+        'description' => 'Test your internet speed and website loading times with Google infrastructure.',
+        'url' => 'https://speed.google.com',
+        'tags' => ['free', 'google', 'speed test', 'internet']
+    ],
+    [
+        'id' => 'tools-pingdom',
+        'name' => 'Pingdom Tools',
+        'category' => 'Performance Testing',
+        'description' => 'Free website speed test tool by Pingdom with performance insights.',
+        'url' => 'https://tools.pingdom.com',
+        'tags' => ['free', 'speed test', 'performance', 'insights']
+    ],
+    [
+        'id' => 'lighthouse',
+        'name' => 'Lighthouse',
+        'category' => 'Performance Testing',
+        'description' => 'Google Lighthouse automated tool for improving web page quality.',
+        'url' => 'https://developers.google.com/web/tools/lighthouse',
+        'tags' => ['free', 'google', 'lighthouse', 'quality', 'seo']
+    ],
+    [
+        'id' => 'keycdn-speed',
+        'name' => 'KeyCDN Speed Test',
+        'category' => 'Performance Testing',
+        'description' => 'Website speed test from 14 global locations with detailed reports.',
+        'url' => 'https://tools.keycdn.com/speed',
+        'tags' => ['free', 'speed test', 'global', 'cdn']
     ],
 
     // SSL & Security Tools
@@ -142,6 +198,22 @@ $tools = [
         'description' => 'Check browser support for CSS properties, HTML5 features, and JavaScript APIs.',
         'url' => 'https://caniuse.com',
         'tags' => ['browser support', 'css', 'html5', 'compatibility']
+    ],
+    [
+        'id' => 'speedtest-net',
+        'name' => 'Speedtest.net',
+        'category' => 'Network Tools',
+        'description' => 'Test your internet speed and network latency from global servers.',
+        'url' => 'https://speedtest.net',
+        'tags' => ['free', 'speed test', 'internet', 'bandwidth']
+    ],
+    [
+        'id' => 'fast-com',
+        'name' => 'Fast.com',
+        'category' => 'Network Tools',
+        'description' => 'Netflix\'s simple internet speed test focused on video streaming performance.',
+        'url' => 'https://fast.com',
+        'tags' => ['free', 'speed test', 'netflix', 'streaming']
     ],
 
     // AI Chat & Assistant Tools
@@ -235,6 +307,30 @@ $tools = [
         'url' => 'https://jigsaw.w3.org/css-validator/',
         'tags' => ['free', 'css', 'validation', 'w3c', 'standards']
     ],
+    [
+        'id' => 'github',
+        'name' => 'GitHub',
+        'category' => 'Development Tools',
+        'description' => 'World\'s leading platform for version control, code collaboration, and project hosting.',
+        'url' => 'https://github.com',
+        'tags' => ['git', 'version control', 'collaboration', 'hosting']
+    ],
+    [
+        'id' => 'stackoverflow',
+        'name' => 'Stack Overflow',
+        'category' => 'Development Tools',
+        'description' => 'Large community of developers sharing knowledge, questions, and solutions.',
+        'url' => 'https://stackoverflow.com',
+        'tags' => ['community', 'questions', 'answers', 'programming']
+    ],
+    [
+        'id' => 'postman',
+        'name' => 'Postman',
+        'category' => 'Development Tools',
+        'description' => 'API development and testing platform for building and testing REST APIs.',
+        'url' => 'https://postman.com',
+        'tags' => ['api', 'testing', 'development', 'rest']
+    ],
 
     // Hosting & Deployment
     [
@@ -277,6 +373,22 @@ $tools = [
         'url' => 'https://digitalocean.com',
         'tags' => ['cloud', 'vps', 'developer', 'simple']
     ],
+    [
+        'id' => 'heroku',
+        'name' => 'Heroku',
+        'category' => 'Hosting & CDN',
+        'description' => 'Cloud platform for deploying, managing, and scaling web applications.',
+        'url' => 'https://heroku.com',
+        'tags' => ['cloud', 'deployment', 'scaling', 'paas']
+    ],
+    [
+        'id' => 'aws',
+        'name' => 'Amazon AWS',
+        'category' => 'Hosting & CDN',
+        'description' => 'Comprehensive cloud computing platform with scalable hosting and services.',
+        'url' => 'https://aws.amazon.com',
+        'tags' => ['cloud', 'enterprise', 'scalable', 'services']
+    ],
 
     // Design & Optimization
     [
@@ -318,6 +430,56 @@ $tools = [
         'description' => 'Web accessibility evaluation tool that helps identify accessibility and WCAG errors.',
         'url' => 'https://wave.webaim.org',
         'tags' => ['free', 'accessibility', 'wcag', 'evaluation']
+    ],
+    
+    // Additional Google Tools
+    [
+        'id' => 'google-analytics',
+        'name' => 'Google Analytics',
+        'category' => 'Performance Testing',
+        'description' => 'Web analytics service to track and report website traffic and user behavior.',
+        'url' => 'https://analytics.google.com',
+        'tags' => ['analytics', 'google', 'tracking', 'reports']
+    ],
+    [
+        'id' => 'google-search-console',
+        'name' => 'Google Search Console',
+        'category' => 'Performance Testing',
+        'description' => 'Monitor, maintain, and troubleshoot your site\'s presence in Google Search results.',
+        'url' => 'https://search.google.com/search-console',
+        'tags' => ['seo', 'google', 'search', 'monitoring']
+    ],
+    [
+        'id' => 'json-formatter',
+        'name' => 'JSON Formatter',
+        'category' => 'Development Tools',
+        'description' => 'Format, validate, and beautify JSON data with syntax highlighting.',
+        'url' => 'https://jsonformatter.org',
+        'tags' => ['json', 'formatter', 'validator', 'free']
+    ],
+    [
+        'id' => 'regex101',
+        'name' => 'Regex101',
+        'category' => 'Development Tools',
+        'description' => 'Online regex tester, debugger with highlighting for PHP, PCRE, Python, and JavaScript.',
+        'url' => 'https://regex101.com',
+        'tags' => ['regex', 'tester', 'debugger', 'free']
+    ],
+    [
+        'id' => 'carbon-now',
+        'name' => 'Carbon',
+        'category' => 'Design & Optimization',
+        'description' => 'Create beautiful images of your source code to share on social media.',
+        'url' => 'https://carbon.now.sh',
+        'tags' => ['code', 'images', 'sharing', 'design']
+    ],
+    [
+        'id' => 'figma',
+        'name' => 'Figma',
+        'category' => 'Design & Optimization',
+        'description' => 'Collaborative interface design tool for creating web and mobile app prototypes.',
+        'url' => 'https://figma.com',
+        'tags' => ['design', 'prototyping', 'collaborative', 'interface']
     ]
 ];
 

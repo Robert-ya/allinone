@@ -265,15 +265,15 @@ body {
 /* Tools Grid */
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
 }
 
 .tool-card {
     background: white;
     border: 1px solid #e5e7eb;
     border-radius: 0.5rem;
-    padding: 1.5rem;
+    padding: 1rem;
     transition: all 0.2s;
     cursor: pointer;
 }
@@ -311,7 +311,7 @@ body {
 }
 
 .tool-name {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
     line-height: 1.2;
