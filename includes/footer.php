@@ -21,12 +21,11 @@
                     <ul class="footer-links">
                         <li><a href="?">All Tools</a></li>
                         <li><a href="?page=about">About</a></li>
-                        <li><a href="admin.php">Admin</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?= date('Y') ?> DevTools Directory. Built with PHP. Last updated: <?= date('F j, Y') ?></p>
+                <p>&copy; <?= date('Y') ?> All In One Host. Built with PHP. Last updated: <?= date('F j, Y') ?></p>
             </div>
         </div>
     </footer>

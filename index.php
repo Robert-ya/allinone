@@ -23,7 +23,7 @@ include 'includes/header.php';
 ?>
 
 <main class="main-layout">
-    <?php if ($page === 'home'): ?>
+    <?php if ($page === 'home' || !empty($category) || !empty($search)): ?>
         <!-- Hero Section -->
         <section class="hero">
             <h1>All In One Host</h1>
@@ -48,7 +48,7 @@ include 'includes/header.php';
             <aside class="sidebar">
                 <h3>Categories</h3>
                 <nav class="category-nav">
-                    <a href="?page=home" class="category-nav-item <?= empty($category) ? 'active' : '' ?>">
+                    <a href="?" class="category-nav-item <?= empty($category) ? 'active' : '' ?>">
                         <div class="nav-icon"><?= getCategoryLogo('All Tools') ?></div>
                         <span>All Tools</span>
                         <span class="nav-count"><?= count($tools) ?></span>
@@ -78,7 +78,7 @@ include 'includes/header.php';
                     <?php endif; ?>
                     - <?= count($filtered_tools) ?> tools found
                 </p>
-                <a href="?page=home" class="clear-filters">Clear filters</a>
+                <a href="?" class="clear-filters">Clear filters</a>
             </div>
         <?php endif; ?>
 

@@ -48,7 +48,6 @@
             <div class="nav-menu">
                 <a href="?" class="nav-link <?= ($page === 'home' || empty($page)) ? 'active' : '' ?>">Home</a>
                 <a href="?page=about" class="nav-link <?= $page === 'about' ? 'active' : '' ?>">About</a>
-                <a href="admin.php" class="nav-link admin-link">Admin</a>
             </div>
         </nav>
     </header>
