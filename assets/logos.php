@@ -211,6 +211,40 @@ function getToolLogo($toolName) {
             <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="#FF7139" stroke-width="1.5"/>
         </svg>',
         
+        // AI Assistant Logos
+        'ChatGPT' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#10A37F"/>
+            <path d="M9.5 8.5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5zm2 7c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5z" fill="white"/>
+            <path d="M8 12h8M12 8l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
+        
+        'Claude' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#CC785C"/>
+            <path d="M7 9h10M7 12h10M7 15h7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        
+        'Google Gemini' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#4285F4"/>
+            <path d="M8 8l8 8M8 16l8-8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="2" fill="white"/>
+        </svg>',
+        
+        'Perplexity AI' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#20808D"/>
+            <path d="M8 9l4 6 4-6M12 9v6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        
+        'DeepSeek' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#1B1B1F"/>
+            <path d="M8 12l2-2 2 2 2-2 2 2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="1" fill="white"/>
+        </svg>',
+        
+        'Grok' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#000000"/>
+            <path d="M8 8l8 8M16 8l-8 8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        
         'Netlify' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="3" y="5" width="18" height="14" rx="2" stroke="#00C7B7" stroke-width="2" fill="#F0FDFA"/>
             <path d="M8 12l2 2 4-4" stroke="#00C7B7" stroke-width="2" stroke-linecap="round"/>

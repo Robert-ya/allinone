@@ -92,7 +92,7 @@ include 'includes/header.php';
             <?php else: ?>
                 <div class="tools-grid">
                     <?php foreach ($filtered_tools as $tool): ?>
-                        <div class="tool-card" data-category="<?= htmlspecialchars($tool['category']) ?>">
+                        <div class="tool-card" data-category="<?= htmlspecialchars($tool['category']) ?>" onclick="window.open('<?= htmlspecialchars($tool['url']) ?>', '_blank')">
                             <div class="tool-header">
                                 <div class="tool-name-section">
                                     <div class="tool-logo"><?= getToolLogo($tool['name']) ?></div>
@@ -107,14 +107,6 @@ include 'includes/header.php';
                                         <span class="tag"><?= htmlspecialchars($tag) ?></span>
                                     <?php endforeach; ?>
                                 </div>
-                                <a href="?tool=<?= $tool['id'] ?>" class="tool-link" target="_blank" rel="noopener">
-                                    Visit Tool
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15,3 21,3 21,9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                </a>
                             </div>
                         </div>
                     <?php endforeach; ?>

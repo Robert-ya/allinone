@@ -50,25 +50,13 @@ function getCategories($tools) {
     // Define priority order with DNS Tools at top
     $categoryOrder = [
         'DNS Tools',
-        'Network Tools', 
+        'Performance Testing', 
         'SSL & Security',
-        'Performance Testing',
-        'Monitoring',
-        'Web Hosting',
-        'Cloud Hosting',
-        'Static Hosting',
+        'Network Tools',
+        'AI Assistants',
         'Development Tools',
-        'Browser Testing',
-        'Validation Tools',
-        'Accessibility',
-        'Design Resources',
-        'Optimization',
-        'Domain Registration',
-        'SSL Certificates',
-        'Developer Utilities',
-        'API Testing',
-        'CDN & Security',
-        'Browser Support'
+        'Hosting & CDN',
+        'Design & Optimization'
     ];
     
     $sortedCategories = [];
@@ -95,25 +83,14 @@ function getCategories($tools) {
  */
 function getCategoryIcon($category) {
     $icons = [
-        'Performance Testing' => '⚡',
         'DNS Tools' => '🌐',
-        'Security Tools' => '🔒',
-        'Monitoring' => '📊',
-        'Web Hosting' => '🖥️',
-        'CDN & Security' => '☁️',
-        'Static Hosting' => '📄',
+        'Performance Testing' => '⚡',
+        'SSL & Security' => '🔒',
+        'Network Tools' => '📊',
+        'AI Assistants' => '🤖',
         'Development Tools' => '💻',
-        'Validation Tools' => '✅',
-        'Accessibility' => '♿',
-        'Design Resources' => '🎨',
-        'Optimization' => '🚀',
-        'Browser Support' => '🌍',
-        'Browser Testing' => '🧪',
-        'Domain Registration' => '📝',
-        'Cloud Hosting' => '☁️',
-        'SSL Certificates' => '🔐',
-        'Developer Utilities' => '🛠️',
-        'API Testing' => '🔌'
+        'Hosting & CDN' => '☁️',
+        'Design & Optimization' => '🎨'
     ];
     
     return $icons[$category] ?? '🔧';

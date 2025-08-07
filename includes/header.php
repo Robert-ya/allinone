@@ -28,7 +28,20 @@
         <nav class="nav-container">
             <div class="nav-brand">
                 <a href="?" class="brand-link">
-                    <span class="brand-icon">🌐</span>
+                    <div class="brand-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="url(#brandGradient)"/>
+                            <path d="M8 12h16M16 8l6 6-6 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="10" cy="12" r="1.5" fill="white"/>
+                            <circle cx="16" cy="20" r="1.5" fill="white"/>
+                            <defs>
+                                <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea"/>
+                                    <stop offset="100%" style="stop-color:#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
                     <span class="brand-text">All In One Host</span>
                 </a>
             </div>
