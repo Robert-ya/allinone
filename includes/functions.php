@@ -35,7 +35,7 @@ function filterTools($tools, $category = '', $search = '') {
 }
 
 /**
- * Get all categories with tool counts
+ * Get all categories with tool counts in proper order
  */
 function getCategories($tools) {
     $categories = [];
@@ -46,8 +46,48 @@ function getCategories($tools) {
         }
         $categories[$category]++;
     }
-    ksort($categories);
-    return $categories;
+    
+    // Define priority order with DNS Tools at top
+    $categoryOrder = [
+        'DNS Tools',
+        'Network Tools', 
+        'SSL & Security',
+        'Performance Testing',
+        'Monitoring',
+        'Web Hosting',
+        'Cloud Hosting',
+        'Static Hosting',
+        'Development Tools',
+        'Browser Testing',
+        'Validation Tools',
+        'Accessibility',
+        'Design Resources',
+        'Optimization',
+        'Domain Registration',
+        'SSL Certificates',
+        'Developer Utilities',
+        'API Testing',
+        'CDN & Security',
+        'Browser Support'
+    ];
+    
+    $sortedCategories = [];
+    
+    // Add categories in priority order
+    foreach ($categoryOrder as $cat) {
+        if (isset($categories[$cat])) {
+            $sortedCategories[$cat] = $categories[$cat];
+        }
+    }
+    
+    // Add any remaining categories
+    foreach ($categories as $cat => $count) {
+        if (!isset($sortedCategories[$cat])) {
+            $sortedCategories[$cat] = $count;
+        }
+    }
+    
+    return $sortedCategories;
 }
 
 /**

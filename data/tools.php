@@ -25,11 +25,35 @@ $tools = [
         'tags' => ['free', 'google', 'performance', 'mobile', 'seo']
     ],
     [
+        'id' => 'intodns',
+        'name' => 'IntoDNS',
+        'category' => 'DNS Tools',
+        'description' => 'Comprehensive DNS health checker and domain configuration analyzer.',
+        'url' => 'https://intodns.com',
+        'tags' => ['free', 'dns', 'health check', 'configuration']
+    ],
+    [
+        'id' => 'dnschecker-org',
+        'name' => 'DNS Checker',
+        'category' => 'DNS Tools',
+        'description' => 'Global DNS propagation checker from multiple locations worldwide.',
+        'url' => 'https://dnschecker.org',
+        'tags' => ['free', 'dns', 'propagation', 'global']
+    ],
+    [
+        'id' => 'ping-eu',
+        'name' => 'Ping.eu',
+        'category' => 'Network Tools',
+        'description' => 'Network diagnostic tools including ping, traceroute, port checker, and DNS lookup.',
+        'url' => 'https://ping.eu',
+        'tags' => ['free', 'ping', 'traceroute', 'network', 'diagnostic']
+    ],
+    [
         'id' => 'whois-lookup',
-        'name' => 'Whois.net',
+        'name' => 'Whois.com',
         'category' => 'DNS Tools',
         'description' => 'Look up domain registration information, ownership details, and expiration dates.',
-        'url' => 'https://whois.net',
+        'url' => 'https://whois.com',
         'tags' => ['free', 'whois', 'domain', 'registration']
     ],
     [
@@ -51,10 +75,26 @@ $tools = [
     [
         'id' => 'ssl-labs',
         'name' => 'SSL Labs Test',
-        'category' => 'Security Tools',
+        'category' => 'SSL & Security',
         'description' => 'Deep analysis of SSL/TLS configuration and security grade for your website.',
         'url' => 'https://www.ssllabs.com/ssltest/',
         'tags' => ['free', 'ssl', 'security', 'https', 'certificate']
+    ],
+    [
+        'id' => 'sslchecker',
+        'name' => 'SSL Checker',
+        'category' => 'SSL & Security',
+        'description' => 'Free SSL certificate checker and verification tool for websites.',
+        'url' => 'https://sslchecker.com',
+        'tags' => ['free', 'ssl', 'certificate', 'checker', 'verification']
+    ],
+    [
+        'id' => 'whynopadlock',
+        'name' => 'Why No Padlock?',
+        'category' => 'SSL & Security',
+        'description' => 'Identify mixed content issues preventing your SSL padlock from appearing.',
+        'url' => 'https://whynopadlock.com',
+        'tags' => ['free', 'ssl', 'mixed content', 'https', 'padlock']
     ],
     [
         'id' => 'securityheaders',

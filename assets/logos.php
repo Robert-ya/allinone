@@ -23,6 +23,15 @@ function getCategoryLogo($category) {
             <path d="M8 12h8M12 8l4 4-4 4" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>',
         
+        'Network Tools' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#8B5CF6" stroke-width="2" fill="#F3E8FF"/>
+            <path d="M12 8v8M8 12h8M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
+        'SSL & Security' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="11" width="18" height="10" rx="2" stroke="#059669" stroke-width="2" fill="#ECFDF5"/>
+            <circle cx="12" cy="7" r="4" stroke="#059669" stroke-width="2"/>
+            <path d="M9 15l2 2 4-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
         'Security Tools' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="#EF4444" stroke-width="2" fill="#FEF2F2"/>
             <path d="M9 12l2 2 4-4" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

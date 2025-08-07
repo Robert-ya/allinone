@@ -22,12 +22,12 @@ $categories = getCategories($tools);
 include 'includes/header.php';
 ?>
 
-<main class="container">
+<main class="main-layout">
     <?php if ($page === 'home'): ?>
         <!-- Hero Section -->
         <section class="hero">
-            <h1>Web Development & Hosting Tools Directory</h1>
-            <p>Discover 50+ essential tools for web hosting, development, and site optimization</p>
+            <h1>All In One Host</h1>
+            <p>Your comprehensive directory for web hosting, DNS, SSL, and development tools</p>
             
             <!-- Search Bar -->
             <div class="search-container">
@@ -43,26 +43,30 @@ include 'includes/header.php';
             </div>
         </section>
 
-        <!-- Categories -->
-        <section class="categories">
-            <h2>Browse by Category</h2>
-            <div class="category-grid">
-                <a href="?page=home" class="category-card <?= empty($category) ? 'active' : '' ?>">
-                    <div class="category-icon"><?= getCategoryLogo('All Tools') ?></div>
-                    <h3>All Tools</h3>
-                    <span class="count"><?= count($tools) ?></span>
-                </a>
-                <?php foreach ($categories as $cat => $count): ?>
-                    <a href="?category=<?= urlencode($cat) ?>" class="category-card <?= $category === $cat ? 'active' : '' ?>">
-                        <div class="category-icon"><?= getCategoryLogo($cat) ?></div>
-                        <h3><?= htmlspecialchars($cat) ?></h3>
-                        <span class="count"><?= $count ?></span>
+        <div class="content-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <h3>Categories</h3>
+                <nav class="category-nav">
+                    <a href="?page=home" class="category-nav-item <?= empty($category) ? 'active' : '' ?>">
+                        <div class="nav-icon"><?= getCategoryLogo('All Tools') ?></div>
+                        <span>All Tools</span>
+                        <span class="nav-count"><?= count($tools) ?></span>
                     </a>
-                <?php endforeach; ?>
-            </div>
-        </section>
+                    <?php foreach ($categories as $cat => $count): ?>
+                        <a href="?category=<?= urlencode($cat) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>">
+                            <div class="nav-icon"><?= getCategoryLogo($cat) ?></div>
+                            <span><?= htmlspecialchars($cat) ?></span>
+                            <span class="nav-count"><?= $count ?></span>
+                        </a>
+                    <?php endforeach; ?>
+                </nav>
+            </aside>
 
-        <!-- Results Info -->
+            <!-- Main Content -->
+            <div class="main-content">
+
+                <!-- Results Info -->
         <?php if (!empty($search) || !empty($category)): ?>
             <div class="results-info">
                 <p>
@@ -116,7 +120,8 @@ include 'includes/header.php';
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
-        </section>
+            </div>
+        </div>
 
     <?php elseif ($page === 'about'): ?>
         <section class="about">

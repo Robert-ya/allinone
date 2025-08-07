@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project appears to be a web application with an administrative interface featuring both public and admin-specific styling. The application uses modern CSS architecture with separate stylesheets for different user roles and sections. The styling suggests a clean, professional design system with responsive layouts, admin authentication, and a sticky navigation header.
+"All In One Host" is a comprehensive PHP-based web tools directory featuring 50+ essential tools for web hosting, DNS management, SSL security, and development. The application has been redesigned with a modern sidebar layout, categorized tool organization, and custom SVG logos for professional presentation. DNS Tools are prioritized at the top of categories, with additional tools like IntoDNS, Ping.eu, SSL Checker, and Why No Padlock integrated as requested.
 
 ## User Preferences
 
