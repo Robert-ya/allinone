@@ -28,19 +28,6 @@ include 'includes/header.php';
         <section class="hero">
             <h1>All In One Host</h1>
             <p>Your comprehensive directory for web hosting, DNS, SSL, and development tools</p>
-            
-            <!-- Search Bar -->
-            <div class="search-container">
-                <form method="GET" action="" class="search-form">
-                    <input type="text" name="search" placeholder="Search tools..." value="<?= htmlspecialchars($search) ?>" class="search-input">
-                    <button type="submit" class="search-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                    </button>
-                </form>
-            </div>
         </section>
 
         <div class="content-layout">
@@ -66,21 +53,7 @@ include 'includes/header.php';
             <!-- Main Content -->
             <div class="main-content">
 
-                <!-- Results Info -->
-        <?php if (!empty($search) || !empty($category)): ?>
-            <div class="results-info">
-                <p>
-                    <?php if (!empty($search)): ?>
-                        Search results for "<strong><?= htmlspecialchars($search) ?></strong>"
-                    <?php endif; ?>
-                    <?php if (!empty($category)): ?>
-                        <?= !empty($search) ? ' in ' : '' ?>Category: <strong><?= htmlspecialchars($category) ?></strong>
-                    <?php endif; ?>
-                    - <?= count($filtered_tools) ?> tools found
-                </p>
-                <a href="?" class="clear-filters">Clear filters</a>
-            </div>
-        <?php endif; ?>
+
 
         <!-- Tools Grid -->
         <section class="tools">

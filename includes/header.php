@@ -46,8 +46,17 @@
                 </a>
             </div>
             <div class="nav-menu">
-                <a href="?" class="nav-link <?= ($page === 'home' || empty($page)) ? 'active' : '' ?>">Home</a>
-                <a href="?page=about" class="nav-link <?= $page === 'about' ? 'active' : '' ?>">About</a>
+                <a href="?" class="nav-link <?= (!isset($_GET['page']) || $_GET['page'] === 'home') ? 'active' : '' ?>">Home</a>
+                <a href="?page=about" class="nav-link <?= ($_GET['page'] ?? '') === 'about' ? 'active' : '' ?>">About</a>
+                <form method="GET" action="" class="header-search-form">
+                    <input type="text" name="search" placeholder="Search tools..." value="<?= htmlspecialchars($_GET['search'] ?? '') ?>" class="header-search-input">
+                    <button type="submit" class="header-search-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </form>
             </div>
         </nav>
     </header>
