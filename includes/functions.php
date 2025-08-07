@@ -3,6 +3,8 @@
  * Helper functions for the tools directory
  */
 
+require_once __DIR__ . '/../assets/logos.php';
+
 /**
  * Filter tools based on category and search term
  */
@@ -49,7 +51,7 @@ function getCategories($tools) {
 }
 
 /**
- * Get category icon
+ * Get category icon (emoji fallback)
  */
 function getCategoryIcon($category) {
     $icons = [

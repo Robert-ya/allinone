@@ -48,13 +48,13 @@ include 'includes/header.php';
             <h2>Browse by Category</h2>
             <div class="category-grid">
                 <a href="?page=home" class="category-card <?= empty($category) ? 'active' : '' ?>">
-                    <div class="category-icon">🔧</div>
+                    <div class="category-icon"><?= getCategoryLogo('All Tools') ?></div>
                     <h3>All Tools</h3>
                     <span class="count"><?= count($tools) ?></span>
                 </a>
                 <?php foreach ($categories as $cat => $count): ?>
                     <a href="?category=<?= urlencode($cat) ?>" class="category-card <?= $category === $cat ? 'active' : '' ?>">
-                        <div class="category-icon"><?= getCategoryIcon($cat) ?></div>
+                        <div class="category-icon"><?= getCategoryLogo($cat) ?></div>
                         <h3><?= htmlspecialchars($cat) ?></h3>
                         <span class="count"><?= $count ?></span>
                     </a>
@@ -90,7 +90,10 @@ include 'includes/header.php';
                     <?php foreach ($filtered_tools as $tool): ?>
                         <div class="tool-card" data-category="<?= htmlspecialchars($tool['category']) ?>">
                             <div class="tool-header">
-                                <h3 class="tool-name"><?= htmlspecialchars($tool['name']) ?></h3>
+                                <div class="tool-name-section">
+                                    <div class="tool-logo"><?= getToolLogo($tool['name']) ?></div>
+                                    <h3 class="tool-name"><?= htmlspecialchars($tool['name']) ?></h3>
+                                </div>
                                 <span class="tool-category"><?= htmlspecialchars($tool['category']) ?></span>
                             </div>
                             <p class="tool-description"><?= htmlspecialchars($tool['description']) ?></p>
