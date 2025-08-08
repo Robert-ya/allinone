@@ -7,7 +7,7 @@ require_once 'data/tools.php';
 
 // Handle routing
 $page = $_GET['page'] ?? 'home';
-$category = $_GET['category'] ?? 'DNS Tools'; // Default to DNS Tools
+$category = $_GET['category'] ?? ($page === 'about' ? '' : 'DNS Tools'); // Default to DNS Tools only if not About page
 $search = $_GET['search'] ?? '';
 $tool_id = $_GET['tool'] ?? '';
 
@@ -25,72 +25,7 @@ include 'includes/header.php';
 ?>
 
 <main class="main-layout">
-    <?php if ($page === 'home' || !empty($category) || !empty($search)): ?>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>All In One Host</h1>
-            <p>Your comprehensive directory for web hosting, DNS, SSL, and development tools</p>
-        </section>
-
-        <div class="content-layout">
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <h3>Categories</h3>
-                <nav class="category-nav">
-                    <?php foreach ($categories as $cat => $count): ?>
-                        <a href="?category=<?= urlencode($cat) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>">
-                            <div class="nav-icon"><?= getCategoryLogo($cat) ?></div>
-                            <span><?= htmlspecialchars($cat) ?></span>
-                            <span class="nav-count"><?= $count ?></span>
-                        </a>
-                    <?php endforeach; ?>
-                    <a href="?category=" class="category-nav-item <?= (isset($_GET['category']) && $_GET['category'] === '') ? 'active' : '' ?>">
-                        <div class="nav-icon"><?= getCategoryLogo('All Tools') ?></div>
-                        <span>All Tools</span>
-                        <span class="nav-count"><?= count($tools) ?></span>
-                    </a>
-                </nav>
-            </aside>
-
-            <!-- Main Content -->
-            <div class="main-content">
-
-
-
-        <!-- Tools Grid -->
-        <section class="tools">
-            <?php if (empty($filtered_tools)): ?>
-                <div class="no-results">
-                    <h3>No tools found</h3>
-                    <p>Try adjusting your search terms or browse a different category.</p>
-                </div>
-            <?php else: ?>
-                <div class="tools-grid">
-                    <?php foreach ($filtered_tools as $tool): ?>
-                        <div class="tool-card" data-category="<?= htmlspecialchars($tool['category']) ?>" data-url="<?= htmlspecialchars($tool['url']) ?>">
-                            <div class="tool-header">
-                                <div class="tool-name-section">
-                                    <div class="tool-logo"><?= getToolLogo($tool['name']) ?></div>
-                                    <h3 class="tool-name"><?= htmlspecialchars($tool['name']) ?></h3>
-                                </div>
-                                <span class="tool-category"><?= htmlspecialchars($tool['category']) ?></span>
-                            </div>
-                            <p class="tool-description"><?= htmlspecialchars($tool['description']) ?></p>
-                            <div class="tool-footer">
-                                <div class="tool-tags">
-                                    <?php foreach ($tool['tags'] as $tag): ?>
-                                        <span class="tag"><?= htmlspecialchars($tag) ?></span>
-                                    <?php endforeach; ?>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
-            </div>
-        </div>
-
-    <?php elseif ($page === 'about'): ?>
+    <?php if ($page === 'about'): ?>
         <!-- About Hero Section -->
         <section class="hero about-hero">
             <h1>About All In One Host</h1>
@@ -165,6 +100,70 @@ include 'includes/header.php';
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    <?php else: ?>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>All In One Host</h1>
+            <p>Your comprehensive directory for web hosting, DNS, SSL, and development tools</p>
+        </section>
+
+        <div class="content-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <h3>Categories</h3>
+                <nav class="category-nav">
+                    <?php foreach ($categories as $cat => $count): ?>
+                        <a href="?category=<?= urlencode($cat) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>">
+                            <div class="nav-icon"><?= getCategoryLogo($cat) ?></div>
+                            <span><?= htmlspecialchars($cat) ?></span>
+                            <span class="nav-count"><?= $count ?></span>
+                        </a>
+                    <?php endforeach; ?>
+                    <a href="?category=" class="category-nav-item <?= (isset($_GET['category']) && $_GET['category'] === '') ? 'active' : '' ?>">
+                        <div class="nav-icon"><?= getCategoryLogo('All Tools') ?></div>
+                        <span>All Tools</span>
+                        <span class="nav-count"><?= count($tools) ?></span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="main-content">
+
+
+
+        <!-- Tools Grid -->
+        <section class="tools">
+            <?php if (empty($filtered_tools)): ?>
+                <div class="no-results">
+                    <h3>No tools found</h3>
+                    <p>Try adjusting your search terms or browse a different category.</p>
+                </div>
+            <?php else: ?>
+                <div class="tools-grid">
+                    <?php foreach ($filtered_tools as $tool): ?>
+                        <div class="tool-card" data-category="<?= htmlspecialchars($tool['category']) ?>" data-url="<?= htmlspecialchars($tool['url']) ?>">
+                            <div class="tool-header">
+                                <div class="tool-name-section">
+                                    <div class="tool-logo"><?= getToolLogo($tool['name']) ?></div>
+                                    <h3 class="tool-name"><?= htmlspecialchars($tool['name']) ?></h3>
+                                </div>
+                                <span class="tool-category"><?= htmlspecialchars($tool['category']) ?></span>
+                            </div>
+                            <p class="tool-description"><?= htmlspecialchars($tool['description']) ?></p>
+                            <div class="tool-footer">
+                                <div class="tool-tags">
+                                    <?php foreach ($tool['tags'] as $tag): ?>
+                                        <span class="tag"><?= htmlspecialchars($tag) ?></span>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
             </div>
         </div>
     <?php endif; ?>
