@@ -7,7 +7,7 @@ require_once 'data/tools.php';
 
 // Handle routing
 $page = $_GET['page'] ?? 'home';
-$category = $_GET['category'] ?? '';
+$category = $_GET['category'] ?? 'DNS Tools'; // Default to DNS Tools
 $search = $_GET['search'] ?? '';
 $tool_id = $_GET['tool'] ?? '';
 
@@ -44,7 +44,7 @@ include 'includes/header.php';
                             <span class="nav-count"><?= $count ?></span>
                         </a>
                     <?php endforeach; ?>
-                    <a href="?" class="category-nav-item <?= empty($category) ? 'active' : '' ?>">
+                    <a href="?category=" class="category-nav-item <?= (isset($_GET['category']) && $_GET['category'] === '') ? 'active' : '' ?>">
                         <div class="nav-icon"><?= getCategoryLogo('All Tools') ?></div>
                         <span>All Tools</span>
                         <span class="nav-count"><?= count($tools) ?></span>
