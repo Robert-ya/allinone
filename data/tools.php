@@ -216,81 +216,7 @@ $tools = [
         'tags' => ['free', 'speed test', 'netflix', 'streaming']
     ],
 
-    // AI Chat & Assistant Tools
-    [
-        'id' => 'chatgpt',
-        'name' => 'ChatGPT',
-        'category' => 'AI Assistants',
-        'description' => 'Advanced AI chatbot by OpenAI for conversations, coding, and creative tasks.',
-        'url' => 'https://chat.openai.com',
-        'tags' => ['ai', 'chatbot', 'openai', 'conversation', 'coding']
-    ],
-    [
-        'id' => 'claude',
-        'name' => 'Claude',
-        'category' => 'AI Assistants',
-        'description' => 'AI assistant by Anthropic for helpful, harmless, and honest conversations.',
-        'url' => 'https://claude.ai',
-        'tags' => ['ai', 'anthropic', 'assistant', 'helpful', 'conversation']
-    ],
-    [
-        'id' => 'gemini',
-        'name' => 'Google Gemini',
-        'category' => 'AI Assistants',
-        'description' => 'Google\'s advanced AI model for text, images, and multimodal conversations.',
-        'url' => 'https://gemini.google.com',
-        'tags' => ['ai', 'google', 'multimodal', 'images', 'conversation']
-    ],
-    [
-        'id' => 'perplexity',
-        'name' => 'Perplexity AI',
-        'category' => 'AI Assistants',
-        'description' => 'AI-powered search engine that provides accurate answers with real-time sources.',
-        'url' => 'https://perplexity.ai',
-        'tags' => ['ai', 'search', 'sources', 'research', 'answers']
-    ],
-    [
-        'id' => 'deepseek',
-        'name' => 'DeepSeek',
-        'category' => 'AI Assistants',
-        'description' => 'Advanced AI model focused on reasoning and mathematical problem-solving.',
-        'url' => 'https://chat.deepseek.com',
-        'tags' => ['ai', 'reasoning', 'math', 'problem-solving', 'deepseek']
-    ],
-    [
-        'id' => 'grok',
-        'name' => 'Grok',
-        'category' => 'AI Assistants',
-        'description' => 'Real-time AI assistant by xAI with access to live information and humor.',
-        'url' => 'https://grok.com',
-        'tags' => ['ai', 'xai', 'real-time', 'humor', 'live-data']
-    ],
-
-    // Development & Code Tools
-    [
-        'id' => 'replit',
-        'name' => 'Replit',
-        'category' => 'Development Tools',
-        'description' => 'Collaborative browser-based IDE for multiple programming languages with instant deployment.',
-        'url' => 'https://replit.com',
-        'tags' => ['ide', 'collaborative', 'deployment', 'multiple languages']
-    ],
-    [
-        'id' => 'codepen',
-        'name' => 'CodePen',
-        'category' => 'Development Tools',
-        'description' => 'Online code editor and social development environment for front-end developers.',
-        'url' => 'https://codepen.io',
-        'tags' => ['editor', 'frontend', 'social', 'demo']
-    ],
-    [
-        'id' => 'jsfiddle',
-        'name' => 'JSFiddle',
-        'category' => 'Development Tools',
-        'description' => 'Online playground for testing and sharing JavaScript, CSS, and HTML snippets.',
-        'url' => 'https://jsfiddle.net',
-        'tags' => ['editor', 'javascript', 'playground', 'free']
-    ],
+    // Development Testing & Validation Tools
     [
         'id' => 'validator-w3',
         'name' => 'W3C Markup Validator',
@@ -308,148 +234,6 @@ $tools = [
         'tags' => ['free', 'css', 'validation', 'w3c', 'standards']
     ],
     [
-        'id' => 'github',
-        'name' => 'GitHub',
-        'category' => 'Development Tools',
-        'description' => 'World\'s leading platform for version control, code collaboration, and project hosting.',
-        'url' => 'https://github.com',
-        'tags' => ['git', 'version control', 'collaboration', 'hosting']
-    ],
-    [
-        'id' => 'stackoverflow',
-        'name' => 'Stack Overflow',
-        'category' => 'Development Tools',
-        'description' => 'Large community of developers sharing knowledge, questions, and solutions.',
-        'url' => 'https://stackoverflow.com',
-        'tags' => ['community', 'questions', 'answers', 'programming']
-    ],
-    [
-        'id' => 'postman',
-        'name' => 'Postman',
-        'category' => 'Development Tools',
-        'description' => 'API development and testing platform for building and testing REST APIs.',
-        'url' => 'https://postman.com',
-        'tags' => ['api', 'testing', 'development', 'rest']
-    ],
-
-    // Hosting & Deployment
-    [
-        'id' => 'netlify',
-        'name' => 'Netlify',
-        'category' => 'Hosting & CDN',
-        'description' => 'Modern platform for deploying and hosting static sites and JAMstack applications.',
-        'url' => 'https://netlify.com',
-        'tags' => ['static', 'jamstack', 'deployment', 'free']
-    ],
-    [
-        'id' => 'vercel',
-        'name' => 'Vercel',
-        'category' => 'Hosting & CDN',
-        'description' => 'Platform for frontend frameworks and static sites with serverless functions.',
-        'url' => 'https://vercel.com',
-        'tags' => ['static', 'serverless', 'nextjs', 'deployment']
-    ],
-    [
-        'id' => 'cloudflare',
-        'name' => 'Cloudflare',
-        'category' => 'Hosting & CDN',
-        'description' => 'Global CDN, DDoS protection, and web security services with free tier.',
-        'url' => 'https://cloudflare.com',
-        'tags' => ['cdn', 'security', 'ddos', 'free', 'dns']
-    ],
-    [
-        'id' => 'github-pages',
-        'name' => 'GitHub Pages',
-        'category' => 'Hosting & CDN',
-        'description' => 'Free static site hosting directly from GitHub repositories.',
-        'url' => 'https://pages.github.com',
-        'tags' => ['free', 'github', 'static', 'git']
-    ],
-    [
-        'id' => 'digitalocean',
-        'name' => 'DigitalOcean',
-        'category' => 'Hosting & CDN',
-        'description' => 'Simple cloud hosting platform with predictable pricing and developer tools.',
-        'url' => 'https://digitalocean.com',
-        'tags' => ['cloud', 'vps', 'developer', 'simple']
-    ],
-    [
-        'id' => 'heroku',
-        'name' => 'Heroku',
-        'category' => 'Hosting & CDN',
-        'description' => 'Cloud platform for deploying, managing, and scaling web applications.',
-        'url' => 'https://heroku.com',
-        'tags' => ['cloud', 'deployment', 'scaling', 'paas']
-    ],
-    [
-        'id' => 'aws',
-        'name' => 'Amazon AWS',
-        'category' => 'Hosting & CDN',
-        'description' => 'Comprehensive cloud computing platform with scalable hosting and services.',
-        'url' => 'https://aws.amazon.com',
-        'tags' => ['cloud', 'enterprise', 'scalable', 'services']
-    ],
-
-    // Design & Optimization
-    [
-        'id' => 'tinypng',
-        'name' => 'TinyPNG',
-        'category' => 'Design & Optimization',
-        'description' => 'Smart PNG and JPEG compression service to reduce file sizes while maintaining quality.',
-        'url' => 'https://tinypng.com',
-        'tags' => ['free', 'compression', 'images', 'optimization']
-    ],
-    [
-        'id' => 'google-fonts',
-        'name' => 'Google Fonts',
-        'category' => 'Design & Optimization',
-        'description' => 'Free web fonts library with easy integration and font pairing suggestions.',
-        'url' => 'https://fonts.google.com',
-        'tags' => ['free', 'fonts', 'typography', 'web fonts']
-    ],
-    [
-        'id' => 'unsplash',
-        'name' => 'Unsplash',
-        'category' => 'Design & Optimization',
-        'description' => 'High-quality stock photography available for free with simple attribution.',
-        'url' => 'https://unsplash.com',
-        'tags' => ['free', 'photos', 'stock', 'high quality']
-    ],
-    [
-        'id' => 'coolors',
-        'name' => 'Coolors',
-        'category' => 'Design & Optimization',
-        'description' => 'Color palette generator and color scheme explorer for designers and developers.',
-        'url' => 'https://coolors.co',
-        'tags' => ['colors', 'palette', 'design', 'generator']
-    ],
-    [
-        'id' => 'wave',
-        'name' => 'WAVE Web Accessibility',
-        'category' => 'Design & Optimization',
-        'description' => 'Web accessibility evaluation tool that helps identify accessibility and WCAG errors.',
-        'url' => 'https://wave.webaim.org',
-        'tags' => ['free', 'accessibility', 'wcag', 'evaluation']
-    ],
-    
-    // Additional Google Tools
-    [
-        'id' => 'google-analytics',
-        'name' => 'Google Analytics',
-        'category' => 'Performance Testing',
-        'description' => 'Web analytics service to track and report website traffic and user behavior.',
-        'url' => 'https://analytics.google.com',
-        'tags' => ['analytics', 'google', 'tracking', 'reports']
-    ],
-    [
-        'id' => 'google-search-console',
-        'name' => 'Google Search Console',
-        'category' => 'Performance Testing',
-        'description' => 'Monitor, maintain, and troubleshoot your site\'s presence in Google Search results.',
-        'url' => 'https://search.google.com/search-console',
-        'tags' => ['seo', 'google', 'search', 'monitoring']
-    ],
-    [
         'id' => 'json-formatter',
         'name' => 'JSON Formatter',
         'category' => 'Development Tools',
@@ -465,23 +249,24 @@ $tools = [
         'url' => 'https://regex101.com',
         'tags' => ['regex', 'tester', 'debugger', 'free']
     ],
+
+    // Image & Accessibility Testing Tools
     [
-        'id' => 'carbon-now',
-        'name' => 'Carbon',
-        'category' => 'Design & Optimization',
-        'description' => 'Create beautiful images of your source code to share on social media.',
-        'url' => 'https://carbon.now.sh',
-        'tags' => ['code', 'images', 'sharing', 'design']
+        'id' => 'tinypng',
+        'name' => 'TinyPNG',
+        'category' => 'Optimization Tools',
+        'description' => 'Smart PNG and JPEG compression service to reduce file sizes while maintaining quality.',
+        'url' => 'https://tinypng.com',
+        'tags' => ['free', 'compression', 'images', 'optimization']
     ],
     [
-        'id' => 'figma',
-        'name' => 'Figma',
-        'category' => 'Design & Optimization',
-        'description' => 'Collaborative interface design tool for creating web and mobile app prototypes.',
-        'url' => 'https://figma.com',
-        'tags' => ['design', 'prototyping', 'collaborative', 'interface']
+        'id' => 'wave',
+        'name' => 'WAVE Web Accessibility',
+        'category' => 'Accessibility Testing',
+        'description' => 'Web accessibility evaluation tool that helps identify accessibility and WCAG errors.',
+        'url' => 'https://wave.webaim.org',
+        'tags' => ['free', 'accessibility', 'wcag', 'evaluation']
     ]
 ];
-
 
 ?>
