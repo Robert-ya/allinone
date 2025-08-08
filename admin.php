@@ -1,6 +1,6 @@
 <?php
 require_once 'includes/security.php';
-forceHTTPS();
+// forceHTTPS(); // Disabled for development
 setSecurityHeaders();
 startSecureSession();
 require_once 'includes/functions.php';

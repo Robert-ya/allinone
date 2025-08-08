@@ -37,15 +37,18 @@
     Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
     Header unset Server
     Header unset X-Powered-By
 </IfModule>
 
-# HTTPS Redirection
+# HTTPS Redirection (disabled for development)
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# RewriteCond %{HTTPS} off
+# RewriteCond %{HTTP_HOST} !localhost
+# RewriteCond %{HTTP_HOST} !127\.0\.0\.1
+# RewriteCond %{HTTP_HOST} !\.replit\.
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Pretty URLs
 RewriteCond %{REQUEST_FILENAME} !-f
