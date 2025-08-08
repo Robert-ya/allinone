@@ -83,14 +83,7 @@ $tools = [
         'url' => 'https://webpagetest.org',
         'tags' => ['free', 'speed test', 'global', 'real browsers']
     ],
-    [
-        'id' => 'pingdom',
-        'name' => 'Pingdom',
-        'category' => 'Performance Testing',
-        'description' => 'Website monitoring service checking availability and performance globally.',
-        'url' => 'https://pingdom.com',
-        'tags' => ['monitoring', 'uptime', 'performance', 'alerts']
-    ],
+
     [
         'id' => 'google-speed-test',
         'name' => 'Google Speed Test',
