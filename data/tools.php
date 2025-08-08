@@ -462,6 +462,40 @@ $tools = [
         'description' => 'Expose local servers to the internet without installing any client.',
         'url' => 'https://serveo.net',
         'tags' => ['free', 'tunneling', 'localhost', 'sharing', 'no-install']
+    ],
+
+    // Proxy Sites
+    [
+        'id' => 'croxyproxy',
+        'name' => 'CroxyProxy',
+        'category' => 'Proxy Sites',
+        'description' => 'Free web proxy to unblock websites and browse anonymously.',
+        'url' => 'https://croxyproxy.com',
+        'tags' => ['free', 'proxy', 'anonymous', 'unblock', 'privacy']
+    ],
+    [
+        'id' => 'hide-me',
+        'name' => 'Hide.me Proxy',
+        'category' => 'Proxy Sites',
+        'description' => 'Free anonymous web proxy service to bypass internet restrictions.',
+        'url' => 'https://hide.me/en/proxy',
+        'tags' => ['free', 'proxy', 'anonymous', 'privacy', 'bypass']
+    ],
+    [
+        'id' => 'proxysite',
+        'name' => 'ProxySite',
+        'category' => 'Proxy Sites',
+        'description' => 'Free web proxy to browse the internet anonymously and bypass restrictions.',
+        'url' => 'https://proxysite.com',
+        'tags' => ['free', 'proxy', 'anonymous', 'browse', 'bypass']
+    ],
+    [
+        'id' => 'kproxy',
+        'name' => 'KProxy',
+        'category' => 'Proxy Sites',
+        'description' => 'Public web proxy service for anonymous browsing and privacy protection.',
+        'url' => 'https://kproxy.com',
+        'tags' => ['free', 'proxy', 'anonymous', 'privacy', 'protection']
     ]
 ];
 
