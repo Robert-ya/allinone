@@ -580,6 +580,135 @@ function getToolLogo($toolName) {
             <path d="M6 6l12 12" stroke="#B8FF02" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
         </svg>',
         
+        // New Tool Logos
+        "What's My DNS" => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#2DD4BF" stroke-width="2" fill="#F0FDFA"/>
+            <path d="M8 12h8M12 8l4 4-4 4" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="8" r="1" fill="#2DD4BF"/>
+        </svg>',
+        
+        'DNS Lookup' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#0369A1" stroke-width="2" fill="#EFF6FF"/>
+            <path d="M8 10l2 2 4-4" stroke="#0369A1" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="16" cy="8" r="1" fill="#0369A1"/>
+            <path d="M12 16h4" stroke="#0369A1" stroke-width="1" stroke-linecap="round"/>
+        </svg>',
+        
+        'Yellow Lab Tools' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#EAB308" stroke-width="2" fill="#FFFBEB"/>
+            <path d="M12 6v6l4 2" stroke="#EAB308" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="8" cy="8" r="1" fill="#EAB308"/>
+            <circle cx="16" cy="16" r="1" fill="#EAB308"/>
+        </svg>',
+        
+        'Have I Been Pwned' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="#DC2626" stroke-width="2" fill="#FEF2F2"/>
+            <circle cx="12" cy="10" r="2" stroke="#DC2626" stroke-width="2"/>
+            <path d="M12 14v4" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        
+        'VirusTotal' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#3B82F6" stroke-width="2" fill="#EFF6FF"/>
+            <path d="M9 12l2 2 4-4" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 2L3 7v6" stroke="#3B82F6" stroke-width="1" opacity="0.6"/>
+        </svg>',
+        
+        'Qualys SSL Labs' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="11" width="18" height="10" rx="2" stroke="#DC2626" stroke-width="2" fill="#FEF2F2"/>
+            <circle cx="12" cy="7" r="4" stroke="#DC2626" stroke-width="2"/>
+            <path d="M10 15h4M12 15v2" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
+        
+        'CodePen' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="16" rx="2" stroke="#1E293B" stroke-width="2" fill="#F8FAFC"/>
+            <path d="M8 9l4 4 4-4M12 9v6" stroke="#1E293B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>',
+        
+        'JS Bin' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="16" rx="2" stroke="#F59E0B" stroke-width="2" fill="#FFFBEB"/>
+            <path d="M8 9l2 2-2 2M14 13h3" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="8" r="1" fill="#F59E0B"/>
+        </svg>',
+        
+        'JSFiddle' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="16" rx="2" stroke="#4F46E5" stroke-width="2" fill="#EEF2FF"/>
+            <path d="M7 9h10M7 13h6M7 17h8" stroke="#4F46E5" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
+        
+        'ReqBin' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="6" width="18" height="12" rx="2" stroke="#059669" stroke-width="2" fill="#ECFDF5"/>
+            <path d="M8 10l4 4 4-4" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="15" r="1" fill="#059669"/>
+        </svg>',
+        
+        'Is It Down Right Now' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#7C3AED" stroke-width="2" fill="#F5F3FF"/>
+            <path d="M8 12h8M12 8v8" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="1" fill="#7C3AED"/>
+        </svg>',
+        
+        'Compressor.io' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="6" width="18" height="12" rx="2" stroke="#EF4444" stroke-width="2" fill="#FEF2F2"/>
+            <path d="M8 10l2 2 2-2 2 2" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 14v2" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        
+        'Kraken.io' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#1F2937" stroke-width="2" fill="#F9FAFB"/>
+            <path d="M9 9l6 6M15 9l-6 6" stroke="#1F2937" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="2" fill="#1F2937"/>
+        </svg>',
+        
+        'JavaScript Minifier' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="16" rx="2" stroke="#F7DF1E" stroke-width="2" fill="#FFFBEB"/>
+            <path d="M8 9l2 2-2 2M14 13h3" stroke="#F7DF1E" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 8v8" stroke="#F7DF1E" stroke-width="1" stroke-linecap="round"/>
+        </svg>',
+        
+        'Browserling' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="14" rx="2" stroke="#10B981" stroke-width="2" fill="#ECFDF5"/>
+            <circle cx="6" cy="8" r="1" fill="#10B981"/>
+            <circle cx="9" cy="8" r="1" fill="#10B981"/>
+            <circle cx="12" cy="8" r="1" fill="#10B981"/>
+            <path d="M6 12h12M6 15h8" stroke="#10B981" stroke-width="1"/>
+        </svg>',
+        
+        'LambdaTest' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="14" rx="2" stroke="#7C3AED" stroke-width="2" fill="#F5F3FF"/>
+            <path d="M8 8l8 8M8 16l8-8" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="1" fill="#7C3AED"/>
+        </svg>',
+        
+        'ngrok' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#1F2937" stroke-width="2" fill="#F9FAFB"/>
+            <path d="M8 12h8M12 8l4 4-4 4" stroke="#1F2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>',
+        
+        'Serveo' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#3B82F6" stroke-width="2" fill="#EFF6FF"/>
+            <path d="M8 8l8 8M8 16l8-8" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 6v12" stroke="#3B82F6" stroke-width="1" opacity="0.5" stroke-linecap="round"/>
+        </svg>',
+        
+        'Speedtest.net' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#00A8E6" stroke-width="2" fill="#F0F9FF"/>
+            <path d="M8 12h8M12 8l4 4-4 4" stroke="#00A8E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="8" r="1" fill="#00A8E6"/>
+            <circle cx="16" cy="16" r="1" fill="#00A8E6"/>
+        </svg>',
+        
+        'Fast.com' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="16" rx="2" stroke="#E50914" stroke-width="2" fill="#FEF2F2"/>
+            <path d="M8 8v8M8 8h4M8 12h3" stroke="#E50914" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="16" cy="12" r="2" stroke="#E50914" stroke-width="2"/>
+        </svg>',
+        
+        'DownDetector' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#EF4444" stroke-width="2" fill="#FEF2F2"/>
+            <path d="M8 12l2-2 2 2 4-4" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="16" r="1" fill="#EF4444"/>
+        </svg>',
+        
         // Additional missing tools
         'Can I Use' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="10" stroke="#14B8A6" stroke-width="2" fill="#F0FDFA"/>

@@ -316,6 +316,190 @@ $tools = [
         'description' => 'Web accessibility evaluation tool that helps identify accessibility and WCAG errors.',
         'url' => 'https://wave.webaim.org',
         'tags' => ['free', 'accessibility', 'wcag', 'evaluation']
+    ],
+
+    // Additional DNS Tools
+    [
+        'id' => 'whatsmydns',
+        'name' => "What's My DNS",
+        'category' => 'DNS Tools',
+        'description' => 'Global DNS propagation checker with clean interface and detailed worldwide results.',
+        'url' => 'https://whatsmydns.net',
+        'tags' => ['free', 'dns', 'propagation', 'global', 'checker']
+    ],
+    [
+        'id' => 'dns-lookup',
+        'name' => 'DNS Lookup',
+        'category' => 'DNS Tools',
+        'description' => 'Professional DNS record lookup tool with support for all record types.',
+        'url' => 'https://dnslookup.org',
+        'tags' => ['free', 'dns', 'records', 'lookup', 'professional']
+    ],
+
+    // Additional Performance Testing
+    [
+        'id' => 'speedtest-net',
+        'name' => 'Speedtest.net',
+        'category' => 'Performance Testing',
+        'description' => 'Internet speed test by Ookla measuring download, upload, and ping speeds.',
+        'url' => 'https://speedtest.net',
+        'tags' => ['free', 'speed test', 'internet', 'ookla', 'bandwidth']
+    ],
+    [
+        'id' => 'fast-com',
+        'name' => 'Fast.com',
+        'category' => 'Performance Testing',
+        'description' => 'Netflix internet speed test focusing on video streaming performance.',
+        'url' => 'https://fast.com',
+        'tags' => ['free', 'netflix', 'speed test', 'streaming']
+    ],
+    [
+        'id' => 'yellow-lab-tools',
+        'name' => 'Yellow Lab Tools',
+        'category' => 'Performance Testing',
+        'description' => 'Performance auditing tool analyzing loading speed, SEO, and code quality.',
+        'url' => 'https://yellowlab.tools',
+        'tags' => ['free', 'performance', 'seo', 'audit', 'quality']
+    ],
+
+    // Additional Security Tools
+    [
+        'id' => 'haveibeenpwned',
+        'name' => 'Have I Been Pwned',
+        'category' => 'Security Tools',
+        'description' => 'Check if your email or phone has been compromised in a data breach.',
+        'url' => 'https://haveibeenpwned.com',
+        'tags' => ['free', 'security', 'breach', 'email', 'password']
+    ],
+    [
+        'id' => 'virustotal',
+        'name' => 'VirusTotal',
+        'category' => 'Security Tools',
+        'description' => 'Analyze suspicious files, URLs, and domains for malware detection.',
+        'url' => 'https://virustotal.com',
+        'tags' => ['free', 'security', 'malware', 'antivirus', 'url-scan']
+    ],
+    [
+        'id' => 'qualys-ssllabs',
+        'name' => 'Qualys SSL Labs',
+        'category' => 'Security Tools',
+        'description' => 'Deep analysis of SSL/TLS configuration on any public server.',
+        'url' => 'https://ssllabs.com/ssltest/',
+        'tags' => ['free', 'ssl', 'tls', 'security', 'certificate']
+    ],
+
+    // Additional Development Tools
+    [
+        'id' => 'codepen',
+        'name' => 'CodePen',
+        'category' => 'Development Tools',
+        'description' => 'Online code editor for HTML, CSS, and JavaScript with live preview.',
+        'url' => 'https://codepen.io',
+        'tags' => ['free', 'code editor', 'html', 'css', 'javascript']
+    ],
+    [
+        'id' => 'jsbin',
+        'name' => 'JS Bin',
+        'category' => 'Development Tools',
+        'description' => 'Collaborative JavaScript debugging and testing environment.',
+        'url' => 'https://jsbin.com',
+        'tags' => ['free', 'javascript', 'debugging', 'testing', 'collaborative']
+    ],
+    [
+        'id' => 'jsfiddle',
+        'name' => 'JSFiddle',
+        'category' => 'Development Tools',
+        'description' => 'Test and share JavaScript, CSS, HTML or CoffeeScript online.',
+        'url' => 'https://jsfiddle.net',
+        'tags' => ['free', 'javascript', 'testing', 'sharing', 'coffeescript']
+    ],
+    [
+        'id' => 'reqbin',
+        'name' => 'ReqBin',
+        'category' => 'Development Tools',
+        'description' => 'Online API testing tool for REST, SOAP, and HTTP APIs.',
+        'url' => 'https://reqbin.com',
+        'tags' => ['free', 'api', 'testing', 'rest', 'soap', 'http']
+    ],
+
+    // Additional Network Tools
+    [
+        'id' => 'downdetector',
+        'name' => 'DownDetector',
+        'category' => 'Network Tools',
+        'description' => 'Real-time problem and outage monitoring for websites and services.',
+        'url' => 'https://downdetector.com',
+        'tags' => ['free', 'monitoring', 'outage', 'status', 'downtime']
+    ],
+    [
+        'id' => 'isitdownrightnow',
+        'name' => 'Is It Down Right Now',
+        'category' => 'Network Tools',
+        'description' => 'Check if a website is down for everyone or just you.',
+        'url' => 'https://isitdownrightnow.com',
+        'tags' => ['free', 'website', 'status', 'down', 'checker']
+    ],
+
+    // Additional Optimization Tools
+    [
+        'id' => 'compressor-io',
+        'name' => 'Compressor.io',
+        'category' => 'Optimization Tools',
+        'description' => 'Optimize and compress JPEG, PNG, SVG, GIF and WEBP images online.',
+        'url' => 'https://compressor.io',
+        'tags' => ['free', 'image', 'compression', 'optimization', 'webp']
+    ],
+    [
+        'id' => 'kraken-io',
+        'name' => 'Kraken.io',
+        'category' => 'Optimization Tools',
+        'description' => 'Advanced image optimization and compression API and web interface.',
+        'url' => 'https://kraken.io',
+        'tags' => ['image', 'optimization', 'api', 'compression', 'advanced']
+    ],
+    [
+        'id' => 'minify-js',
+        'name' => 'JavaScript Minifier',
+        'category' => 'Optimization Tools',
+        'description' => 'Minify and compress JavaScript code to reduce file size and load times.',
+        'url' => 'https://javascript-minifier.com',
+        'tags' => ['free', 'javascript', 'minify', 'compression', 'optimization']
+    ],
+
+    // Additional Browser Testing
+    [
+        'id' => 'browserling',
+        'name' => 'Browserling',
+        'category' => 'Browser Testing',
+        'description' => 'Live interactive cross-browser testing on real browsers in the cloud.',
+        'url' => 'https://browserling.com',
+        'tags' => ['browser testing', 'cross-browser', 'live', 'cloud', 'interactive']
+    ],
+    [
+        'id' => 'lambdatest',
+        'name' => 'LambdaTest',
+        'category' => 'Browser Testing',
+        'description' => 'Cross browser testing cloud platform for testing websites across browsers.',
+        'url' => 'https://lambdatest.com',
+        'tags' => ['browser testing', 'cross-browser', 'cloud', 'automated', 'responsive']
+    ],
+
+    // Additional Hosting Tools
+    [
+        'id' => 'ngrok',
+        'name' => 'ngrok',
+        'category' => 'Development Tools',
+        'description' => 'Secure tunnels to localhost for testing webhooks and sharing local dev.',
+        'url' => 'https://ngrok.com',
+        'tags' => ['tunneling', 'localhost', 'webhooks', 'development', 'secure']
+    ],
+    [
+        'id' => 'serveo',
+        'name' => 'Serveo',
+        'category' => 'Development Tools',
+        'description' => 'Expose local servers to the internet without installing any client.',
+        'url' => 'https://serveo.net',
+        'tags' => ['free', 'tunneling', 'localhost', 'sharing', 'no-install']
     ]
 ];
 
