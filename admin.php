@@ -5,8 +5,17 @@ startSecureSession();
 require_once 'includes/functions.php';
 require_once 'data/tools.php';
 
+// Ensure $tools variable is available
+global $tools;
+if (!isset($tools)) {
+    $tools = [];
+}
+
 // Simple authentication - using environment variable for security
-$admin_password = $_ENV['ADMIN_PASSWORD'] ?? getenv('ADMIN_PASSWORD') ?? 'changeme123';
+$admin_password = $_ENV['ADMIN_PASSWORD'] ?? getenv('ADMIN_PASSWORD');
+if (empty($admin_password)) {
+    die('Error: Admin password must be set in environment variable ADMIN_PASSWORD for security.');
+}
 $is_logged_in = $_SESSION['admin_logged_in'] ?? false;
 
 // Handle login
@@ -95,7 +104,7 @@ $categories = getCategories($tools);
                 <div class="stats">
                     <div class="stat-card">
                         <h3>Total Tools</h3>
-                        <div class="stat-number"><?= count($tools) ?></div>
+                        <div class="stat-number"><?= isset($tools) ? count($tools) : 0 ?></div>
                     </div>
                     <div class="stat-card">
                         <h3>Categories</h3>
@@ -158,7 +167,7 @@ $categories = getCategories($tools);
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($tools as $tool): ?>
+                                <?php if (isset($tools)) foreach ($tools as $tool): ?>
                                     <tr>
                                         <td><?= htmlspecialchars($tool['name']) ?></td>
                                         <td><?= htmlspecialchars($tool['category']) ?></td>
