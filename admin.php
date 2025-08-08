@@ -5,13 +5,16 @@ startSecureSession();
 require_once 'includes/functions.php';
 require_once 'data/tools.php';
 
-// Simple authentication
-$admin_password = 'admin123'; // In production, use environment variable
+// Simple authentication - using environment variable for security
+$admin_password = $_ENV['ADMIN_PASSWORD'] ?? getenv('ADMIN_PASSWORD') ?? 'changeme123';
 $is_logged_in = $_SESSION['admin_logged_in'] ?? false;
 
 // Handle login
-if ($_POST['action'] === 'login') {
-    if ($_POST['password'] === $admin_password) {
+if (isset($_POST['action']) && $_POST['action'] === 'login') {
+    // Verify CSRF token
+    if (!isset($_POST['csrf_token']) || !verify_csrf_token($_POST['csrf_token'])) {
+        $error = 'Invalid security token. Please try again.';
+    } elseif (isset($_POST['password']) && $_POST['password'] === $admin_password) {
         $_SESSION['admin_logged_in'] = true;
         $is_logged_in = true;
     } else {
@@ -20,24 +23,31 @@ if ($_POST['action'] === 'login') {
 }
 
 // Handle logout
-if ($_GET['action'] === 'logout') {
+if (isset($_GET['action']) && $_GET['action'] === 'logout') {
     session_destroy();
     header('Location: admin.php');
     exit;
 }
 
 // Handle tool actions
-if ($is_logged_in && $_POST['action']) {
-    switch ($_POST['action']) {
-        case 'add_tool':
-            addTool($_POST);
-            break;
-        case 'edit_tool':
-            editTool($_POST);
-            break;
-        case 'delete_tool':
-            deleteTool($_POST['tool_id']);
-            break;
+if ($is_logged_in && isset($_POST['action'])) {
+    // Verify CSRF token for security
+    if (!isset($_POST['csrf_token']) || !verify_csrf_token($_POST['csrf_token'])) {
+        $error = 'Invalid security token. Please try again.';
+    } else {
+        switch ($_POST['action']) {
+            case 'add_tool':
+                addTool($_POST);
+                break;
+            case 'edit_tool':
+                editTool($_POST);
+                break;
+            case 'delete_tool':
+                if (isset($_POST['tool_id'])) {
+                    deleteTool($_POST['tool_id']);
+                }
+                break;
+        }
     }
 }
 
@@ -71,6 +81,7 @@ $categories = getCategories($tools);
                 <?php endif; ?>
                 <form method="POST">
                     <input type="hidden" name="action" value="login">
+                    <?= csrf_token_field() ?>
                     <div class="form-group">
                         <label for="password">Password:</label>
                         <input type="password" id="password" name="password" required>
@@ -97,6 +108,7 @@ $categories = getCategories($tools);
                     <h2>Add New Tool</h2>
                     <form method="POST" class="tool-form">
                         <input type="hidden" name="action" value="add_tool">
+                        <?= csrf_token_field() ?>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Tool Name:</label>
@@ -156,6 +168,7 @@ $categories = getCategories($tools);
                                             <form method="POST" style="display: inline;" onsubmit="return confirm('Are you sure?')">
                                                 <input type="hidden" name="action" value="delete_tool">
                                                 <input type="hidden" name="tool_id" value="<?= $tool['id'] ?>">
+                                                <?= csrf_token_field() ?>
                                                 <button type="submit" class="delete-btn">Delete</button>
                                             </form>
                                         </td>

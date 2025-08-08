@@ -56,5 +56,20 @@ function startSecureSession() {
         session_regenerate_id(true);
         $_SESSION['last_regeneration'] = time();
     }
+    
+    // Generate CSRF token if not exists
+    if (!isset($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+}
+
+// Generate CSRF token field
+function csrf_token_field() {
+    return '<input type="hidden" name="csrf_token" value="' . htmlspecialchars($_SESSION['csrf_token'] ?? '') . '">';
+}
+
+// Verify CSRF token
+function verify_csrf_token($token) {
+    return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
 }
 ?>
