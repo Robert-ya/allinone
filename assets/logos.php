@@ -144,6 +144,13 @@ function getCategoryLogo($category) {
             <circle cx="12" cy="12" r="10" stroke="#7C3AED" stroke-width="2" fill="#F5F3FF"/>
             <circle cx="12" cy="8" r="2" fill="#7C3AED"/>
             <path d="M9 14v6M15 14v6M9 14h6" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        
+        'Proxy Sites' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#6366F1" stroke-width="2" fill="#EEF2FF"/>
+            <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="#6366F1" stroke-width="2"/>
+            <circle cx="12" cy="12" r="3" stroke="#6366F1" stroke-width="1.5"/>
+            <path d="M9.5 9.5l5 5M14.5 9.5l-5 5" stroke="#6366F1" stroke-width="1" stroke-linecap="round"/>
         </svg>'
     ];
     
@@ -311,6 +318,33 @@ function getToolLogo($toolName) {
         'Grok' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="10" fill="#000000"/>
             <path d="M8 8l8 8M16 8l-8 8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        
+        // Proxy Sites
+        'CroxyProxy' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#8B5CF6" stroke-width="2" fill="#F5F3FF"/>
+            <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="#8B5CF6" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="2" fill="#8B5CF6"/>
+        </svg>',
+        
+        'Hide.me Proxy' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#10B981" stroke-width="2" fill="#ECFDF5"/>
+            <path d="M9 9h6v6h-6z" stroke="#10B981" stroke-width="2" fill="#10B981" fill-opacity="0.2"/>
+            <path d="M7 7l10 10M17 7l-10 10" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
+        
+        'ProxySite' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#3B82F6" stroke-width="2" fill="#EFF6FF"/>
+            <path d="M8 8h8v8h-8z" stroke="#3B82F6" stroke-width="2" fill="#3B82F6" fill-opacity="0.1"/>
+            <circle cx="12" cy="12" r="3" stroke="#3B82F6" stroke-width="1.5"/>
+            <path d="M9.5 9.5l5 5M14.5 9.5l-5 5" stroke="#3B82F6" stroke-width="1" stroke-linecap="round"/>
+        </svg>',
+        
+        'KProxy' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#F59E0B" stroke-width="2" fill="#FFFBEB"/>
+            <path d="M8 8v8M8 12h8" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 8l4 4-4 4" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="1" fill="#F59E0B"/>
         </svg>',
         
         'Netlify' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

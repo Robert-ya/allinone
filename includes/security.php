@@ -3,19 +3,21 @@
  * Security headers and configurations
  */
 
-// Set secure session settings
-ini_set('session.cookie_secure', '1');
+// Set secure session settings - adjusted for development
+ini_set('session.cookie_secure', '0'); // Allow HTTP in development
 ini_set('session.cookie_httponly', '1');
 ini_set('session.cookie_samesite', 'Strict');
 ini_set('session.use_strict_mode', '1');
 
 // Set security headers
 function setSecurityHeaders() {
-    // Content Security Policy
-    header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'");
+    // Content Security Policy - relaxed for external tool redirects
+    header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' *; form-action 'self' *; frame-ancestors 'none'; object-src 'none'; base-uri 'self'");
     
-    // HTTP Strict Transport Security (HSTS)
-    header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
+    // HTTP Strict Transport Security (HSTS) - disabled for development
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+        header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
+    }
     
     // X-Content-Type-Options
     header("X-Content-Type-Options: nosniff");
@@ -42,7 +44,7 @@ function startSecureSession() {
         'lifetime' => 3600, // 1 hour
         'path' => '/',
         'domain' => $_SERVER['HTTP_HOST'] ?? '',
-        'secure' => isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on',
+        'secure' => false, // Allow HTTP in development
         'httponly' => true,
         'samesite' => 'Strict'
     ]);
@@ -56,5 +58,20 @@ function startSecureSession() {
         session_regenerate_id(true);
         $_SESSION['last_regeneration'] = time();
     }
+    
+    // Generate CSRF token if not exists
+    if (!isset($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+}
+
+// Generate CSRF token field
+function csrf_token_field() {
+    return '<input type="hidden" name="csrf_token" value="' . htmlspecialchars($_SESSION['csrf_token'] ?? '') . '">';
+}
+
+// Verify CSRF token
+function verify_csrf_token($token) {
+    return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
 }
 ?>

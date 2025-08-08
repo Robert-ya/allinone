@@ -56,7 +56,8 @@ function getCategories($tools) {
         'AI Assistants',
         'Development Tools',
         'Hosting & CDN',
-        'Design & Optimization'
+        'Design & Optimization',
+        'Proxy Sites'
     ];
     
     $sortedCategories = [];
@@ -90,7 +91,11 @@ function getCategoryIcon($category) {
         'AI Assistants' => '🤖',
         'Development Tools' => '💻',
         'Hosting & CDN' => '☁️',
-        'Design & Optimization' => '🎨'
+        'Design & Optimization' => '🎨',
+        'Optimization Tools' => '🚀',
+        'Accessibility Testing' => '♿',
+        'Browser Testing' => '🌍',
+        'Proxy Sites' => '🕵️'
     ];
     
     return $icons[$category] ?? '🔧';
