@@ -3,6 +3,17 @@
  * Security headers and configurations
  */
 
+// Force HTTPS redirection
+function forceHTTPS() {
+    if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
+        if (isset($_SERVER['HTTP_HOST']) && isset($_SERVER['REQUEST_URI'])) {
+            $redirectURL = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            header("Location: $redirectURL", true, 301);
+            exit();
+        }
+    }
+}
+
 // Set secure session settings
 ini_set('session.cookie_secure', '1');
 ini_set('session.cookie_httponly', '1');
