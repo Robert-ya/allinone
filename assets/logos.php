@@ -151,6 +151,14 @@ function getCategoryLogo($category) {
             <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="#6366F1" stroke-width="2"/>
             <circle cx="12" cy="12" r="3" stroke="#6366F1" stroke-width="1.5"/>
             <path d="M9.5 9.5l5 5M14.5 9.5l-5 5" stroke="#6366F1" stroke-width="1" stroke-linecap="round"/>
+        </svg>',
+        
+        'SEO Tools' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#059669" stroke-width="2" fill="#ECFDF5"/>
+            <path d="M16 8l-6 6-2-2" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 18l8-8M8 10l8 8" stroke="#10B981" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+            <circle cx="12" cy="6" r="1" fill="#059669"/>
+            <circle cx="18" cy="12" r="1" fill="#059669"/>
         </svg>'
     ];
     
@@ -345,6 +353,129 @@ function getToolLogo($toolName) {
             <path d="M8 8v8M8 12h8" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
             <path d="M12 8l4 4-4 4" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="12" cy="12" r="1" fill="#F59E0B"/>
+        </svg>',
+        
+        // New Development Tools
+        'CodeBeautify' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#6366F1" stroke-width="2" fill="#EEF2FF"/>
+            <path d="M7 8l2 2-2 2M11 12h4" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="16" r="1" fill="#6366F1"/>
+            <circle cx="16" cy="16" r="1" fill="#6366F1"/>
+        </svg>',
+        
+        'Beautifier.io' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#F59E0B" stroke-width="2" fill="#FFFBEB"/>
+            <path d="M7 8h10M7 12h8M7 16h6" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="8" r="1" fill="#F59E0B"/>
+            <circle cx="17" cy="12" r="1" fill="#F59E0B"/>
+        </svg>',
+        
+        
+        'Site24x7 HTML Beautifier' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#DC2626" stroke-width="2" fill="#FEF2F2"/>
+            <path d="M7 8h10M7 12h8M7 16h10" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+            <path d="M17 8l2-2M17 12l2-2M17 16l2-2" stroke="#DC2626" stroke-width="1" stroke-linecap="round"/>
+        </svg>',
+        
+        'W3C Link Checker' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#1E40AF" stroke-width="2" fill="#EFF6FF"/>
+            <path d="M8 12h8M12 8l4 4-4 4" stroke="#1E40AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="6" cy="12" r="1" fill="#1E40AF"/>
+            <path d="M9 9l6 6" stroke="#3B82F6" stroke-width="1" stroke-linecap="round"/>
+        </svg>',
+        
+        // New SEO Tools
+        'Seobility SEO Checker' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#059669" stroke-width="2" fill="#ECFDF5"/>
+            <path d="M8 12l2 2 4-4" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 6v12M6 12h12" stroke="#10B981" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+            <circle cx="16" cy="8" r="1" fill="#059669"/>
+        </svg>',
+        
+        'SEOptimer' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#8B5CF6" stroke-width="2" fill="#F5F3FF"/>
+            <path d="M7 15l3-3 3 3 4-4" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="7" cy="7" r="1" fill="#8B5CF6"/>
+            <circle cx="17" cy="7" r="1" fill="#8B5CF6"/>
+        </svg>',
+        
+        'Neil Patel SEO Analyzer' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#F97316" stroke-width="2" fill="#FFF7ED"/>
+            <path d="M8 14l2-2 2 2 4-4" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="8" r="2" stroke="#F97316" stroke-width="1.5"/>
+            <path d="M16 16v2M8 16v2" stroke="#F97316" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
+        
+        'SEO Site Checkup' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="14" rx="2" stroke="#0EA5E9" stroke-width="2" fill="#F0F9FF"/>
+            <path d="M7 10l2 2 2-4 2 6 2-2" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="6" cy="8" r="1" fill="#0EA5E9"/>
+            <circle cx="18" cy="8" r="1" fill="#0EA5E9"/>
+        </svg>',
+        
+        'Rank Math SEO Analyzer' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#16A34A" stroke-width="2" fill="#F0FDF4"/>
+            <path d="M8 12l2 2 4-4" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 2v20M2 12h20" stroke="#22C55E" stroke-width="0.5" stroke-linecap="round" opacity="0.3"/>
+            <circle cx="8" cy="8" r="1" fill="#16A34A"/>
+            <circle cx="16" cy="8" r="1" fill="#16A34A"/>
+        </svg>',
+        
+        'AIOSEO Analyzer' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#7C3AED" stroke-width="2" fill="#F5F3FF"/>
+            <path d="M12 7l-3 6h6l-3-6z" stroke="#7C3AED" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="12" cy="16" r="1" fill="#7C3AED"/>
+            <path d="M9 15h6" stroke="#7C3AED" stroke-width="1" stroke-linecap="round"/>
+        </svg>',
+        
+        // Additional Performance Testing Tools
+        'Total Validator' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#DC2626" stroke-width="2" fill="#FEF2F2"/>
+            <path d="M9 12l2 2 4-4" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 6l12 12M18 6L6 18" stroke="#EF4444" stroke-width="0.5" stroke-linecap="round" opacity="0.2"/>
+            <circle cx="12" cy="6" r="1" fill="#DC2626"/>
+            <circle cx="18" cy="12" r="1" fill="#DC2626"/>
+            <circle cx="12" cy="18" r="1" fill="#DC2626"/>
+            <circle cx="6" cy="12" r="1" fill="#DC2626"/>
+        </svg>',
+        
+        'ValidBot' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="6" width="18" height="12" rx="2" stroke="#0891B2" stroke-width="2" fill="#F0F9FF"/>
+            <circle cx="9" cy="10" r="1" fill="#0891B2"/>
+            <circle cx="15" cy="10" r="1" fill="#0891B2"/>
+            <path d="M8 14h8" stroke="#0891B2" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 2v4M12 18v4" stroke="#0891B2" stroke-width="1" stroke-linecap="round"/>
+        </svg>',
+        
+        // Additional Security Tools
+        'Pentest-Tools Website Scanner' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="#EF4444" stroke-width="2" fill="#FEF2F2"/>
+            <path d="M9 12l2 2 4-4" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="8" r="1" fill="#EF4444"/>
+            <path d="M8 16l8-8" stroke="#F87171" stroke-width="0.5" stroke-linecap="round" opacity="0.5"/>
+        </svg>',
+        
+        // Additional Network Tools  
+        'Think with Google Test My Site' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#4285F4" stroke-width="2" fill="#EFF6FF"/>
+            <path d="M8 10l2 2 4-4" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 16v2M10 18h4" stroke="#4285F4" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="16" cy="8" r="1" fill="#4285F4"/>
+        </svg>',
+        
+        // Additional Accessibility Tools
+        'axe DevTools' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#7C3AED" stroke-width="2" fill="#F5F3FF"/>
+            <circle cx="12" cy="8" r="2" fill="#7C3AED"/>
+            <path d="M9 14v6M15 14v6M9 14h6" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 10l12 8M18 10L6 18" stroke="#A855F7" stroke-width="0.5" stroke-linecap="round" opacity="0.3"/>
+        </svg>',
+        
+        'Siteimprove Accessibility Checker' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#059669" stroke-width="2" fill="#ECFDF5"/>
+            <circle cx="12" cy="8" r="2" fill="#059669"/>
+            <path d="M9 14v6M15 14v6M9 14h6" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            <path d="M9 12l2 2 4-4" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>',
         
         'Netlify' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

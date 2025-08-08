@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Optimize crawling
+Crawl-delay: 1
+
+# Sitemap location (update with your actual domain)
+Sitemap: https://allinonehost.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin.php
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /includes/
+Disallow: /data/
+
+# Allow important directories
+Allow: /assets/
+Allow: /sitemap.xml

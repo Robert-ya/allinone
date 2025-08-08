@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?php
+header('Content-Type: text/xml; charset=utf-8');
+require_once 'data/tools.php';
+require_once 'includes/functions.php';
+
+$base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'];
+$categories = getCategories($tools);
+?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <!-- Homepage -->
+    <url>
+        <loc><?= $base_url ?>/?</loc>
+        <lastmod><?= date('c') ?></lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- About page -->
+    <url>
+        <loc><?= $base_url ?>/?page=about</loc>
+        <lastmod><?= date('c') ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Category pages -->
+    <?php foreach (array_keys($categories) as $category): ?>
+    <url>
+        <loc><?= $base_url ?>/?category=<?= urlencode($category) ?></loc>
+        <lastmod><?= date('c') ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <?php endforeach; ?>
+    
+    <!-- All tools page -->
+    <url>
+        <loc><?= $base_url ?>/?category=</loc>
+        <lastmod><?= date('c') ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+</urlset>

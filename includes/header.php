@@ -3,25 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= (isset($page_title) && !empty($page_title)) ? htmlspecialchars($page_title) . ' - ' : '' ?>All In One Host - Web Tools Directory</title>
-    <meta name="description" content="All In One Host - Discover 54 essential web hosting and development tools. Browse by category, search, and find the perfect tools for your web development needs.">
-    <meta name="keywords" content="all in one host, web hosting, development tools, hosting tools, web development, dns tools, ssl, performance testing, monitoring">
+    <title><?php 
+        if ($page === 'about') {
+            echo 'About All In One Host - 72 Online Web Development Tools Directory';
+        } elseif (!empty($search)) {
+            echo 'Search Results for "' . htmlspecialchars($search) . '" - All In One Host';
+        } elseif (!empty($category) && $category !== 'DNS Tools') {
+            echo htmlspecialchars($category) . ' Tools - All In One Host Directory';
+        } else {
+            echo 'All In One Host - 72 Essential Online Web Tools for Developers & Hosting';
+        }
+    ?></title>
+    <meta name="description" content="<?php 
+        if ($page === 'about') {
+            echo 'Discover All In One Host - a comprehensive directory of 72 curated online web tools for developers, system administrators, and hosting professionals. No downloads required.';
+        } elseif (!empty($search)) {
+            echo 'Find ' . htmlspecialchars($search) . ' tools in our directory of 72 online web development tools. DNS, SEO, performance testing, security, and more.';
+        } elseif (!empty($category) && $category !== 'DNS Tools') {
+            echo 'Browse ' . htmlspecialchars($category) . ' tools in our curated directory. Professional online tools for web development, hosting, and system administration.';
+        } else {
+            echo 'All In One Host - Discover 72 essential online web tools for developers. DNS, SEO, performance testing, security scanning, accessibility testing, and development tools.';
+        }
+    ?>">
+    <meta name="keywords" content="web development tools, online tools, dns tools, seo tools, performance testing, ssl checker, accessibility testing, development utilities, hosting tools, security scanner, website validation, code formatter">
+    <meta name="author" content="All In One Host">
+    <meta name="robots" content="index, follow">
+    <meta name="rating" content="general">
+    <meta name="distribution" content="global">
     <link rel="preload" href="assets/style.css" as="style">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="preload" href="assets/main.js" as="script">
     <script src="assets/main.js" defer></script>
     <link rel="canonical" href="<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
     
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "All In One Host",
+        "description": "Comprehensive directory of <?= count($tools) ?> essential online web development tools for developers, system administrators, and hosting professionals.",
+        "url": "<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] ?>",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] ?>/?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="All In One Host">
     <meta property="og:url" content="<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
-    <meta property="og:title" content="All In One Host - Web Tools Directory">
-    <meta property="og:description" content="All In One Host - Discover 54 essential web hosting and development tools">
+    <meta property="og:title" content="<?php 
+        if ($page === 'about') {
+            echo 'About All In One Host - 72 Online Web Development Tools Directory';
+        } elseif (!empty($category) && $category !== 'DNS Tools') {
+            echo htmlspecialchars($category) . ' Tools - All In One Host Directory';
+        } else {
+            echo 'All In One Host - 72 Essential Online Web Tools for Developers';
+        }
+    ?>">
+    <meta property="og:description" content="<?php 
+        if ($page === 'about') {
+            echo 'Comprehensive directory of 72 curated online web tools for developers, system administrators, and hosting professionals. No downloads required.';
+        } elseif (!empty($category) && $category !== 'DNS Tools') {
+            echo 'Professional ' . htmlspecialchars($category) . ' tools for web development, hosting, and system administration. All tools accessible online.';
+        } else {
+            echo 'Discover 72 essential online web tools: DNS, SEO, performance testing, security scanning, accessibility testing, and development utilities.';
+        }
+    ?>">
+    <meta property="og:locale" content="en_US">
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="All In One Host - Web Tools Directory">
-    <meta property="twitter:description" content="All In One Host - Discover 54 essential web hosting and development tools">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@allinonehost">
+    <meta name="twitter:title" content="<?php 
+        if ($page === 'about') {
+            echo 'About All In One Host - 72 Online Web Development Tools';
+        } elseif (!empty($category) && $category !== 'DNS Tools') {
+            echo htmlspecialchars($category) . ' Tools - All In One Host';
+        } else {
+            echo 'All In One Host - 72 Essential Online Web Tools';
+        }
+    ?>">
+    <meta name="twitter:description" content="<?php 
+        if ($page === 'about') {
+            echo '72 curated online web tools for developers and hosting professionals. DNS, SEO, performance, security, and accessibility tools.';
+        } elseif (!empty($category) && $category !== 'DNS Tools') {
+            echo 'Professional ' . htmlspecialchars($category) . ' tools for web development and system administration. All accessible online.';
+        } else {
+            echo 'Essential online tools for developers: DNS, SEO, performance testing, security scanning, accessibility, and development utilities.';
+        }
+    ?>">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='url(%23brandGradient)'/><path d='M8 12h16M16 8l6 6-6 6' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/><circle cx='10' cy='12' r='1.5' fill='white'/><circle cx='16' cy='20' r='1.5' fill='white'/><defs><linearGradient id='brandGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea'/><stop offset='100%25' style='stop-color:%23764ba2'/></linearGradient></defs></svg>">

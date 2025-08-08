@@ -53,8 +53,12 @@ function getCategories($tools) {
         'Performance Testing', 
         'SSL & Security',
         'Network Tools',
+        'SEO Tools',
         'AI Assistants',
         'Development Tools',
+        'Accessibility Testing',
+        'Browser Testing',
+        'Optimization Tools',
         'Hosting & CDN',
         'Design & Optimization',
         'Proxy Sites'
@@ -88,13 +92,14 @@ function getCategoryIcon($category) {
         'Performance Testing' => '⚡',
         'SSL & Security' => '🔒',
         'Network Tools' => '📊',
+        'SEO Tools' => '📈',
         'AI Assistants' => '🤖',
         'Development Tools' => '💻',
-        'Hosting & CDN' => '☁️',
-        'Design & Optimization' => '🎨',
-        'Optimization Tools' => '🚀',
         'Accessibility Testing' => '♿',
         'Browser Testing' => '🌍',
+        'Optimization Tools' => '🚀',
+        'Hosting & CDN' => '☁️',
+        'Design & Optimization' => '🎨',
         'Proxy Sites' => '🕵️'
     ];
     
