@@ -101,7 +101,7 @@ include 'includes/header.php';
             <div class="about-content">
                 <div class="about-section">
                     <h2>Our Mission</h2>
-                    <p>All In One Host serves as your comprehensive directory for web hosting, DNS, SSL, and development tools. We've curated a collection of over 50 essential tools, each carefully selected for its utility, reliability, and relevance to web developers and hosting professionals.</p>
+                    <p>All In One Host serves as your comprehensive directory for web hosting, DNS, SSL, and development tools. We've curated a collection of 54 essential tools, each carefully selected for its utility, reliability, and relevance to web developers and hosting professionals. Every tool has been verified to ensure no duplicates and maximum value.</p>
                 </div>
 
                 <div class="about-section">
@@ -148,7 +148,22 @@ include 'includes/header.php';
 
                 <div class="about-section">
                     <h2>Built for Developers</h2>
-                    <p>Whether you're a seasoned developer, system administrator, or just getting started with web hosting, our directory provides quick access to the tools you need. From DNS troubleshooting to performance optimization, security scanning to accessibility testing - we've got you covered.</p>
+                    <p>Whether you're a seasoned developer, system administrator, or just getting started with web hosting, our directory provides quick access to the tools you need. From DNS troubleshooting to performance optimization, security scanning to accessibility testing - we've got you covered with 54 carefully curated, duplicate-free tools.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">54</div>
+                            <div class="stat-label">Unique Tools</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">0</div>
+                            <div class="stat-label">Duplicates</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Free Access</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
