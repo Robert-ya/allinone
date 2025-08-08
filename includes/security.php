@@ -3,25 +3,6 @@
  * Security headers and configurations
  */
 
-// Force HTTPS redirection (only in production)
-function forceHTTPS() {
-    // Skip HTTPS redirection in development environment
-    if (isset($_SERVER['SERVER_NAME']) && 
-        (strpos($_SERVER['SERVER_NAME'], 'localhost') !== false || 
-         strpos($_SERVER['SERVER_NAME'], '127.0.0.1') !== false ||
-         strpos($_SERVER['SERVER_NAME'], '.replit.') !== false)) {
-        return;
-    }
-    
-    if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
-        if (isset($_SERVER['HTTP_HOST']) && isset($_SERVER['REQUEST_URI'])) {
-            $redirectURL = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-            header("Location: $redirectURL", true, 301);
-            exit();
-        }
-    }
-}
-
 // Set secure session settings
 ini_set('session.cookie_secure', '1');
 ini_set('session.cookie_httponly', '1');
@@ -33,8 +14,8 @@ function setSecurityHeaders() {
     // Content Security Policy
     header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'");
     
-    // HTTP Strict Transport Security (HSTS) - disabled for development
-    // header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
+    // HTTP Strict Transport Security (HSTS)
+    header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
     
     // X-Content-Type-Options
     header("X-Content-Type-Options: nosniff");
