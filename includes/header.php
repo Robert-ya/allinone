@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= (isset($page_title) && !empty($page_title)) ? htmlspecialchars($page_title) . ' - ' : '' ?>All In One Host - Web Tools Directory</title>
-    <meta name="description" content="All In One Host - Discover 50+ essential web hosting and development tools. Browse by category, search, and find the perfect tools for your web development needs.">
+    <meta name="description" content="All In One Host - Discover 54 essential web hosting and development tools. Browse by category, search, and find the perfect tools for your web development needs.">
     <meta name="keywords" content="all in one host, web hosting, development tools, hosting tools, web development, dns tools, ssl, performance testing, monitoring">
+    <link rel="preload" href="assets/style.css" as="style">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="preload" href="assets/main.js" as="script">
     <script src="assets/main.js" defer></script>
     <link rel="canonical" href="https://<?= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
     
@@ -14,12 +16,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://<?= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
     <meta property="og:title" content="All In One Host - Web Tools Directory">
-    <meta property="og:description" content="All In One Host - Discover 50+ essential web hosting and development tools">
+    <meta property="og:description" content="All In One Host - Discover 54 essential web hosting and development tools">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="All In One Host - Web Tools Directory">
-    <meta property="twitter:description" content="All In One Host - Discover 50+ essential web hosting and development tools">
+    <meta property="twitter:description" content="All In One Host - Discover 54 essential web hosting and development tools">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">

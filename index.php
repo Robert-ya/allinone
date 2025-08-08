@@ -67,7 +67,7 @@ include 'includes/header.php';
             <?php else: ?>
                 <div class="tools-grid">
                     <?php foreach ($filtered_tools as $tool): ?>
-                        <div class="tool-card" data-category="<?= htmlspecialchars($tool['category']) ?>" onclick="window.open('<?= htmlspecialchars($tool['url']) ?>', '_blank')">
+                        <div class="tool-card" data-category="<?= htmlspecialchars($tool['category']) ?>" data-url="<?= htmlspecialchars($tool['url']) ?>">
                             <div class="tool-header">
                                 <div class="tool-name-section">
                                     <div class="tool-logo"><?= getToolLogo($tool['name']) ?></div>
@@ -91,26 +91,82 @@ include 'includes/header.php';
         </div>
 
     <?php elseif ($page === 'about'): ?>
-        <section class="about">
-            <h1>About Our Directory</h1>
-            <div class="about-content">
-                <p>This directory contains a curated collection of over 50 essential web hosting and development tools. Each tool has been carefully selected based on its utility, reliability, and relevance to web developers and hosting professionals.</p>
-                
-                <h2>Categories Include:</h2>
-                <ul>
-                    <?php foreach ($categories as $cat => $count): ?>
-                        <li><strong><?= htmlspecialchars($cat) ?></strong> - <?= $count ?> tools</li>
-                    <?php endforeach; ?>
-                </ul>
-                
-                <h2>How to Use</h2>
-                <ol>
-                    <li>Browse tools by category or use the search function</li>
-                    <li>Click on any tool to visit its website</li>
-                    <li>All external links open in new tabs for your convenience</li>
-                </ol>
-            </div>
+        <!-- About Hero Section -->
+        <section class="hero about-hero">
+            <h1>About All In One Host</h1>
+            <p>Discover the story behind your comprehensive web development toolkit</p>
         </section>
+
+        <div class="about-layout">
+            <div class="about-content">
+                <div class="about-section">
+                    <h2>Our Mission</h2>
+                    <p>All In One Host serves as your comprehensive directory for web hosting, DNS, SSL, and development tools. We've curated a collection of 54 essential tools, each carefully selected for its utility, reliability, and relevance to web developers and hosting professionals. Every tool has been verified to ensure no duplicates and maximum value.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>What You'll Find</h2>
+                    <div class="categories-grid">
+                        <?php foreach ($categories as $cat => $count): ?>
+                            <div class="category-item">
+                                <div class="category-icon"><?= getCategoryLogo($cat) ?></div>
+                                <div class="category-info">
+                                    <h3><?= htmlspecialchars($cat) ?></h3>
+                                    <span class="category-count"><?= $count ?> tools</span>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2>How to Use Our Directory</h2>
+                    <div class="steps-grid">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Browse or Search</h3>
+                                <p>Use the sidebar to browse tools by category or use the search function to find specific tools</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Click to Visit</h3>
+                                <p>Click on any tool card to visit its official website and start using it immediately</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>New Tab Convenience</h3>
+                                <p>All external links open in new tabs so you can keep our directory open for reference</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2>Built for Developers</h2>
+                    <p>Whether you're a seasoned developer, system administrator, or just getting started with web hosting, our directory provides quick access to the tools you need. From DNS troubleshooting to performance optimization, security scanning to accessibility testing - we've got you covered with 54 carefully curated, duplicate-free tools.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">54</div>
+                            <div class="stat-label">Unique Tools</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">0</div>
+                            <div class="stat-label">Duplicates</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Free Access</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <?php endif; ?>
 </main>
 
