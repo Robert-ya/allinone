@@ -48,11 +48,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Track tool clicks for analytics
-    document.querySelectorAll('.tool-link').forEach(link => {
-        link.addEventListener('click', function() {
-            const toolName = this.closest('.tool-card').querySelector('.tool-name').textContent;
-            console.log('Tool clicked:', toolName);
+    // Handle tool card clicks to open in new tab
+    document.querySelectorAll('.tool-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const url = this.dataset.url;
+            const toolName = this.querySelector('.tool-name').textContent;
+            if (url) {
+                console.log('Tool clicked:', toolName);
+                window.open(url, '_blank');
+            }
         });
     });
     
