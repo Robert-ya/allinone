@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($page_title) ? htmlspecialchars($page_title) . ' - ' : '' ?>All In One Host - Web Tools Directory</title>
+    <title><?= (isset($page_title) && !empty($page_title)) ? htmlspecialchars($page_title) . ' - ' : '' ?>All In One Host - Web Tools Directory</title>
     <meta name="description" content="All In One Host - Discover 50+ essential web hosting and development tools. Browse by category, search, and find the perfect tools for your web development needs.">
     <meta name="keywords" content="all in one host, web hosting, development tools, hosting tools, web development, dns tools, ssl, performance testing, monitoring">
     <link rel="stylesheet" href="assets/style.css">
