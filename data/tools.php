@@ -305,7 +305,7 @@ $tools = [
     [
         'id' => 'wave',
         'name' => 'WAVE Web Accessibility',
-        'category' => 'Accessibility Testing',
+        'category' => 'Development Tools',
         'description' => 'Web accessibility evaluation tool that helps identify accessibility and WCAG errors.',
         'url' => 'https://wave.webaim.org',
         'tags' => ['free', 'accessibility', 'wcag', 'evaluation']
