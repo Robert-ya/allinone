@@ -37,11 +37,6 @@ include 'includes/header.php';
             <aside class="sidebar">
                 <h3>Categories</h3>
                 <nav class="category-nav">
-                    <a href="?" class="category-nav-item <?= empty($category) ? 'active' : '' ?>">
-                        <div class="nav-icon"><?= getCategoryLogo('All Tools') ?></div>
-                        <span>All Tools</span>
-                        <span class="nav-count"><?= count($tools) ?></span>
-                    </a>
                     <?php foreach ($categories as $cat => $count): ?>
                         <a href="?category=<?= urlencode($cat) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>">
                             <div class="nav-icon"><?= getCategoryLogo($cat) ?></div>
@@ -49,6 +44,11 @@ include 'includes/header.php';
                             <span class="nav-count"><?= $count ?></span>
                         </a>
                     <?php endforeach; ?>
+                    <a href="?" class="category-nav-item <?= empty($category) ? 'active' : '' ?>">
+                        <div class="nav-icon"><?= getCategoryLogo('All Tools') ?></div>
+                        <span>All Tools</span>
+                        <span class="nav-count"><?= count($tools) ?></span>
+                    </a>
                 </nav>
             </aside>
 
