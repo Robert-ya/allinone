@@ -137,13 +137,13 @@ include 'includes/header.php';
         
         <!-- Hero Section -->
         <section class="hero">
-            <h1>All In One Host - <?php 
+            <h1><?php 
                 if (!empty($search)) {
-                    echo 'Search Results';
+                    echo 'All In One Host - Search Results';
                 } elseif (!empty($category) && $category !== 'DNS Tools') {
-                    echo htmlspecialchars($category) . ' Tools';
+                    echo 'All In One Host - ' . htmlspecialchars($category) . ' Tools';
                 } else {
-                    echo 'Essential Online Web Tools for Developers';
+                    echo 'All In One Host';
                 }
             ?></h1>
             <p><?php 
@@ -152,7 +152,7 @@ include 'includes/header.php';
                 } elseif (!empty($category) && $category !== 'DNS Tools') {
                     echo 'Professional ' . htmlspecialchars($category) . ' for developers, system administrators, and hosting professionals';
                 } else {
-                    echo 'Your comprehensive directory for web hosting, DNS, SSL, SEO analysis, and development tools';
+                    echo 'Your comprehensive directory for web hosting, DNS, SSL, and development tools';
                 }
             ?></p>
         </section>
