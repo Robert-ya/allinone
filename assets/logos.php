@@ -370,12 +370,6 @@ function getToolLogo($toolName) {
             <circle cx="17" cy="12" r="1" fill="#F59E0B"/>
         </svg>',
         
-        'FreeFormatter' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#10B981" stroke-width="2" fill="#ECFDF5"/>
-            <path d="M8 8l2 2-2 2M12 12h4" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 16h8" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="7" cy="7" r="1" fill="#10B981"/>
-        </svg>',
         
         'Site24x7 HTML Beautifier' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="3" y="3" width="18" height="18" rx="2" stroke="#DC2626" stroke-width="2" fill="#FEF2F2"/>

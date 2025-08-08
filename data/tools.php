@@ -446,23 +446,6 @@ $tools = [
         'tags' => ['browser testing', 'cross-browser', 'cloud', 'automated', 'responsive']
     ],
 
-    // Additional Hosting Tools
-    [
-        'id' => 'ngrok',
-        'name' => 'ngrok',
-        'category' => 'Development Tools',
-        'description' => 'Secure tunnels to localhost for testing webhooks and sharing local dev.',
-        'url' => 'https://ngrok.com',
-        'tags' => ['tunneling', 'localhost', 'webhooks', 'development', 'secure']
-    ],
-    [
-        'id' => 'serveo',
-        'name' => 'Serveo',
-        'category' => 'Development Tools',
-        'description' => 'Expose local servers to the internet without installing any client.',
-        'url' => 'https://serveo.net',
-        'tags' => ['free', 'tunneling', 'localhost', 'sharing', 'no-install']
-    ],
 
     // Proxy Sites
     [
@@ -514,14 +497,6 @@ $tools = [
         'description' => 'Advanced JavaScript and JSX beautifier with React support and customization options.',
         'url' => 'https://beautifier.io',
         'tags' => ['free', 'javascript', 'jsx', 'react', 'beautifier', 'formatter']
-    ],
-    [
-        'id' => 'freeformatter',
-        'name' => 'FreeFormatter',
-        'category' => 'Development Tools',
-        'description' => 'Comprehensive collection of HTML, CSS, JavaScript formatters and validators.',
-        'url' => 'https://www.freeformatter.com',
-        'tags' => ['free', 'formatter', 'validator', 'html', 'css', 'javascript']
     ],
     [
         'id' => 'site24x7-html-beautifier',
