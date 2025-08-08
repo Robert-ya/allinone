@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($page_title) ? htmlspecialchars($page_title) . ' - ' : '' ?>All In One Host - Web Tools Directory</title>
+    <title><?= (isset($page_title) && !empty($page_title)) ? htmlspecialchars($page_title) . ' - ' : '' ?>All In One Host - Web Tools Directory</title>
     <meta name="description" content="All In One Host - Discover 50+ essential web hosting and development tools. Browse by category, search, and find the perfect tools for your web development needs.">
     <meta name="keywords" content="all in one host, web hosting, development tools, hosting tools, web development, dns tools, ssl, performance testing, monitoring">
     <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/main.js" defer></script>
     <link rel="canonical" href="https://<?= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
     
     <!-- Open Graph / Facebook -->
@@ -45,7 +46,14 @@
                     <span class="brand-text">All In One Host</span>
                 </a>
             </div>
-            <div class="nav-menu">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="nav-menu" id="navMenu">
                 <a href="?" class="nav-link <?= (!isset($_GET['page']) || $_GET['page'] === 'home') ? 'active' : '' ?>">Home</a>
                 <a href="?page=about" class="nav-link <?= ($_GET['page'] ?? '') === 'about' ? 'active' : '' ?>">About</a>
                 <form method="GET" action="" class="header-search-form">

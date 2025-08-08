@@ -1,5 +1,7 @@
 <?php
-session_start();
+require_once 'includes/security.php';
+setSecurityHeaders();
+startSecureSession();
 require_once 'includes/functions.php';
 require_once 'data/tools.php';
 
@@ -112,39 +114,6 @@ include 'includes/header.php';
     <?php endif; ?>
 </main>
 
-<script>
-// Simple search enhancement
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.querySelector('.search-input');
-    const toolCards = document.querySelectorAll('.tool-card');
-    
-    // Live search functionality
-    if (searchInput && toolCards.length > 0) {
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            
-            toolCards.forEach(card => {
-                const name = card.querySelector('.tool-name').textContent.toLowerCase();
-                const description = card.querySelector('.tool-description').textContent.toLowerCase();
-                const category = card.dataset.category.toLowerCase();
-                
-                if (name.includes(searchTerm) || description.includes(searchTerm) || category.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    }
-    
-    // Track tool clicks for analytics
-    document.querySelectorAll('.tool-link').forEach(link => {
-        link.addEventListener('click', function() {
-            const toolName = this.closest('.tool-card').querySelector('.tool-name').textContent;
-            console.log('Tool clicked:', toolName);
-        });
-    });
-});
-</script>
+<script src="assets/main.js"></script>
 
 <?php include 'includes/footer.php'; ?>

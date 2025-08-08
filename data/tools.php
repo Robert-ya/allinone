@@ -216,6 +216,40 @@ $tools = [
         'tags' => ['free', 'speed test', 'netflix', 'streaming']
     ],
 
+    // Development Testing & Validation Tools
+    [
+        'id' => 'validator-w3',
+        'name' => 'W3C Markup Validator',
+        'category' => 'Development Tools',
+        'description' => 'Check markup validity of web documents in HTML, XHTML, and other formats.',
+        'url' => 'https://validator.w3.org',
+        'tags' => ['free', 'html', 'validation', 'w3c', 'standards']
+    ],
+    [
+        'id' => 'css-validator',
+        'name' => 'W3C CSS Validator',
+        'category' => 'Development Tools',
+        'description' => 'Validate CSS stylesheets according to W3C standards and specifications.',
+        'url' => 'https://jigsaw.w3.org/css-validator/',
+        'tags' => ['free', 'css', 'validation', 'w3c', 'standards']
+    ],
+    [
+        'id' => 'json-formatter',
+        'name' => 'JSON Formatter',
+        'category' => 'Development Tools',
+        'description' => 'Format, validate, and beautify JSON data with syntax highlighting.',
+        'url' => 'https://jsonformatter.org',
+        'tags' => ['json', 'formatter', 'validator', 'free']
+    ],
+    [
+        'id' => 'regex101',
+        'name' => 'Regex101',
+        'category' => 'Development Tools',
+        'description' => 'Online regex tester, debugger with highlighting for PHP, PCRE, Python, and JavaScript.',
+        'url' => 'https://regex101.com',
+        'tags' => ['regex', 'tester', 'debugger', 'free']
+    ],
+
     // AI Chat & Assistant Tools
     [
         'id' => 'chatgpt',
@@ -266,222 +300,23 @@ $tools = [
         'tags' => ['ai', 'xai', 'real-time', 'humor', 'live-data']
     ],
 
-    // Development & Code Tools
-    [
-        'id' => 'replit',
-        'name' => 'Replit',
-        'category' => 'Development Tools',
-        'description' => 'Collaborative browser-based IDE for multiple programming languages with instant deployment.',
-        'url' => 'https://replit.com',
-        'tags' => ['ide', 'collaborative', 'deployment', 'multiple languages']
-    ],
-    [
-        'id' => 'codepen',
-        'name' => 'CodePen',
-        'category' => 'Development Tools',
-        'description' => 'Online code editor and social development environment for front-end developers.',
-        'url' => 'https://codepen.io',
-        'tags' => ['editor', 'frontend', 'social', 'demo']
-    ],
-    [
-        'id' => 'jsfiddle',
-        'name' => 'JSFiddle',
-        'category' => 'Development Tools',
-        'description' => 'Online playground for testing and sharing JavaScript, CSS, and HTML snippets.',
-        'url' => 'https://jsfiddle.net',
-        'tags' => ['editor', 'javascript', 'playground', 'free']
-    ],
-    [
-        'id' => 'validator-w3',
-        'name' => 'W3C Markup Validator',
-        'category' => 'Development Tools',
-        'description' => 'Check markup validity of web documents in HTML, XHTML, and other formats.',
-        'url' => 'https://validator.w3.org',
-        'tags' => ['free', 'html', 'validation', 'w3c', 'standards']
-    ],
-    [
-        'id' => 'css-validator',
-        'name' => 'W3C CSS Validator',
-        'category' => 'Development Tools',
-        'description' => 'Validate CSS stylesheets according to W3C standards and specifications.',
-        'url' => 'https://jigsaw.w3.org/css-validator/',
-        'tags' => ['free', 'css', 'validation', 'w3c', 'standards']
-    ],
-    [
-        'id' => 'github',
-        'name' => 'GitHub',
-        'category' => 'Development Tools',
-        'description' => 'World\'s leading platform for version control, code collaboration, and project hosting.',
-        'url' => 'https://github.com',
-        'tags' => ['git', 'version control', 'collaboration', 'hosting']
-    ],
-    [
-        'id' => 'stackoverflow',
-        'name' => 'Stack Overflow',
-        'category' => 'Development Tools',
-        'description' => 'Large community of developers sharing knowledge, questions, and solutions.',
-        'url' => 'https://stackoverflow.com',
-        'tags' => ['community', 'questions', 'answers', 'programming']
-    ],
-    [
-        'id' => 'postman',
-        'name' => 'Postman',
-        'category' => 'Development Tools',
-        'description' => 'API development and testing platform for building and testing REST APIs.',
-        'url' => 'https://postman.com',
-        'tags' => ['api', 'testing', 'development', 'rest']
-    ],
-
-    // Hosting & Deployment
-    [
-        'id' => 'netlify',
-        'name' => 'Netlify',
-        'category' => 'Hosting & CDN',
-        'description' => 'Modern platform for deploying and hosting static sites and JAMstack applications.',
-        'url' => 'https://netlify.com',
-        'tags' => ['static', 'jamstack', 'deployment', 'free']
-    ],
-    [
-        'id' => 'vercel',
-        'name' => 'Vercel',
-        'category' => 'Hosting & CDN',
-        'description' => 'Platform for frontend frameworks and static sites with serverless functions.',
-        'url' => 'https://vercel.com',
-        'tags' => ['static', 'serverless', 'nextjs', 'deployment']
-    ],
-    [
-        'id' => 'cloudflare',
-        'name' => 'Cloudflare',
-        'category' => 'Hosting & CDN',
-        'description' => 'Global CDN, DDoS protection, and web security services with free tier.',
-        'url' => 'https://cloudflare.com',
-        'tags' => ['cdn', 'security', 'ddos', 'free', 'dns']
-    ],
-    [
-        'id' => 'github-pages',
-        'name' => 'GitHub Pages',
-        'category' => 'Hosting & CDN',
-        'description' => 'Free static site hosting directly from GitHub repositories.',
-        'url' => 'https://pages.github.com',
-        'tags' => ['free', 'github', 'static', 'git']
-    ],
-    [
-        'id' => 'digitalocean',
-        'name' => 'DigitalOcean',
-        'category' => 'Hosting & CDN',
-        'description' => 'Simple cloud hosting platform with predictable pricing and developer tools.',
-        'url' => 'https://digitalocean.com',
-        'tags' => ['cloud', 'vps', 'developer', 'simple']
-    ],
-    [
-        'id' => 'heroku',
-        'name' => 'Heroku',
-        'category' => 'Hosting & CDN',
-        'description' => 'Cloud platform for deploying, managing, and scaling web applications.',
-        'url' => 'https://heroku.com',
-        'tags' => ['cloud', 'deployment', 'scaling', 'paas']
-    ],
-    [
-        'id' => 'aws',
-        'name' => 'Amazon AWS',
-        'category' => 'Hosting & CDN',
-        'description' => 'Comprehensive cloud computing platform with scalable hosting and services.',
-        'url' => 'https://aws.amazon.com',
-        'tags' => ['cloud', 'enterprise', 'scalable', 'services']
-    ],
-
-    // Design & Optimization
+    // Image & Accessibility Testing Tools
     [
         'id' => 'tinypng',
         'name' => 'TinyPNG',
-        'category' => 'Design & Optimization',
+        'category' => 'Optimization Tools',
         'description' => 'Smart PNG and JPEG compression service to reduce file sizes while maintaining quality.',
         'url' => 'https://tinypng.com',
         'tags' => ['free', 'compression', 'images', 'optimization']
     ],
     [
-        'id' => 'google-fonts',
-        'name' => 'Google Fonts',
-        'category' => 'Design & Optimization',
-        'description' => 'Free web fonts library with easy integration and font pairing suggestions.',
-        'url' => 'https://fonts.google.com',
-        'tags' => ['free', 'fonts', 'typography', 'web fonts']
-    ],
-    [
-        'id' => 'unsplash',
-        'name' => 'Unsplash',
-        'category' => 'Design & Optimization',
-        'description' => 'High-quality stock photography available for free with simple attribution.',
-        'url' => 'https://unsplash.com',
-        'tags' => ['free', 'photos', 'stock', 'high quality']
-    ],
-    [
-        'id' => 'coolors',
-        'name' => 'Coolors',
-        'category' => 'Design & Optimization',
-        'description' => 'Color palette generator and color scheme explorer for designers and developers.',
-        'url' => 'https://coolors.co',
-        'tags' => ['colors', 'palette', 'design', 'generator']
-    ],
-    [
         'id' => 'wave',
         'name' => 'WAVE Web Accessibility',
-        'category' => 'Design & Optimization',
+        'category' => 'Accessibility Testing',
         'description' => 'Web accessibility evaluation tool that helps identify accessibility and WCAG errors.',
         'url' => 'https://wave.webaim.org',
         'tags' => ['free', 'accessibility', 'wcag', 'evaluation']
-    ],
-    
-    // Additional Google Tools
-    [
-        'id' => 'google-analytics',
-        'name' => 'Google Analytics',
-        'category' => 'Performance Testing',
-        'description' => 'Web analytics service to track and report website traffic and user behavior.',
-        'url' => 'https://analytics.google.com',
-        'tags' => ['analytics', 'google', 'tracking', 'reports']
-    ],
-    [
-        'id' => 'google-search-console',
-        'name' => 'Google Search Console',
-        'category' => 'Performance Testing',
-        'description' => 'Monitor, maintain, and troubleshoot your site\'s presence in Google Search results.',
-        'url' => 'https://search.google.com/search-console',
-        'tags' => ['seo', 'google', 'search', 'monitoring']
-    ],
-    [
-        'id' => 'json-formatter',
-        'name' => 'JSON Formatter',
-        'category' => 'Development Tools',
-        'description' => 'Format, validate, and beautify JSON data with syntax highlighting.',
-        'url' => 'https://jsonformatter.org',
-        'tags' => ['json', 'formatter', 'validator', 'free']
-    ],
-    [
-        'id' => 'regex101',
-        'name' => 'Regex101',
-        'category' => 'Development Tools',
-        'description' => 'Online regex tester, debugger with highlighting for PHP, PCRE, Python, and JavaScript.',
-        'url' => 'https://regex101.com',
-        'tags' => ['regex', 'tester', 'debugger', 'free']
-    ],
-    [
-        'id' => 'carbon-now',
-        'name' => 'Carbon',
-        'category' => 'Design & Optimization',
-        'description' => 'Create beautiful images of your source code to share on social media.',
-        'url' => 'https://carbon.now.sh',
-        'tags' => ['code', 'images', 'sharing', 'design']
-    ],
-    [
-        'id' => 'figma',
-        'name' => 'Figma',
-        'category' => 'Design & Optimization',
-        'description' => 'Collaborative interface design tool for creating web and mobile app prototypes.',
-        'url' => 'https://figma.com',
-        'tags' => ['design', 'prototyping', 'collaborative', 'interface']
     ]
 ];
-
 
 ?>
