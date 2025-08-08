@@ -338,22 +338,6 @@ $tools = [
 
     // Additional Performance Testing
     [
-        'id' => 'speedtest-net',
-        'name' => 'Speedtest.net',
-        'category' => 'Performance Testing',
-        'description' => 'Internet speed test by Ookla measuring download, upload, and ping speeds.',
-        'url' => 'https://speedtest.net',
-        'tags' => ['free', 'speed test', 'internet', 'ookla', 'bandwidth']
-    ],
-    [
-        'id' => 'fast-com',
-        'name' => 'Fast.com',
-        'category' => 'Performance Testing',
-        'description' => 'Netflix internet speed test focusing on video streaming performance.',
-        'url' => 'https://fast.com',
-        'tags' => ['free', 'netflix', 'speed test', 'streaming']
-    ],
-    [
         'id' => 'yellow-lab-tools',
         'name' => 'Yellow Lab Tools',
         'category' => 'Performance Testing',
@@ -379,14 +363,7 @@ $tools = [
         'url' => 'https://virustotal.com',
         'tags' => ['free', 'security', 'malware', 'antivirus', 'url-scan']
     ],
-    [
-        'id' => 'qualys-ssllabs',
-        'name' => 'Qualys SSL Labs',
-        'category' => 'Security Tools',
-        'description' => 'Deep analysis of SSL/TLS configuration on any public server.',
-        'url' => 'https://ssllabs.com/ssltest/',
-        'tags' => ['free', 'ssl', 'tls', 'security', 'certificate']
-    ],
+
 
     // Additional Development Tools
     [
@@ -423,14 +400,6 @@ $tools = [
     ],
 
     // Additional Network Tools
-    [
-        'id' => 'downdetector',
-        'name' => 'DownDetector',
-        'category' => 'Network Tools',
-        'description' => 'Real-time problem and outage monitoring for websites and services.',
-        'url' => 'https://downdetector.com',
-        'tags' => ['free', 'monitoring', 'outage', 'status', 'downtime']
-    ],
     [
         'id' => 'isitdownrightnow',
         'name' => 'Is It Down Right Now',
