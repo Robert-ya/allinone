@@ -115,6 +115,7 @@ include 'includes/header.php';
             </div>
         </div>
     <?php else: ?>
+        <?php if (!empty($category) && $category !== 'DNS Tools' || !empty($search)): ?>
         <!-- Breadcrumb Navigation -->
         <nav aria-label="Breadcrumb" class="breadcrumb">
             <ol class="breadcrumb-list">
@@ -132,6 +133,7 @@ include 'includes/header.php';
                 <?php endif; ?>
             </ol>
         </nav>
+        <?php endif; ?>
         
         <!-- Hero Section -->
         <section class="hero">
@@ -141,7 +143,7 @@ include 'includes/header.php';
                 } elseif (!empty($category) && $category !== 'DNS Tools') {
                     echo htmlspecialchars($category) . ' Tools';
                 } else {
-                    echo '72 Essential Online Web Tools';
+                    echo 'Essential Online Web Tools for Developers';
                 }
             ?></h1>
             <p><?php 
@@ -150,7 +152,7 @@ include 'includes/header.php';
                 } elseif (!empty($category) && $category !== 'DNS Tools') {
                     echo 'Professional ' . htmlspecialchars($category) . ' for developers, system administrators, and hosting professionals';
                 } else {
-                    echo 'Your comprehensive directory for web development, DNS management, SEO analysis, SSL security, performance testing, and accessibility tools';
+                    echo 'Your comprehensive directory for web hosting, DNS, SSL, SEO analysis, and development tools';
                 }
             ?></p>
         </section>
