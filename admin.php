@@ -1,5 +1,7 @@
 <?php
-session_start();
+require_once 'includes/security.php';
+setSecurityHeaders();
+startSecureSession();
 require_once 'includes/functions.php';
 require_once 'data/tools.php';
 
@@ -167,11 +169,6 @@ $categories = getCategories($tools);
         <?php endif; ?>
     </div>
 
-    <script>
-    function editTool(toolId) {
-        // Simple edit functionality - could be enhanced with modal
-        alert('Edit functionality would open a modal or redirect to edit page for tool: ' + toolId);
-    }
-    </script>
+    <script src="assets/admin.js"></script>
 </body>
 </html>
