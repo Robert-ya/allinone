@@ -45,7 +45,14 @@
                     <span class="brand-text">All In One Host</span>
                 </a>
             </div>
-            <div class="nav-menu">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="nav-menu" id="navMenu">
                 <a href="?" class="nav-link <?= (!isset($_GET['page']) || $_GET['page'] === 'home') ? 'active' : '' ?>">Home</a>
                 <a href="?page=about" class="nav-link <?= ($_GET['page'] ?? '') === 'about' ? 'active' : '' ?>">About</a>
                 <form method="GET" action="" class="header-search-form">
