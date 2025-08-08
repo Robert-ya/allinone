@@ -5,9 +5,6 @@ startSecureSession();
 require_once 'includes/functions.php';
 require_once 'data/tools.php';
 
-// Initialize page title
-$page_title = 'All In One Host - Web Tools Directory';
-
 // Handle routing
 $page = $_GET['page'] ?? 'home';
 $category = $_GET['category'] ?? '';
