@@ -250,6 +250,56 @@ $tools = [
         'tags' => ['regex', 'tester', 'debugger', 'free']
     ],
 
+    // AI Chat & Assistant Tools
+    [
+        'id' => 'chatgpt',
+        'name' => 'ChatGPT',
+        'category' => 'AI Assistants',
+        'description' => 'Advanced AI chatbot by OpenAI for conversations, coding, and creative tasks.',
+        'url' => 'https://chat.openai.com',
+        'tags' => ['ai', 'chatbot', 'openai', 'conversation', 'coding']
+    ],
+    [
+        'id' => 'claude',
+        'name' => 'Claude',
+        'category' => 'AI Assistants',
+        'description' => 'AI assistant by Anthropic for helpful, harmless, and honest conversations.',
+        'url' => 'https://claude.ai',
+        'tags' => ['ai', 'anthropic', 'assistant', 'helpful', 'conversation']
+    ],
+    [
+        'id' => 'gemini',
+        'name' => 'Google Gemini',
+        'category' => 'AI Assistants',
+        'description' => 'Google\'s advanced AI model for text, images, and multimodal conversations.',
+        'url' => 'https://gemini.google.com',
+        'tags' => ['ai', 'google', 'multimodal', 'images', 'conversation']
+    ],
+    [
+        'id' => 'perplexity',
+        'name' => 'Perplexity AI',
+        'category' => 'AI Assistants',
+        'description' => 'AI-powered search engine that provides accurate answers with real-time sources.',
+        'url' => 'https://perplexity.ai',
+        'tags' => ['ai', 'search', 'sources', 'research', 'answers']
+    ],
+    [
+        'id' => 'deepseek',
+        'name' => 'DeepSeek',
+        'category' => 'AI Assistants',
+        'description' => 'Advanced AI model focused on reasoning and mathematical problem-solving.',
+        'url' => 'https://chat.deepseek.com',
+        'tags' => ['ai', 'reasoning', 'math', 'problem-solving', 'deepseek']
+    ],
+    [
+        'id' => 'grok',
+        'name' => 'Grok',
+        'category' => 'AI Assistants',
+        'description' => 'Real-time AI assistant by xAI with access to live information and humor.',
+        'url' => 'https://grok.com',
+        'tags' => ['ai', 'xai', 'real-time', 'humor', 'live-data']
+    ],
+
     // Image & Accessibility Testing Tools
     [
         'id' => 'tinypng',

@@ -126,6 +126,24 @@ function getCategoryLogo($category) {
             <rect x="3" y="4" width="18" height="14" rx="2" stroke="#8B5CF6" stroke-width="2" fill="#F3E8FF"/>
             <path d="M7 9l4 4 4-4" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="12" cy="15" r="1" fill="#8B5CF6"/>
+        </svg>',
+        
+        'AI Assistants' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#8B5CF6" stroke-width="2" fill="#F5F3FF"/>
+            <circle cx="9" cy="10" r="1.5" fill="#8B5CF6"/>
+            <circle cx="15" cy="10" r="1.5" fill="#8B5CF6"/>
+            <path d="M8 15c1 2 3 2 4 2s3 0 4-2" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 6l12 12M18 6L6 18" stroke="#A855F7" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+        </svg>',
+        
+        'Optimization Tools' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#F59E0B" stroke-width="2" fill="#FFFBEB"/>
+        </svg>',
+        
+        'Accessibility Testing' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#7C3AED" stroke-width="2" fill="#F5F3FF"/>
+            <circle cx="12" cy="8" r="2" fill="#7C3AED"/>
+            <path d="M9 14v6M15 14v6M9 14h6" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
         </svg>'
     ];
     
@@ -147,6 +165,56 @@ function getToolLogo($toolName) {
             <circle cx="12" cy="12" r="10" stroke="#059669" stroke-width="2" fill="#ECFDF5"/>
             <path d="M8 10l2 2 4-4" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="12" cy="15" r="1" fill="#059669"/>
+        </svg>',
+        
+        // AI Assistant Individual Logos
+        'ChatGPT' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#10A37F" stroke-width="2" fill="#D1F2EB"/>
+            <path d="M8 10h8M8 14h8" stroke="#10A37F" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="10" cy="7" r="1" fill="#10A37F"/>
+            <circle cx="14" cy="7" r="1" fill="#10A37F"/>
+            <path d="M8 17c1 1 2 1 4 1s3 0 4-1" stroke="#10A37F" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
+        
+        'Claude' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="9" stroke="#D97706" stroke-width="2" fill="#FEF3C7"/>
+            <path d="M8 9c1-2 3-2 4-2s3 0 4 2" stroke="#D97706" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="9" cy="11" r="1" fill="#D97706"/>
+            <circle cx="15" cy="11" r="1" fill="#D97706"/>
+            <path d="M7 15l3-1 2 2 2-2 3 1" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>',
+        
+        'Google Gemini' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#1976D2" stroke-width="2" fill="#E3F2FD"/>
+            <path d="M8 8l8 8M16 8l-8 8" stroke="#1976D2" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="2" fill="#1976D2"/>
+            <path d="M7 12h10" stroke="#1976D2" stroke-width="1" stroke-linecap="round"/>
+            <path d="M12 7v10" stroke="#1976D2" stroke-width="1" stroke-linecap="round"/>
+        </svg>',
+        
+        'Perplexity AI' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#7C3AED" stroke-width="2" fill="#F5F3FF"/>
+            <path d="M9 12l2-2 2 2 2-2" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="8" r="1" fill="#7C3AED"/>
+            <circle cx="16" cy="8" r="1" fill="#7C3AED"/>
+            <path d="M12 15v2M10 17h4" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
+        
+        'DeepSeek' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="3" stroke="#0F172A" stroke-width="2" fill="#F8FAFC"/>
+            <path d="M7 12l3-3 3 3 3-3" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="8" r="1.5" fill="#0F172A"/>
+            <path d="M9 15h6" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="9" cy="17" r="0.5" fill="#0F172A"/>
+            <circle cx="15" cy="17" r="0.5" fill="#0F172A"/>
+        </svg>',
+        
+        'Grok' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#DC2626" stroke-width="2" fill="#FEE2E2"/>
+            <path d="M8 10l8 8M16 10l-8 8" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="8" cy="8" r="1" fill="#DC2626"/>
+            <circle cx="16" cy="8" r="1" fill="#DC2626"/>
+            <path d="M12 18l-2-2M12 18l2-2" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>',
         
         'Google PageSpeed Insights' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
