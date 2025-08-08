@@ -26,10 +26,22 @@ include 'includes/header.php';
 
 <main class="main-layout">
     <?php if ($page === 'about'): ?>
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="?" title="Home - All In One Host">🏠 Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <span aria-current="page">About</span>
+                </li>
+            </ol>
+        </nav>
+        
         <!-- About Hero Section -->
         <section class="hero about-hero">
-            <h1>About All In One Host</h1>
-            <p>Discover the story behind your comprehensive web development toolkit</p>
+            <h1>About All In One Host - Web Development Tools Directory</h1>
+            <p>Discover the story behind your comprehensive directory of 72 curated online web development tools</p>
         </section>
 
         <div class="about-layout">
@@ -103,28 +115,62 @@ include 'includes/header.php';
             </div>
         </div>
     <?php else: ?>
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="?" title="Home - All In One Host">🏠 Home</a>
+                </li>
+                <?php if (!empty($category) && $category !== 'DNS Tools'): ?>
+                <li class="breadcrumb-item">
+                    <span aria-current="page"><?= htmlspecialchars($category) ?> Tools</span>
+                </li>
+                <?php elseif (!empty($search)): ?>
+                <li class="breadcrumb-item">
+                    <span aria-current="page">Search: "<?= htmlspecialchars($search) ?>"</span>
+                </li>
+                <?php endif; ?>
+            </ol>
+        </nav>
+        
         <!-- Hero Section -->
         <section class="hero">
-            <h1>All In One Host</h1>
-            <p>Your comprehensive directory for web hosting, DNS, SSL, and development tools</p>
+            <h1>All In One Host - <?php 
+                if (!empty($search)) {
+                    echo 'Search Results';
+                } elseif (!empty($category) && $category !== 'DNS Tools') {
+                    echo htmlspecialchars($category) . ' Tools';
+                } else {
+                    echo '72 Essential Online Web Tools';
+                }
+            ?></h1>
+            <p><?php 
+                if (!empty($search)) {
+                    echo 'Showing results for "' . htmlspecialchars($search) . '" in our directory of professional online tools';
+                } elseif (!empty($category) && $category !== 'DNS Tools') {
+                    echo 'Professional ' . htmlspecialchars($category) . ' for developers, system administrators, and hosting professionals';
+                } else {
+                    echo 'Your comprehensive directory for web development, DNS management, SEO analysis, SSL security, performance testing, and accessibility tools';
+                }
+            ?></p>
         </section>
 
         <div class="content-layout">
             <!-- Sidebar -->
             <aside class="sidebar">
-                <h3>Categories</h3>
-                <nav class="category-nav">
+                <h2>Tool Categories</h2>
+                <nav class="category-nav" aria-label="Tool categories navigation">
                     <?php foreach ($categories as $cat => $count): ?>
-                        <a href="?category=<?= urlencode($cat) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>">
-                            <div class="nav-icon"><?= getCategoryLogo($cat) ?></div>
+                        <a href="?category=<?= urlencode($cat) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>" title="Browse <?= $count ?> <?= htmlspecialchars($cat) ?> tools" aria-label="<?= htmlspecialchars($cat) ?> category with <?= $count ?> tools">
+                            <div class="nav-icon" aria-hidden="true"><?= getCategoryLogo($cat) ?></div>
                             <span><?= htmlspecialchars($cat) ?></span>
-                            <span class="nav-count"><?= $count ?></span>
+                            <span class="nav-count" aria-label="<?= $count ?> tools in this category"><?= $count ?></span>
                         </a>
                     <?php endforeach; ?>
-                    <a href="?category=" class="category-nav-item <?= (isset($_GET['category']) && $_GET['category'] === '') ? 'active' : '' ?>">
-                        <div class="nav-icon"><?= getCategoryLogo('All Tools') ?></div>
+                    <a href="?category=" class="category-nav-item <?= (isset($_GET['category']) && $_GET['category'] === '') ? 'active' : '' ?>" title="Browse all <?= count($tools) ?> online tools" aria-label="All tools category with <?= count($tools) ?> tools">
+                        <div class="nav-icon" aria-hidden="true"><?= getCategoryLogo('All Tools') ?></div>
                         <span>All Tools</span>
-                        <span class="nav-count"><?= count($tools) ?></span>
+                        <span class="nav-count" aria-label="<?= count($tools) ?> total tools"><?= count($tools) ?></span>
                     </a>
                 </nav>
             </aside>
@@ -144,23 +190,29 @@ include 'includes/header.php';
             <?php else: ?>
                 <div class="tools-grid">
                     <?php foreach ($filtered_tools as $tool): ?>
-                        <div class="tool-card" data-category="<?= htmlspecialchars($tool['category']) ?>" data-url="<?= htmlspecialchars($tool['url']) ?>">
-                            <div class="tool-header">
+                        <article class="tool-card" data-category="<?= htmlspecialchars($tool['category']) ?>" data-url="<?= htmlspecialchars($tool['url']) ?>" itemscope itemtype="https://schema.org/SoftwareApplication">
+                            <header class="tool-header">
                                 <div class="tool-name-section">
-                                    <div class="tool-logo"><?= getToolLogo($tool['name']) ?></div>
-                                    <h3 class="tool-name"><?= htmlspecialchars($tool['name']) ?></h3>
+                                    <div class="tool-logo" aria-hidden="true"><?= getToolLogo($tool['name']) ?></div>
+                                    <h3 class="tool-name" itemprop="name"><?= htmlspecialchars($tool['name']) ?></h3>
                                 </div>
-                                <span class="tool-category"><?= htmlspecialchars($tool['category']) ?></span>
-                            </div>
-                            <p class="tool-description"><?= htmlspecialchars($tool['description']) ?></p>
+                                <span class="tool-category" itemprop="applicationCategory"><?= htmlspecialchars($tool['category']) ?></span>
+                            </header>
+                            <p class="tool-description" itemprop="description"><?= htmlspecialchars($tool['description']) ?></p>
                             <div class="tool-footer">
                                 <div class="tool-tags">
                                     <?php foreach ($tool['tags'] as $tag): ?>
-                                        <span class="tag"><?= htmlspecialchars($tag) ?></span>
+                                        <span class="tag" itemprop="keywords"><?= htmlspecialchars($tag) ?></span>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
-                        </div>
+                            <meta itemprop="url" content="<?= htmlspecialchars($tool['url']) ?>">
+                            <meta itemprop="operatingSystem" content="Web Browser">
+                            <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <meta itemprop="price" content="0">
+                                <meta itemprop="priceCurrency" content="USD">
+                            </div>
+                        </article>
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
