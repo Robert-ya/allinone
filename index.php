@@ -40,8 +40,8 @@ include 'includes/header.php';
         
         <!-- About Hero Section -->
         <section class="hero about-hero">
-            <h1>About All In One Host - Web Development Tools Directory</h1>
-            <p>Discover the story behind your comprehensive directory of 72 curated online web development tools</p>
+            <h1>About All In One Host</h1>
+            <p>Your comprehensive directory for web hosting, DNS, SSL, and development tools</p>
         </section>
 
         <div class="about-layout">
