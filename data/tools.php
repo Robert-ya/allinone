@@ -339,11 +339,11 @@ $tools = [
         'tags' => ['free', 'performance', 'seo', 'audit', 'quality']
     ],
 
-    // Additional Security Tools
+    // Additional SSL & Security Tools
     [
         'id' => 'haveibeenpwned',
         'name' => 'Have I Been Pwned',
-        'category' => 'Security Tools',
+        'category' => 'SSL & Security',
         'description' => 'Check if your email or phone has been compromised in a data breach.',
         'url' => 'https://haveibeenpwned.com',
         'tags' => ['free', 'security', 'breach', 'email', 'password']
@@ -351,7 +351,7 @@ $tools = [
     [
         'id' => 'virustotal',
         'name' => 'VirusTotal',
-        'category' => 'Security Tools',
+        'category' => 'SSL & Security',
         'description' => 'Analyze suspicious files, URLs, and domains for malware detection.',
         'url' => 'https://virustotal.com',
         'tags' => ['free', 'security', 'malware', 'antivirus', 'url-scan']

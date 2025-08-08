@@ -90,7 +90,10 @@ function getCategoryIcon($category) {
         'AI Assistants' => '🤖',
         'Development Tools' => '💻',
         'Hosting & CDN' => '☁️',
-        'Design & Optimization' => '🎨'
+        'Design & Optimization' => '🎨',
+        'Optimization Tools' => '🚀',
+        'Accessibility Testing' => '♿',
+        'Browser Testing' => '🌍'
     ];
     
     return $icons[$category] ?? '🔧';
