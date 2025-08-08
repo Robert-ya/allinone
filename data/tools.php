@@ -496,6 +496,154 @@ $tools = [
         'description' => 'Public web proxy service for anonymous browsing and privacy protection.',
         'url' => 'https://kproxy.com',
         'tags' => ['free', 'proxy', 'anonymous', 'privacy', 'protection']
+    ],
+
+    // Additional Development Tools
+    [
+        'id' => 'codebeautify',
+        'name' => 'CodeBeautify',
+        'category' => 'Development Tools',
+        'description' => 'Multi-language code formatter and beautifier for CSS, HTML, JavaScript, JSON, and more.',
+        'url' => 'https://codebeautify.org',
+        'tags' => ['free', 'formatter', 'beautifier', 'css', 'html', 'javascript']
+    ],
+    [
+        'id' => 'beautifier-io',
+        'name' => 'Beautifier.io',
+        'category' => 'Development Tools',
+        'description' => 'Advanced JavaScript and JSX beautifier with React support and customization options.',
+        'url' => 'https://beautifier.io',
+        'tags' => ['free', 'javascript', 'jsx', 'react', 'beautifier', 'formatter']
+    ],
+    [
+        'id' => 'freeformatter',
+        'name' => 'FreeFormatter',
+        'category' => 'Development Tools',
+        'description' => 'Comprehensive collection of HTML, CSS, JavaScript formatters and validators.',
+        'url' => 'https://www.freeformatter.com',
+        'tags' => ['free', 'formatter', 'validator', 'html', 'css', 'javascript']
+    ],
+    [
+        'id' => 'site24x7-html-beautifier',
+        'name' => 'Site24x7 HTML Beautifier',
+        'category' => 'Development Tools',
+        'description' => 'Professional HTML formatter that preserves comments and follows industry standards.',
+        'url' => 'https://www.site24x7.com/tools/html-beautifier.html',
+        'tags' => ['free', 'html', 'formatter', 'beautifier', 'professional']
+    ],
+    [
+        'id' => 'w3c-link-checker',
+        'name' => 'W3C Link Checker',
+        'category' => 'Development Tools',
+        'description' => 'Official W3C tool to check links, anchors, and referenced content in web pages.',
+        'url' => 'https://validator.w3.org/checklink',
+        'tags' => ['free', 'links', 'validator', 'w3c', 'checker']
+    ],
+
+    // SEO Analysis Tools - New Category
+    [
+        'id' => 'seobility',
+        'name' => 'Seobility SEO Checker',
+        'category' => 'SEO Tools',
+        'description' => 'Comprehensive SEO analyzer checking 200+ criteria with prioritized improvement suggestions.',
+        'url' => 'https://www.seobility.net/en/seocheck/',
+        'tags' => ['free', 'seo', 'analyzer', 'comprehensive', 'audit']
+    ],
+    [
+        'id' => 'seoptimer',
+        'name' => 'SEOptimer',
+        'category' => 'SEO Tools',
+        'description' => 'Fast SEO audit tool analyzing 100+ data points with white-label reporting options.',
+        'url' => 'https://www.seoptimer.com',
+        'tags' => ['free', 'seo', 'audit', 'fast', 'reporting']
+    ],
+    [
+        'id' => 'neil-patel-seo',
+        'name' => 'Neil Patel SEO Analyzer',
+        'category' => 'SEO Tools',
+        'description' => 'Free SEO analyzer with step-by-step fix instructions and video tutorials.',
+        'url' => 'https://neilpatel.com/seo-analyzer/',
+        'tags' => ['free', 'seo', 'analyzer', 'tutorial', 'beginner-friendly']
+    ],
+    [
+        'id' => 'seo-site-checkup',
+        'name' => 'SEO Site Checkup',
+        'category' => 'SEO Tools',
+        'description' => 'Weekly SEO monitoring tool tracking 70+ variables with competitor analysis.',
+        'url' => 'https://seositecheckup.com',
+        'tags' => ['seo', 'monitoring', 'competitor', 'analysis', 'tracking']
+    ],
+    [
+        'id' => 'rankmath-analyzer',
+        'name' => 'Rank Math SEO Analyzer',
+        'category' => 'SEO Tools',
+        'description' => 'WordPress-focused SEO analysis tool generating downloadable PDF reports.',
+        'url' => 'https://rankmath.com/tools/seo-analyzer/',
+        'tags' => ['free', 'seo', 'wordpress', 'pdf', 'analyzer']
+    ],
+    [
+        'id' => 'aioseo-analyzer',
+        'name' => 'AIOSEO Analyzer',
+        'category' => 'SEO Tools',
+        'description' => 'WordPress SEO analyzer detecting critical errors with actionable insights.',
+        'url' => 'https://aioseo.com/seo-analyzer/',
+        'tags' => ['free', 'seo', 'wordpress', 'analyzer', 'insights']
+    ],
+
+    // Additional Performance Testing Tools
+    [
+        'id' => 'total-validator',
+        'name' => 'Total Validator',
+        'category' => 'Performance Testing',
+        'description' => 'Comprehensive validator testing HTML, CSS, accessibility, broken links, and spelling.',
+        'url' => 'https://totalvalidator.com',
+        'tags' => ['validator', 'html', 'css', 'accessibility', 'links']
+    ],
+    [
+        'id' => 'validbot',
+        'name' => 'ValidBot',
+        'category' => 'Performance Testing',
+        'description' => 'Complete website health checker running 100+ tests including DNS, SSL, and performance.',
+        'url' => 'https://www.validbot.com',
+        'tags' => ['validator', 'comprehensive', 'dns', 'ssl', 'performance']
+    ],
+
+    // Additional Security Tools
+    [
+        'id' => 'pentest-tools',
+        'name' => 'Pentest-Tools Website Scanner',
+        'category' => 'SSL & Security',
+        'description' => 'Advanced security scanner detecting SQLi, XSS, and 75+ vulnerability types.',
+        'url' => 'https://pentest-tools.com/website-vulnerability-scanning/website-scanner',
+        'tags' => ['security', 'vulnerability', 'scanner', 'sqli', 'xss']
+    ],
+
+    // Additional Network Tools
+    [
+        'id' => 'testmysite-google',
+        'name' => 'Think with Google Test My Site',
+        'category' => 'Network Tools',
+        'description' => 'Google tool testing mobile site speed and providing revenue impact estimates.',
+        'url' => 'https://testmysite.thinkwithgoogle.com',
+        'tags' => ['free', 'google', 'mobile', 'speed', 'revenue']
+    ],
+
+    // Additional Accessibility Tools
+    [
+        'id' => 'axe-devtools',
+        'name' => 'axe DevTools',
+        'category' => 'Accessibility Testing',
+        'description' => 'Fast accessibility testing engine with browser extensions for automated and manual testing.',
+        'url' => 'https://deque.com/axe/devtools/',
+        'tags' => ['accessibility', 'browser-extension', 'automated', 'manual', 'testing']
+    ],
+    [
+        'id' => 'siteimprove-checker',
+        'name' => 'Siteimprove Accessibility Checker',
+        'category' => 'Accessibility Testing',
+        'description' => 'Browser extension providing real-time accessibility feedback and validation.',
+        'url' => 'https://siteimprove.com/integrations/browser-extensions/',
+        'tags' => ['accessibility', 'browser-extension', 'real-time', 'validation']
     ]
 ];
 
