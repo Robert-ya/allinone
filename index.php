@@ -100,14 +100,14 @@ include 'includes/header.php';
         <!-- About Hero Section -->
         <section class="hero about-hero">
             <h1>About All In One Host</h1>
-            <p>Your comprehensive directory for web hosting, development and devops tools</p>
+            <p>Your comprehensive directory for web hosting,development and devops tools</p>
         </section>
 
         <div class="about-layout">
             <div class="about-content">
                 <div class="about-section">
                     <h2>Our Mission</h2>
-                    <p>All In One Host is your comprehensive directory for web hosting, development and devops tools. We've curated a collection of <?= count($tools) ?> essential online tools across 13 categories, each carefully selected for its utility, reliability, and relevance to web hosting professionals, developers, and DevOps engineers. Every tool has been verified to ensure no duplicates and maximum value.</p>
+                    <p>All In One Host is your comprehensive directory for web hosting,development and devops tools. We've curated a collection of <?= count($tools) ?> essential online tools across 13 categories, each carefully selected for its utility, reliability, and relevance to web hosting professionals, developers, and DevOps engineers. Every tool has been verified to ensure no duplicates and maximum value.</p>
                 </div>
 
                 <div class="about-section">
@@ -178,7 +178,7 @@ include 'includes/header.php';
         <!-- Hero Section -->
         <section class="hero">
             <h1>All In One Host</h1>
-            <p>Your comprehensive directory for web hosting, development and devops tools</p>
+            <p>Your comprehensive directory for web hosting,development and devops tools</p>
         </section>
 
         <div class="content-layout">

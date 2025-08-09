@@ -3,7 +3,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>About This Directory</h3>
-                    <p>Your comprehensive directory for web hosting, development and devops tools. A curated collection of <?= isset($tools) ? count($tools) : '72' ?> essential online tools across 13 specialized categories.</p>
+                    <p>Your comprehensive directory for web hosting,development and devops tools. A curated collection of <?= isset($tools) ? count($tools) : '72' ?> essential online tools across 13 specialized categories.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Categories</h3>

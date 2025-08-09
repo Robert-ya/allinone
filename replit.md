@@ -36,7 +36,7 @@
 
 Preferred communication style: Simple, everyday language.
 Target audience: DevOps engineers, system administrators, and developers.
-Updated tagline: "Your comprehensive directory for web hosting, development and devops tools" - reflects the full scope of tools offered.
+Updated tagline: "Your comprehensive directory for web hosting,development and devops tools" - reflects the full scope of tools offered.
 
 ## System Architecture
 
