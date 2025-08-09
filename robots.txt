@@ -22,8 +22,9 @@ Disallow: /composer.lock
 Allow: /assets/
 Allow: /sitemap.xml
 Allow: /robots.txt
-Allow: /?page=about
-Allow: /?category=*
+Allow: /about
+Allow: /category/*
+Allow: /all-tools
 
 # Special instructions for major search engines
 User-agent: Googlebot

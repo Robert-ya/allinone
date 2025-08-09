@@ -25,7 +25,7 @@
                     <ul class="footer-links">
                         <li><a href="/" title="Browse all <?= isset($tools) ? count($tools) : '72' ?> web development tools">All Tools</a></li>
                         <li><a href="/about" title="Learn more about All In One Host directory">About</a></li>
-                        <li><a href="sitemap.xml" title="XML Sitemap for search engines">Sitemap</a></li>
+                        <li><a href="/sitemap.xml" title="XML Sitemap for search engines">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
