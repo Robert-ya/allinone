@@ -2,7 +2,7 @@
 
 ## Overview
 
-"All In One Host" is a comprehensive PHP-based web tools directory featuring 72 essential online tools for web hosting, DNS management, SSL security, SEO analysis, and development. The application has been redesigned with a modern sidebar layout, categorized tool organization, and custom SVG logos for professional presentation. DNS Tools are prioritized at the top of categories, with quality tools carefully curated to avoid duplicates and provide comprehensive coverage across all categories.
+"All In One Host" is a comprehensive PHP-based web tools directory featuring 72 essential online tools across 13 specialized categories including web development, DNS management, SEO analysis, performance testing, security scanning, accessibility validation, AI assistants, browser testing, design optimization, network tools, hosting & CDN, optimization utilities, and proxy sites. The application has been redesigned with a modern sidebar layout, categorized tool organization, and custom SVG logos for professional presentation. DNS Tools are prioritized at the top of categories, with quality tools carefully curated to avoid duplicates and provide comprehensive coverage across all categories.
 
 ### Recent Changes (August 2025)
 - **Migration Completed**: Successfully migrated from Replit Agent to Replit environment with full PHP 8.2 compatibility

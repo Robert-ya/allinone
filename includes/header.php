@@ -16,16 +16,16 @@
     ?></title>
     <meta name="description" content="<?php 
         if (isset($page) && $page === 'about') {
-            echo 'All In One Host - 72 curated online web tools for developers. DNS, SEO, performance, security, accessibility testing. No downloads required.';
+            echo 'All In One Host - 72 curated online tools across 13 categories. DNS, SEO, performance testing, security scanning, accessibility validation, AI assistants, development utilities. No downloads required.';
         } elseif (isset($search) && !empty($search)) {
-            echo 'Find ' . htmlspecialchars($search) . ' tools in our directory of 72 online web development tools. DNS, SEO, performance, security tools.';
+            echo 'Find ' . htmlspecialchars($search) . ' tools in our directory of 72 online tools across 13 categories including DNS, SEO, performance, security, accessibility, and development.';
         } elseif (isset($category) && !empty($category) && $category !== 'DNS') {
-            echo htmlspecialchars($category) . ' tools for web development and hosting. Professional online tools accessible instantly.';
+            echo htmlspecialchars($category) . ' tools for web development and digital professionals. Professional online tools accessible instantly across 13 specialized categories.';
         } else {
-            echo 'All In One Host - 72 online web tools for developers. DNS, SEO, performance, security, accessibility, development utilities.';
+            echo 'All In One Host - 72 online tools across 13 categories for developers and digital professionals. DNS, SEO, performance testing, security, accessibility, AI assistants, development utilities.';
         }
     ?>">
-    <meta name="keywords" content="web development tools, online tools directory, dns tools, seo analysis tools, performance testing, ssl checker, accessibility testing, development utilities, hosting tools, security scanner, website validation, code formatter, system administration tools, developer resources">
+    <meta name="keywords" content="web development tools, online tools directory, dns tools, seo analysis tools, performance testing, ssl checker, accessibility testing, development utilities, hosting tools, security scanner, website validation, code formatter, system administration tools, developer resources, ai assistants, browser testing, proxy sites, design optimization, network tools">
     <meta name="author" content="All In One Host">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="rating" content="general">

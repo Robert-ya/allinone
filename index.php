@@ -100,14 +100,14 @@ include 'includes/header.php';
         <!-- About Hero Section -->
         <section class="hero about-hero">
             <h1>About All In One Host</h1>
-            <p>Your comprehensive directory for web hosting, DNS, SSL, and development tools</p>
+            <p>Your comprehensive directory for web development, DNS, SEO, performance testing, security, and accessibility tools</p>
         </section>
 
         <div class="about-layout">
             <div class="about-content">
                 <div class="about-section">
                     <h2>Our Mission</h2>
-                    <p>All In One Host serves as your comprehensive directory for web hosting, DNS, SSL, SEO analysis, and development tools. We've curated a collection of <?= count($tools) ?> essential online tools, each carefully selected for its utility, reliability, and relevance to web developers and hosting professionals. Every tool has been verified to ensure no duplicates and maximum value.</p>
+                    <p>All In One Host serves as your comprehensive directory for web development, DNS management, SEO analysis, performance testing, security scanning, and accessibility validation tools. We've curated a collection of <?= count($tools) ?> essential online tools across 13 categories, each carefully selected for its utility, reliability, and relevance to web developers, system administrators, and digital professionals. Every tool has been verified to ensure no duplicates and maximum value.</p>
                 </div>
 
                 <div class="about-section">
@@ -178,7 +178,7 @@ include 'includes/header.php';
         <!-- Hero Section -->
         <section class="hero">
             <h1>All In One Host</h1>
-            <p>Your comprehensive directory for web hosting, DNS, SSL, and development tools</p>
+            <p>Your comprehensive directory for web development, DNS, SEO, performance testing, security, and accessibility tools</p>
         </section>
 
         <div class="content-layout">
