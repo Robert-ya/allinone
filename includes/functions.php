@@ -5,6 +5,39 @@
 
 require_once __DIR__ . '/../assets/logos.php';
 
+// Enhanced caching functionality
+function setCacheHeaders($type = 'static', $max_age = 3600) {
+    $current_page = $_GET['page'] ?? '';
+    $is_dynamic = isset($_GET['search']) || isset($_POST['search']) || !empty($_POST);
+    
+    if ($type === 'static' && !$is_dynamic) {
+        // Static content caching with ETags
+        $etag = md5(filemtime(__FILE__) . $current_page . date('Y-m-d-H'));
+        header('ETag: "' . $etag . '"');
+        header('Cache-Control: public, max-age=' . $max_age . ', must-revalidate');
+        header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime(__FILE__)) . ' GMT');
+        
+        // Check if client has cached version
+        if (isset($_SERVER['HTTP_IF_NONE_MATCH']) && 
+            $_SERVER['HTTP_IF_NONE_MATCH'] === '"' . $etag . '"') {
+            header('HTTP/1.1 304 Not Modified');
+            exit;
+        }
+    } else {
+        // Dynamic content - no caching
+        header('Expires: Thu, 19 Nov 1981 08:52:00 GMT');
+        header('Cache-Control: no-store, no-cache, must-revalidate');
+        header('Pragma: no-cache');
+    }
+}
+
+// Get versioned asset URL for cache busting
+function getAssetUrl($asset_path) {
+    $file_path = __DIR__ . '/../' . $asset_path;
+    $version = file_exists($file_path) ? filemtime($file_path) : time();
+    return $asset_path . '?v=' . $version;
+}
+
 /**
  * Filter tools based on category and search term
  */

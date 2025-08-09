@@ -54,9 +54,10 @@
     # Content Security Policy
     Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' *; form-action 'self' *; frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
     
-    # Cache control for static assets
+    # Cache control for static assets with versioning support
     <filesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
         Header set Cache-Control "max-age=31536000, public, immutable"
+        Header set Vary "Accept-Encoding"
     </filesMatch>
     
     # Cache control for HTML
@@ -114,8 +115,43 @@
     RewriteRule ^category/([^/]+)/?$ /index.php?category=$1 [L,QSA]
 </IfModule>
 
-# Enable ETags for better caching
+# Enable ETags for better caching and add compression for performance
 FileETag MTime Size
+
+# Additional performance optimizations
+<IfModule mod_headers.c>
+    # Enable Keep-Alive connections
+    Header set Connection keep-alive
+    
+    # Add Vary header for better caching
+    <filesMatch "\.(css|js|xml|gz|html)$">
+        Header append Vary: Accept-Encoding
+    </filesMatch>
+    
+    # Preload key resources
+    <filesMatch "\.css$">
+        Header set Link "</assets/main.min.js>; rel=preload; as=script"
+    </filesMatch>
+</IfModule>
+
+# Optimize file serve order
+<IfModule mod_mime.c>
+    # Serve compressed versions if available
+    RewriteCond %{HTTP:Accept-Encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}\.gz -f
+    RewriteRule ^(.*)\.css$ $1\.css\.gz [QSA,L]
+    RewriteRule ^(.*)\.js$ $1\.js\.gz [QSA,L]
+    
+    # Serve correct content type for compressed files
+    <filesMatch "\.css\.gz$">
+        ForceType text/css
+        Header set Content-Encoding gzip
+    </filesMatch>
+    <filesMatch "\.js\.gz$">
+        ForceType application/javascript
+        Header set Content-Encoding gzip
+    </filesMatch>
+</IfModule>
 
 # Set default character encoding
 AddDefaultCharset UTF-8

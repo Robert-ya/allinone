@@ -6,6 +6,9 @@ require_once 'includes/functions.php';
 require_once 'includes/url_canonical.php';
 require_once 'data/tools.php';
 
+// Set appropriate caching headers based on content type
+setCacheHeaders('static', 3600);
+
 // Enforce canonical URL (non-www)
 enforceCanonicalUrl();
 
