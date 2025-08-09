@@ -6,6 +6,7 @@
 
 ### Recent Changes (August 2025)
 - **Migration Completed**: Successfully migrated from Replit Agent to Replit environment with full PHP 8.2 compatibility
+- **Fixed Default Homepage**: Updated homepage to always show DNS tools by default and maintain consistent header across all pages
 - **Security Enhancements**: Implemented comprehensive security headers and URL canonicalization
 - **SEO Improvements**: Added .htaccess with proper redirects, canonicalization, and caching
 - **UI Fixes**: Removed breadcrumb navigation from category and about pages for cleaner layout

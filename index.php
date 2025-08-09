@@ -17,7 +17,7 @@ if (!isset($tools)) {
 
 // Handle routing
 $page = $_GET['page'] ?? 'home';
-$category = $_GET['category'] ?? ($page === 'about' ? '' : 'DNS Tools'); // Default to DNS Tools only if not About page
+$category = $_GET['category'] ?? ($page === 'about' ? '' : 'DNS'); // Default to DNS only if not About page
 $search = $_GET['search'] ?? '';
 $tool_id = $_GET['tool'] ?? '';
 
@@ -116,24 +116,8 @@ include 'includes/header.php';
         
         <!-- Hero Section -->
         <section class="hero">
-            <h1><?php 
-                if (!empty($search)) {
-                    echo 'All In One Host - Search Results';
-                } elseif (!empty($category) && $category !== 'DNS') {
-                    echo 'All In One Host - ' . htmlspecialchars($category) . ' Tools';
-                } else {
-                    echo 'All In One Host';
-                }
-            ?></h1>
-            <p><?php 
-                if (!empty($search)) {
-                    echo 'Showing results for "' . htmlspecialchars($search) . '" in our directory of professional online tools';
-                } elseif (!empty($category) && $category !== 'DNS') {
-                    echo 'Professional ' . htmlspecialchars($category) . ' for developers, system administrators, and hosting professionals';
-                } else {
-                    echo 'Your comprehensive directory for web hosting, DNS, SSL, and development tools';
-                }
-            ?></p>
+            <h1>All In One Host</h1>
+            <p>Your comprehensive directory for web hosting, DNS, SSL, and development tools</p>
         </section>
 
         <div class="content-layout">
