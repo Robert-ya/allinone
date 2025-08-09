@@ -35,6 +35,7 @@
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Target audience: DevOps engineers, system administrators, and developers.
 
 ## System Architecture
 
