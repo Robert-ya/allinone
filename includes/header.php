@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="assets/style.css">
     <link rel="preload" href="assets/main.js" as="script">
     <script src="assets/main.js" defer></script>
-    <link rel="canonical" href="<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
+    <link rel="canonical" href="<?= getCanonicalUrl() ?>">
     
     <!-- Structured Data JSON-LD -->
     <script type="application/ld+json">
@@ -43,12 +43,12 @@
         "@type": "WebSite",
         "name": "All In One Host",
         "description": "Comprehensive directory of <?= count($tools) ?> essential online web development tools for developers, system administrators, and hosting professionals.",
-        "url": "<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] ?>",
+        "url": "<?= getStructuredDataUrl() ?>",
         "potentialAction": {
             "@type": "SearchAction",
             "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] ?>/?search={search_term_string}"
+                "urlTemplate": "<?= getStructuredDataUrl() ?>/?search={search_term_string}"
             },
             "query-input": "required name=search_term_string"
         }
@@ -58,7 +58,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="All In One Host">
-    <meta property="og:url" content="<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
+    <meta property="og:url" content="<?= getCanonicalUrl() ?>">
     <meta property="og:title" content="<?php 
         if ($page === 'about') {
             echo 'About All In One Host - 72 Online Web Development Tools Directory';

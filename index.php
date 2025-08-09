@@ -3,7 +3,17 @@ require_once 'includes/security.php';
 setSecurityHeaders();
 startSecureSession();
 require_once 'includes/functions.php';
+require_once 'includes/url_canonical.php';
 require_once 'data/tools.php';
+
+// Enforce canonical URL (non-www)
+enforceCanonicalUrl();
+
+// Ensure $tools variable is available
+global $tools;
+if (!isset($tools)) {
+    $tools = [];
+}
 
 // Handle routing
 $page = $_GET['page'] ?? 'home';
@@ -26,18 +36,6 @@ include 'includes/header.php';
 
 <main class="main-layout">
     <?php if ($page === 'about'): ?>
-        <!-- Breadcrumb Navigation -->
-        <nav aria-label="Breadcrumb" class="breadcrumb">
-            <ol class="breadcrumb-list">
-                <li class="breadcrumb-item">
-                    <a href="?" title="Home - All In One Host">🏠 Home</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <span aria-current="page">About</span>
-                </li>
-            </ol>
-        </nav>
-        
         <!-- About Hero Section -->
         <section class="hero about-hero">
             <h1>About All In One Host</h1>
