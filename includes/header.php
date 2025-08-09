@@ -8,7 +8,7 @@
             echo 'About All In One Host - 72 Online Web Development Tools Directory';
         } elseif (!empty($search)) {
             echo 'Search Results for "' . htmlspecialchars($search) . '" - All In One Host';
-        } elseif (!empty($category) && $category !== 'DNS Tools') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo htmlspecialchars($category) . ' Tools - All In One Host Directory';
         } else {
             echo 'All In One Host - 72 Essential Online Web Tools for Developers & Hosting';
@@ -19,7 +19,7 @@
             echo 'Discover All In One Host - a comprehensive directory of 72 curated online web tools for developers, system administrators, and hosting professionals. No downloads required.';
         } elseif (!empty($search)) {
             echo 'Find ' . htmlspecialchars($search) . ' tools in our directory of 72 online web development tools. DNS, SEO, performance testing, security, and more.';
-        } elseif (!empty($category) && $category !== 'DNS Tools') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo 'Browse ' . htmlspecialchars($category) . ' tools in our curated directory. Professional online tools for web development, hosting, and system administration.';
         } else {
             echo 'All In One Host - 72 essential online web tools for developers. DNS, SEO, performance, security, accessibility tools.';
@@ -62,7 +62,7 @@
     <meta property="og:title" content="<?php 
         if ($page === 'about') {
             echo 'About All In One Host - 72 Online Web Development Tools Directory';
-        } elseif (!empty($category) && $category !== 'DNS Tools') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo htmlspecialchars($category) . ' Tools - All In One Host Directory';
         } else {
             echo 'All In One Host - 72 Essential Online Web Tools for Developers';
@@ -71,7 +71,7 @@
     <meta property="og:description" content="<?php 
         if ($page === 'about') {
             echo 'Comprehensive directory of 72 curated online web tools for developers, system administrators, and hosting professionals. No downloads required.';
-        } elseif (!empty($category) && $category !== 'DNS Tools') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo 'Professional ' . htmlspecialchars($category) . ' tools for web development, hosting, and system administration. All tools accessible online.';
         } else {
             echo 'Discover 72 essential online web tools: DNS, SEO, performance testing, security scanning, accessibility testing, and development utilities.';
@@ -91,7 +91,7 @@
     <meta name="twitter:title" content="<?php 
         if ($page === 'about') {
             echo 'About All In One Host - 72 Online Web Development Tools';
-        } elseif (!empty($category) && $category !== 'DNS Tools') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo htmlspecialchars($category) . ' Tools - All In One Host';
         } else {
             echo 'All In One Host - 72 Essential Online Web Tools';
@@ -100,7 +100,7 @@
     <meta name="twitter:description" content="<?php 
         if ($page === 'about') {
             echo '72 curated online web tools for developers and hosting professionals. DNS, SEO, performance, security, and accessibility tools.';
-        } elseif (!empty($category) && $category !== 'DNS Tools') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo 'Professional ' . htmlspecialchars($category) . ' tools for web development and system administration. All accessible online.';
         } else {
             echo 'Essential online tools for developers: DNS, SEO, performance, security, accessibility, development utilities.';
