@@ -170,10 +170,94 @@ function getCategoryLogo($category) {
 
 function getToolLogo($toolName) {
     $toolLogos = [
+        // DNS Tools - Green tones
+        'IntoDNS' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#10B981" stroke-width="2" fill="#D1FAE5"/>
+            <path d="M8 12h8M12 8l4 4-4 4" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>',
+        'DNS Checker' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#059669" stroke-width="2" fill="#ECFDF5"/>
+            <path d="M9 12l2 2 4-4" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>',
+        'MXToolbox' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#16A34A" stroke-width="2" fill="#F0FDF4"/>
+            <path d="M8 12h8M8 8h8M8 16h8" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        'Whois.com' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#065F46" stroke-width="2" fill="#D1FAE5"/>
+            <circle cx="12" cy="10" r="2" stroke="#065F46" stroke-width="1.5"/>
+            <path d="M12 14v4M10 18h4" stroke="#065F46" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
+        'NSLookup.io' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="14" rx="2" stroke="#22C55E" stroke-width="2" fill="#F0FDF4"/>
+            <circle cx="8" cy="9" r="1" fill="#22C55E"/>
+            <path d="M11 9h6M11 13h4" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
+        
+        // Performance Testing - Orange/Yellow tones
         'GTmetrix' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" stroke="#3398D0" stroke-width="2" fill="#DAE6F0"/>
-            <path d="M7 12l3 3 7-7" stroke="#3398D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="12" cy="12" r="3" fill="#7EB0DC"/>
+            <circle cx="12" cy="12" r="10" stroke="#F59E0B" stroke-width="2" fill="#FEF3C7"/>
+            <path d="M12 6v6l4 2" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>',
+        'Google PageSpeed Insights' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#EA580C" stroke-width="2" fill="#FED7AA"/>
+            <path d="M8 12h8M12 8v8M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6" stroke="#EA580C" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>',
+        'WebPageTest' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#D97706" stroke-width="2" fill="#FDE68A"/>
+        </svg>',
+        
+        // SSL & Security - Red tones
+        'SSL Labs' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="11" width="18" height="10" rx="2" stroke="#DC2626" stroke-width="2" fill="#FEE2E2"/>
+            <circle cx="12" cy="7" r="4" stroke="#DC2626" stroke-width="2"/>
+            <circle cx="12" cy="16" r="1" fill="#DC2626"/>
+        </svg>',
+        'Qualys SSL Test' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="#EF4444" stroke-width="2" fill="#FEE2E2"/>
+            <path d="M9 12l2 2 4-4" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>',
+        
+        // Development Tools - Blue tones
+        'JSON Formatter' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="#3B82F6" stroke-width="2" fill="#DBEAFE"/>
+            <path d="M7 8l3 4-3 4M13 8h4" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        'Base64 Decode' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#2563EB" stroke-width="2" fill="#EFF6FF"/>
+            <path d="M8 14l4-8 4 8M10 12h4" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        
+        // SEO Tools - Purple tones
+        'Google Search Console' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#8B5CF6" stroke-width="2" fill="#F3E8FF"/>
+            <path d="M16 8l-6 6-2-2" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>',
+        
+        // AI Assistants - Indigo tones  
+        'OpenAI ChatGPT' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#6366F1" stroke-width="2" fill="#EEF2FF"/>
+            <circle cx="9" cy="10" r="1.5" fill="#6366F1"/>
+            <circle cx="15" cy="10" r="1.5" fill="#6366F1"/>
+            <path d="M8 15c1 2 3 2 4 2s3 0 4-2" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        
+        // Network Tools - Teal tones
+        'Ping Test' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#14B8A6" stroke-width="2" fill="#F0FDFA"/>
+            <path d="M8 12l4-4 4 4M12 8v8" stroke="#14B8A6" stroke-width="2" stroke-linecap="round"/>
+        </svg>',
+        
+        // More tools with unique colors
+        'Cloudflare' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 12h-2.76A6 6 0 1 0 8 18h10a4 4 0 0 0 0-8z" fill="#F48120"/>
+            <path d="M18 12h-2.76A6 6 0 1 0 8 18h6" fill="#FAAD3F"/>
+        </svg>',
+        
+        // Default logo with category-based colors
+        'default' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="{color}" stroke-width="2" fill="{bg}"/>
+            <path d="M9 12l2 2 4-4" stroke="{color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>',
         
         'Pingdom' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
