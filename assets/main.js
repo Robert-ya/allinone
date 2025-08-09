@@ -16,8 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             e.stopPropagation();
             console.log('Mobile menu toggle clicked');
+            const isActive = elements.navMenu.classList.contains('active');
+            console.log('Menu was active:', isActive, 'Making it:', !isActive);
             this.classList.toggle('active');
             elements.navMenu.classList.toggle('active');
+            console.log('Menu classes after toggle:', elements.navMenu.className);
         });
         
         // Close mobile menu when clicking on nav links
