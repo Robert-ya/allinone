@@ -6,16 +6,30 @@ function openTool(url, toolId) {
         // Primary method: window.open
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
         
-        // Check if popup was blocked
+        // Check if popup was blocked - but don't redirect current tab
         if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
-            console.warn('Popup blocked, using server redirect');
-            // Fallback: Server-side redirect
-            window.location.href = '/?tool=' + toolId;
+            console.warn('Popup blocked - trying alternative methods');
+            
+            // Try creating a temporary link and clicking it
+            const tempLink = document.createElement('a');
+            tempLink.href = url;
+            tempLink.target = '_blank';
+            tempLink.rel = 'noopener noreferrer';
+            document.body.appendChild(tempLink);
+            tempLink.click();
+            document.body.removeChild(tempLink);
         }
     } catch (error) {
         console.error('Error opening tool:', error);
-        // Final fallback: Server-side redirect
-        window.location.href = '/?tool=' + toolId;
+        
+        // Final fallback: Create and click a link element
+        const fallbackLink = document.createElement('a');
+        fallbackLink.href = url;
+        fallbackLink.target = '_blank';
+        fallbackLink.rel = 'noopener noreferrer';
+        document.body.appendChild(fallbackLink);
+        fallbackLink.click();
+        document.body.removeChild(fallbackLink);
     }
 }
 
@@ -112,22 +126,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 try {
                     const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
                     
-                    // Fallback 1: Check if popup was blocked
+                    // Fallback 1: Check if popup was blocked - but don't redirect current tab
                     if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
-                        console.warn('Popup blocked, trying alternative method');
-                        // Use location.href as fallback
-                        window.location.href = url;
+                        console.warn('Popup blocked, trying link method');
+                        // Create a temporary link and click it instead of redirecting current tab
+                        const tempLink = document.createElement('a');
+                        tempLink.href = url;
+                        tempLink.target = '_blank';
+                        tempLink.rel = 'noopener noreferrer';
+                        document.body.appendChild(tempLink);
+                        tempLink.click();
+                        document.body.removeChild(tempLink);
                     }
                 } catch (error) {
                     console.error('Error opening tool:', error);
                     
-                    // Fallback 2: Server-side redirect
-                    if (toolId) {
-                        window.location.href = '/?tool=' + toolId;
-                    } else {
-                        // Final fallback: direct navigation
-                        window.location.href = url;
-                    }
+                    // Fallback 2: Create and click a link element
+                    const fallbackLink = document.createElement('a');
+                    fallbackLink.href = url;
+                    fallbackLink.target = '_blank';
+                    fallbackLink.rel = 'noopener noreferrer';
+                    document.body.appendChild(fallbackLink);
+                    fallbackLink.click();
+                    document.body.removeChild(fallbackLink);
                 }
             }
         }
