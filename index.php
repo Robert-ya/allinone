@@ -159,8 +159,8 @@ include 'includes/header.php';
                             <div class="stat-label">Online Tools</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">0</div>
-                            <div class="stat-label">Duplicates</div>
+                            <div class="stat-number"><?= count($categories) ?></div>
+                            <div class="stat-label">Categories</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-number">100%</div>
