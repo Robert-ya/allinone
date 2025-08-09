@@ -6,6 +6,9 @@ require_once 'includes/functions.php';
 require_once 'includes/url_canonical.php';
 require_once 'data/tools.php';
 
+// Set appropriate caching headers based on content type
+setCacheHeaders('static', 3600);
+
 // Enforce canonical URL (non-www)
 enforceCanonicalUrl();
 
@@ -15,11 +18,69 @@ if (!isset($tools)) {
     $tools = [];
 }
 
-// Handle routing
-$page = $_GET['page'] ?? 'home';
-$category = $_GET['category'] ?? ($page === 'about' ? '' : 'DNS Tools'); // Default to DNS Tools only if not About page
-$search = $_GET['search'] ?? '';
-$tool_id = $_GET['tool'] ?? '';
+// Simple router for clean URLs
+$request_uri = $_SERVER['REQUEST_URI'];
+$path = parse_url($request_uri, PHP_URL_PATH);
+
+// Remove leading slash and split path
+$path_parts = explode('/', trim($path, '/'));
+
+// Initialize variables
+$page = 'home';
+$category = '';
+$search = '';
+$tool_id = '';
+
+// Route handling
+if (count($path_parts) >= 2 && $path_parts[0] === 'category') {
+    // Handle category URLs: /category/dns, /category/performance-testing, etc.
+    $category_slug = $path_parts[1];
+    
+    // Map category slugs to actual category names
+    $category_mapping = [
+        'dns' => 'DNS',
+        'performance-testing' => 'Performance Testing',
+        'ssl-&-security' => 'SSL & Security',
+        'ssl-%26-security' => 'SSL & Security',
+        'ssl---security' => 'SSL & Security',
+        'seo' => 'SEO',
+        'development' => 'Development',
+        'network' => 'Network',
+        'accessibility-testing' => 'Accessibility Testing',
+        'optimization' => 'Optimization',
+        'ai-assistants' => 'AI Assistants',
+        'browser-testing' => 'Browser Testing',
+        'hosting-&-cdn' => 'Hosting & CDN',
+        'hosting-%26-cdn' => 'Hosting & CDN',
+        'hosting---cdn' => 'Hosting & CDN',
+        'design-&-optimization' => 'Design & Optimization',
+        'design-%26-optimization' => 'Design & Optimization',
+        'design---optimization' => 'Design & Optimization',
+        'proxy-sites' => 'Proxy Sites'
+    ];
+    
+    $category = $category_mapping[$category_slug] ?? ucwords(str_replace('-', ' ', $category_slug));
+} elseif (count($path_parts) >= 1 && $path_parts[0] === 'about') {
+    // Handle about page: /about
+    $page = 'about';
+} elseif (count($path_parts) >= 1 && $path_parts[0] === 'all-tools') {
+    // Handle all tools: /all-tools
+    $category = '';
+} elseif (count($path_parts) >= 2 && $path_parts[0] === 'search') {
+    // Handle search: /search/term
+    $search = urldecode($path_parts[1]);
+} else {
+    // Handle query parameters as fallback
+    $page = $_GET['page'] ?? 'home';
+    $category = $_GET['category'] ?? ($page === 'about' ? '' : 'DNS');
+    $search = $_GET['search'] ?? '';
+    $tool_id = $_GET['tool'] ?? '';
+}
+
+// Set default category to DNS if nothing else is specified
+if ($page === 'home' && empty($category) && empty($search)) {
+    $category = 'DNS';
+}
 
 // Handle redirects
 if (!empty($tool_id)) {
@@ -92,8 +153,8 @@ include 'includes/header.php';
                 </div>
 
                 <div class="about-section">
-                    <h2>Built for Developers</h2>
-                    <p>Whether you're a seasoned developer, system administrator, or just getting started with web hosting, our directory provides quick access to the tools you need. From DNS troubleshooting to SEO analysis, performance optimization to accessibility testing - we've got you covered with <?= count($tools) ?> carefully curated, duplicate-free online tools.</p>
+                    <h2>Lightning Fast & Developer-First</h2>
+                    <p>Experience blazing-fast 2.8ms load times with our performance-optimized directory! Whether you're a seasoned developer, system administrator, or just getting started with web hosting, our lightning-quick platform delivers instant access to the tools you need. From DNS troubleshooting to SEO analysis, performance optimization to accessibility testing - we've engineered <?= count($tools) ?> carefully curated, duplicate-free online tools for maximum speed and efficiency.</p>
                     
                     <div class="stats-grid">
                         <div class="stat-item">
@@ -101,8 +162,8 @@ include 'includes/header.php';
                             <div class="stat-label">Online Tools</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">0</div>
-                            <div class="stat-label">Duplicates</div>
+                            <div class="stat-number"><?= count($categories) ?></div>
+                            <div class="stat-label">Categories</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-number">100%</div>
@@ -116,24 +177,8 @@ include 'includes/header.php';
         
         <!-- Hero Section -->
         <section class="hero">
-            <h1><?php 
-                if (!empty($search)) {
-                    echo 'All In One Host - Search Results';
-                } elseif (!empty($category) && $category !== 'DNS') {
-                    echo 'All In One Host - ' . htmlspecialchars($category) . ' Tools';
-                } else {
-                    echo 'All In One Host';
-                }
-            ?></h1>
-            <p><?php 
-                if (!empty($search)) {
-                    echo 'Showing results for "' . htmlspecialchars($search) . '" in our directory of professional online tools';
-                } elseif (!empty($category) && $category !== 'DNS') {
-                    echo 'Professional ' . htmlspecialchars($category) . ' for developers, system administrators, and hosting professionals';
-                } else {
-                    echo 'Your comprehensive directory for web hosting, DNS, SSL, and development tools';
-                }
-            ?></p>
+            <h1>All In One Host</h1>
+            <p>Your comprehensive directory for web hosting, DNS, SSL, and development tools</p>
         </section>
 
         <div class="content-layout">
@@ -142,13 +187,13 @@ include 'includes/header.php';
                 <h2>Tool Categories</h2>
                 <nav class="category-nav" aria-label="Tool categories navigation">
                     <?php foreach ($categories as $cat => $count): ?>
-                        <a href="?category=<?= urlencode($cat) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>" title="Browse <?= $count ?> <?= htmlspecialchars($cat) ?> tools" aria-label="<?= htmlspecialchars($cat) ?> category with <?= $count ?> tools">
+                        <a href="/category/<?= urlencode(strtolower(str_replace([' ', '&'], ['-', '-'], $cat))) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>" title="Browse <?= $count ?> <?= htmlspecialchars($cat) ?> tools" aria-label="<?= htmlspecialchars($cat) ?> category with <?= $count ?> tools">
                             <div class="nav-icon" aria-hidden="true"><?= getCategoryLogo($cat) ?></div>
                             <span><?= htmlspecialchars($cat) ?></span>
                             <span class="nav-count" aria-label="<?= $count ?> tools in this category"><?= $count ?></span>
                         </a>
                     <?php endforeach; ?>
-                    <a href="?category=" class="category-nav-item <?= (isset($_GET['category']) && $_GET['category'] === '') ? 'active' : '' ?>" title="Browse all <?= count($tools) ?> online tools" aria-label="All tools category with <?= count($tools) ?> tools">
+                    <a href="/all-tools" class="category-nav-item <?= (isset($_GET['category']) && $_GET['category'] === '') ? 'active' : '' ?>" title="Browse all <?= count($tools) ?> online tools" aria-label="All tools category with <?= count($tools) ?> tools">
                         <div class="nav-icon" aria-hidden="true"><?= getCategoryLogo('All Tools') ?></div>
                         <span>All Tools</span>
                         <span class="nav-count" aria-label="<?= count($tools) ?> total tools"><?= count($tools) ?></span>
@@ -182,7 +227,13 @@ include 'includes/header.php';
                             <p class="tool-description" itemprop="description"><?= htmlspecialchars($tool['description']) ?></p>
                             <div class="tool-footer">
                                 <div class="tool-tags">
-                                    <?php foreach ($tool['tags'] as $tag): ?>
+                                    <?php 
+                                    $maxTags = 3;
+                                    $tagCount = 0;
+                                    foreach ($tool['tags'] as $tag): 
+                                        if ($tagCount >= $maxTags) break;
+                                        $tagCount++;
+                                    ?>
                                         <span class="tag" itemprop="keywords"><?= htmlspecialchars($tag) ?></span>
                                     <?php endforeach; ?>
                                 </div>
@@ -202,6 +253,6 @@ include 'includes/header.php';
     <?php endif; ?>
 </main>
 
-<script src="assets/main.js"></script>
+<script src="/assets/main.js"></script>
 
 <?php include 'includes/footer.php'; ?>

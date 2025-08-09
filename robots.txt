@@ -1,19 +1,47 @@
 User-agent: *
 Allow: /
 
-# Optimize crawling
+# Optimize crawling for search engines
 Crawl-delay: 1
 
-# Sitemap location (update with your actual domain)
-Sitemap: https://allinonehost.com/sitemap.xml
+# Enhanced sitemap locations
+Sitemap: https://allinonehost.replit.app/sitemap.xml
 
-# Disallow admin areas
+# Disallow admin and sensitive areas
 Disallow: /admin.php
 Disallow: /admin/
 Disallow: /.git/
 Disallow: /includes/
 Disallow: /data/
+Disallow: /.htaccess
+Disallow: /.env
+Disallow: /composer.json
+Disallow: /composer.lock
 
-# Allow important directories
+# Allow important directories and files
 Allow: /assets/
 Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /about
+Allow: /category/*
+Allow: /all-tools
+
+# Special instructions for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block unwanted bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

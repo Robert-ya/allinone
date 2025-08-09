@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://allinonehost.replit.app/</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://allinonehost.replit.app/assets/og-image.svg</image:loc>
+            <image:title>All In One Host - 72 Essential Online Web Development Tools</image:title>
+            <image:caption>Professional web development tools directory</image:caption>
+        </image:image>
     </url>
     <url>
-        <loc>https://allinonehost.replit.app/?page=about</loc>
+        <loc>https://allinonehost.replit.app/about</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://allinonehost.replit.app/?category=DNS+Tools</loc>
+        <loc>https://allinonehost.replit.app/category/dns</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://allinonehost.replit.app/?category=Performance+Testing</loc>
+        <loc>https://allinonehost.replit.app/category/performance-testing</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://allinonehost.replit.app/?category=SSL+%26+Security</loc>
+        <loc>https://allinonehost.replit.app/category/ssl---security</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://allinonehost.replit.app/?category=Network+Tools</loc>
+        <loc>https://allinonehost.replit.app/category/network</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://allinonehost.replit.app/?category=SEO+Tools</loc>
+        <loc>https://allinonehost.replit.app/category/seo</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://allinonehost.replit.app/?category=AI+Assistants</loc>
+        <loc>https://allinonehost.replit.app/category/ai-assistants</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://allinonehost.replit.app/?category=Development+Tools</loc>
+        <loc>https://allinonehost.replit.app/category/development</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://allinonehost.replit.app/?category=Accessibility+Testing</loc>
+        <loc>https://allinonehost.replit.app/category/accessibility-testing</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://allinonehost.replit.app/?category=Browser+Testing</loc>
+        <loc>https://allinonehost.replit.app/category/browser-testing</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://allinonehost.replit.app/?category=Optimization+Tools</loc>
+        <loc>https://allinonehost.replit.app/category/optimization</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
+
     <url>
-        <loc>https://allinonehost.replit.app/?category=Hosting+%26+CDN</loc>
-        <lastmod>2025-08-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://allinonehost.replit.app/?category=Design+%26+Optimization</loc>
-        <lastmod>2025-08-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://allinonehost.replit.app/?category=Proxy+Sites</loc>
+        <loc>https://allinonehost.replit.app/category/proxy-sites</loc>
         <lastmod>2025-08-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://allinonehost.replit.app/all-tools</loc>
+        <lastmod>2025-08-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

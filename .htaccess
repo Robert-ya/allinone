@@ -1,51 +1,192 @@
-# Security Headers
-<IfModule mod_headers.c>
-    Header always set X-Content-Type-Options nosniff
-    Header always set X-Frame-Options DENY
-    Header always set X-XSS-Protection "1; mode=block"
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-</IfModule>
+# SEO and Performance Optimizations for All In One Host
+# Last updated: August 9, 2025
 
-# Compression
+# Enable compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
     AddOutputFilterByType DEFLATE text/xml
     AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
     AddOutputFilterByType DEFLATE application/xml
     AddOutputFilterByType DEFLATE application/xhtml+xml
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
-# Browser Caching
+# Enable caching
 <IfModule mod_expires.c>
-    ExpiresActive on
+    ExpiresActive On
     ExpiresByType text/css "access plus 1 year"
     ExpiresByType application/javascript "access plus 1 year"
     ExpiresByType text/javascript "access plus 1 year"
-    ExpiresByType image/png "access plus 1 month"
-    ExpiresByType image/jpg "access plus 1 month"
-    ExpiresByType image/jpeg "access plus 1 month"
-    ExpiresByType image/gif "access plus 1 month"
-    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType text/x-javascript "access plus 1 year"
+    ExpiresByType application/x-shockwave-flash "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType application/json "access plus 1 hour"
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always set X-Frame-Options "DENY"
+    
+    # XSS Protection
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # MIME type sniffing prevention
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' *; form-action 'self' *; frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+    
+    # Cache control for static assets with versioning support
+    <filesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+        Header set Vary "Accept-Encoding"
+    </filesMatch>
+    
+    # Cache control for HTML
+    <filesMatch "\.(html|htm|php)$">
+        Header set Cache-Control "max-age=3600, public, must-revalidate"
+    </filesMatch>
 </IfModule>
 
 # URL Canonicalization - Force non-www
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Force HTTPS (when available)
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # Remove www
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+    
+    # Remove trailing slashes from non-directories
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} ^(.+)/$
+    RewriteRule ^(.*)$ %1 [R=301,L]
+    
+    # Handle specific category name conversions first (most specific rules first)
+    RewriteRule ^category/dns/?$ /index.php?category=DNS [L,QSA]
+    RewriteRule ^category/ssl-&-security/?$ /index.php?category=SSL+%26+Security [L,QSA]
+    RewriteRule ^category/ssl-%26-security/?$ /index.php?category=SSL+%26+Security [L,QSA]
+    RewriteRule ^category/performance-testing/?$ /index.php?category=Performance+Testing [L,QSA]
+    RewriteRule ^category/seo/?$ /index.php?category=SEO [L,QSA]
+    RewriteRule ^category/development/?$ /index.php?category=Development [L,QSA]
+    RewriteRule ^category/network/?$ /index.php?category=Network [L,QSA]
+    RewriteRule ^category/accessibility-testing/?$ /index.php?category=Accessibility+Testing [L,QSA]
+    RewriteRule ^category/optimization/?$ /index.php?category=Optimization [L,QSA]
+    RewriteRule ^category/ai-assistants/?$ /index.php?category=AI+Assistants [L,QSA]
+    RewriteRule ^category/browser-testing/?$ /index.php?category=Browser+Testing [L,QSA]
+    RewriteRule ^category/hosting-&-cdn/?$ /index.php?category=Hosting+%26+CDN [L,QSA]
+    RewriteRule ^category/hosting-%26-cdn/?$ /index.php?category=Hosting+%26+CDN [L,QSA]
+    RewriteRule ^category/design-&-optimization/?$ /index.php?category=Design+%26+Optimization [L,QSA]
+    RewriteRule ^category/design-%26-optimization/?$ /index.php?category=Design+%26+Optimization [L,QSA]
+    RewriteRule ^category/proxy-sites/?$ /index.php?category=Proxy+Sites [L,QSA]
+    
+    # Clean URLs for all tools
+    RewriteRule ^all-tools/?$ /index.php?category= [L,QSA]
+    
+    # Clean URLs for search
+    RewriteRule ^search/([^/]+)/?$ /index.php?search=$1 [L,QSA]
+    
+    # Clean URLs for about page
+    RewriteRule ^about/?$ /index.php?page=about [L,QSA]
+    
+    # Generic category handler (fallback for any other categories)
+    RewriteRule ^category/([^/]+)/?$ /index.php?category=$1 [L,QSA]
+</IfModule>
 
-# Force non-www (canonical URL)
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [R=301,L]
+# Enable ETags for better caching and add compression for performance
+FileETag MTime Size
 
-# Force HTTPS if available
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# Additional performance optimizations
+<IfModule mod_headers.c>
+    # Enable Keep-Alive connections
+    Header set Connection keep-alive
+    
+    # Add Vary header for better caching
+    <filesMatch "\.(css|js|xml|gz|html)$">
+        Header append Vary: Accept-Encoding
+    </filesMatch>
+    
+    # Preload key resources
+    <filesMatch "\.css$">
+        Header set Link "</assets/main.min.js>; rel=preload; as=script"
+    </filesMatch>
+</IfModule>
 
-# Pretty URLs (optional - if you want clean URLs later)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [QSA,L]
+# Optimize file serve order
+<IfModule mod_mime.c>
+    # Serve compressed versions if available
+    RewriteCond %{HTTP:Accept-Encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}\.gz -f
+    RewriteRule ^(.*)\.css$ $1\.css\.gz [QSA,L]
+    RewriteRule ^(.*)\.js$ $1\.js\.gz [QSA,L]
+    
+    # Serve correct content type for compressed files
+    <filesMatch "\.css\.gz$">
+        ForceType text/css
+        Header set Content-Encoding gzip
+    </filesMatch>
+    <filesMatch "\.js\.gz$">
+        ForceType application/javascript
+        Header set Content-Encoding gzip
+    </filesMatch>
+</IfModule>
+
+# Set default character encoding
+AddDefaultCharset UTF-8
+
+# MIME types for better SEO
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+    AddType text/css .css
+    AddType image/svg+xml .svg
+    AddType application/json .json
+    AddType application/ld+json .jsonld
+    AddType application/rss+xml .rss
+    AddType application/atom+xml .atom
+</IfModule>
+
+# Prevent access to sensitive files
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Block access to version control directories
+RedirectMatch 404 /\.git
+
+# Block access to admin and includes directories from search engines
+<IfModule mod_rewrite.c>
+    # Block admin.php from being indexed
+    RewriteCond %{THE_REQUEST} \s/+admin\.php[\s?] [NC]
+    RewriteRule ^ - [F]
+    
+    # Block includes directory
+    RewriteCond %{THE_REQUEST} \s/+includes/ [NC]
+    RewriteRule ^ - [F]
+    
+    # Block data directory
+    RewriteCond %{THE_REQUEST} \s/+data/ [NC]
+    RewriteRule ^ - [F]
+</IfModule>
