@@ -86,11 +86,24 @@
     # Clean URLs for categories
     RewriteRule ^category/([^/]+)/?$ /?category=$1 [L,QSA]
     
+    # Clean URLs for all tools
+    RewriteRule ^all-tools/?$ /?category= [L,QSA]
+    
     # Clean URLs for search
     RewriteRule ^search/([^/]+)/?$ /?search=$1 [L,QSA]
     
     # Clean URLs for about page
     RewriteRule ^about/?$ /?page=about [L,QSA]
+    
+    # Handle category name conversions
+    RewriteRule ^category/dns/?$ /?category=DNS [L,QSA]
+    RewriteRule ^category/ssl-security/?$ /?category=SSL+%26+Security [L,QSA]
+    RewriteRule ^category/performance-testing/?$ /?category=Performance+Testing [L,QSA]
+    RewriteRule ^category/seo/?$ /?category=SEO [L,QSA]
+    RewriteRule ^category/development/?$ /?category=Development [L,QSA]
+    RewriteRule ^category/network/?$ /?category=Network [L,QSA]
+    RewriteRule ^category/accessibility/?$ /?category=Accessibility [L,QSA]
+    RewriteRule ^category/optimization/?$ /?category=Optimization [L,QSA]
 </IfModule>
 
 # Enable ETags for better caching

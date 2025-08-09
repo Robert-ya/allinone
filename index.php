@@ -126,13 +126,13 @@ include 'includes/header.php';
                 <h2>Tool Categories</h2>
                 <nav class="category-nav" aria-label="Tool categories navigation">
                     <?php foreach ($categories as $cat => $count): ?>
-                        <a href="?category=<?= urlencode($cat) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>" title="Browse <?= $count ?> <?= htmlspecialchars($cat) ?> tools" aria-label="<?= htmlspecialchars($cat) ?> category with <?= $count ?> tools">
+                        <a href="/category/<?= urlencode(strtolower(str_replace(' ', '-', $cat))) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>" title="Browse <?= $count ?> <?= htmlspecialchars($cat) ?> tools" aria-label="<?= htmlspecialchars($cat) ?> category with <?= $count ?> tools">
                             <div class="nav-icon" aria-hidden="true"><?= getCategoryLogo($cat) ?></div>
                             <span><?= htmlspecialchars($cat) ?></span>
                             <span class="nav-count" aria-label="<?= $count ?> tools in this category"><?= $count ?></span>
                         </a>
                     <?php endforeach; ?>
-                    <a href="?category=" class="category-nav-item <?= (isset($_GET['category']) && $_GET['category'] === '') ? 'active' : '' ?>" title="Browse all <?= count($tools) ?> online tools" aria-label="All tools category with <?= count($tools) ?> tools">
+                    <a href="/all-tools" class="category-nav-item <?= (isset($_GET['category']) && $_GET['category'] === '') ? 'active' : '' ?>" title="Browse all <?= count($tools) ?> online tools" aria-label="All tools category with <?= count($tools) ?> tools">
                         <div class="nav-icon" aria-hidden="true"><?= getCategoryLogo('All Tools') ?></div>
                         <span>All Tools</span>
                         <span class="nav-count" aria-label="<?= count($tools) ?> total tools"><?= count($tools) ?></span>
@@ -166,7 +166,13 @@ include 'includes/header.php';
                             <p class="tool-description" itemprop="description"><?= htmlspecialchars($tool['description']) ?></p>
                             <div class="tool-footer">
                                 <div class="tool-tags">
-                                    <?php foreach ($tool['tags'] as $tag): ?>
+                                    <?php 
+                                    $maxTags = 3;
+                                    $tagCount = 0;
+                                    foreach ($tool['tags'] as $tag): 
+                                        if ($tagCount >= $maxTags) break;
+                                        $tagCount++;
+                                    ?>
                                         <span class="tag" itemprop="keywords"><?= htmlspecialchars($tag) ?></span>
                                     <?php endforeach; ?>
                                 </div>
@@ -186,6 +192,6 @@ include 'includes/header.php';
     <?php endif; ?>
 </main>
 
-<script src="assets/main.js"></script>
+<script src="/assets/main.js"></script>
 
 <?php include 'includes/footer.php'; ?>
