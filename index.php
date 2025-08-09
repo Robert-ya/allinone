@@ -107,7 +107,7 @@ include 'includes/header.php';
             <div class="about-content">
                 <div class="about-section">
                     <h2>Our Mission</h2>
-                    <p>All In One Host serves as your comprehensive directory for web development, DNS management, SEO analysis, performance testing, security scanning, and accessibility validation tools. We've curated a collection of <?= count($tools) ?> essential online tools across 13 categories, each carefully selected for its utility, reliability, and relevance to web developers, system administrators, and digital professionals. Every tool has been verified to ensure no duplicates and maximum value.</p>
+                    <p>All In One Host is your comprehensive directory for web hosting, development and devops tools. We've curated a collection of <?= count($tools) ?> essential online tools across 13 categories, each carefully selected for its utility, reliability, and relevance to web hosting professionals, developers, and DevOps engineers. Every tool has been verified to ensure no duplicates and maximum value.</p>
                 </div>
 
                 <div class="about-section">

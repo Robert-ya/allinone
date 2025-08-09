@@ -3,7 +3,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>About This Directory</h3>
-                    <p>A curated collection of <?= isset($tools) ? count($tools) : '72' ?> essential online web development tools to help developers, system administrators, and hosting professionals find the right tools for their projects.</p>
+                    <p>Your comprehensive directory for web hosting, development and devops tools. A curated collection of <?= isset($tools) ? count($tools) : '72' ?> essential online tools across 13 specialized categories.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Categories</h3>
@@ -23,7 +23,7 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="/" title="Browse all <?= isset($tools) ? count($tools) : '72' ?> web development tools">All Tools</a></li>
+                        <li><a href="/" title="Browse all <?= isset($tools) ? count($tools) : '72' ?> hosting, development and devops tools">All Tools</a></li>
                         <li><a href="/about" title="Learn more about All In One Host directory">About</a></li>
                         <li><a href="/sitemap.xml" title="XML Sitemap for search engines">Sitemap</a></li>
                     </ul>

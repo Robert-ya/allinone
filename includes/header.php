@@ -16,13 +16,13 @@
     ?></title>
     <meta name="description" content="<?php 
         if (isset($page) && $page === 'about') {
-            echo 'All In One Host - 72 curated online tools across 13 categories. DNS, SEO, performance testing, security scanning, accessibility validation, AI assistants, development utilities. No downloads required.';
+            echo 'All In One Host - Your comprehensive directory for web hosting, development and devops tools. 72 curated online tools across 13 categories. No downloads required.';
         } elseif (isset($search) && !empty($search)) {
-            echo 'Find ' . htmlspecialchars($search) . ' tools in our directory of 72 online tools across 13 categories including DNS, SEO, performance, security, accessibility, and development.';
+            echo 'Find ' . htmlspecialchars($search) . ' tools in your comprehensive directory for web hosting, development and devops tools. 72 online tools across 13 categories.';
         } elseif (isset($category) && !empty($category) && $category !== 'DNS') {
-            echo htmlspecialchars($category) . ' tools for web development and digital professionals. Professional online tools accessible instantly across 13 specialized categories.';
+            echo htmlspecialchars($category) . ' tools from your comprehensive directory for web hosting, development and devops. Professional online tools accessible instantly.';
         } else {
-            echo 'All In One Host - 72 online tools across 13 categories for developers and digital professionals. DNS, SEO, performance testing, security, accessibility, AI assistants, development utilities.';
+            echo 'All In One Host - Your comprehensive directory for web hosting, development and devops tools. 72 online tools across 13 specialized categories.';
         }
     ?>">
     <meta name="keywords" content="web development tools, online tools directory, dns tools, seo analysis tools, performance testing, ssl checker, accessibility testing, development utilities, hosting tools, security scanner, website validation, code formatter, system administration tools, developer resources, ai assistants, browser testing, proxy sites, design optimization, network tools">
@@ -49,7 +49,7 @@
         "@type": ["WebSite", "SoftwareApplication"],
         "name": "All In One Host",
         "alternateName": "All In One Host Tools Directory",
-        "description": "Comprehensive directory of <?= isset($tools) ? count($tools) : 72 ?> essential online web development tools for developers, system administrators, and hosting professionals.",
+        "description": "Your comprehensive directory for web hosting, development and devops tools. <?= isset($tools) ? count($tools) : 72 ?> essential online tools for professionals.",
         "url": "<?= getStructuredDataUrl() ?>",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web Browser",
@@ -133,7 +133,7 @@
         } elseif (isset($category) && !empty($category) && $category !== 'DNS') {
             echo 'Professional ' . htmlspecialchars($category) . ' tools for web development and system administration. All accessible online instantly.';
         } else {
-            echo 'Essential online tools for developers: DNS management, SEO analysis, performance testing, security scanning, accessibility validation, development utilities.';
+            echo 'Your comprehensive directory for web hosting, development and devops tools across 13 specialized categories.';
         }
     ?>">
     <meta name="twitter:image" content="<?= getStructuredDataUrl() ?>/assets/og-image.svg">
