@@ -139,7 +139,7 @@ include 'includes/header.php';
         <div class="content-layout">
             <!-- Sidebar -->
             <aside class="sidebar">
-                <h2>Categories</h2>
+                <h2>Tool Categories</h2>
                 <nav class="category-nav" aria-label="Tool categories navigation">
                     <?php foreach ($categories as $cat => $count): ?>
                         <a href="?category=<?= urlencode($cat) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>" title="Browse <?= $count ?> <?= htmlspecialchars($cat) ?> tools" aria-label="<?= htmlspecialchars($cat) ?> category with <?= $count ?> tools">

@@ -9,6 +9,8 @@
 - **Security Enhancements**: Implemented comprehensive security headers and URL canonicalization
 - **SEO Improvements**: Added .htaccess with proper redirects, canonicalization, and caching
 - **UI Fixes**: Removed breadcrumb navigation from category and about pages for cleaner layout
+- **Tool Logo Colors**: Updated tool logos to use unique brand-matching colors instead of uniform gradient
+- **Category Styling**: Changed sidebar title to "Tool Categories" and updated tool tags to lighter gray styling
 - Expanded directory from 54 to 72 tools with 18 new high-quality online tools
 - Removed 3 tools (ngrok, Serveo, FreeFormatter) that require downloads or aren't pure online tools
 - Added new SEO Tools category with comprehensive analysis tools
