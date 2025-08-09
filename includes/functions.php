@@ -33,9 +33,11 @@ function setCacheHeaders($type = 'static', $max_age = 3600) {
 
 // Get versioned asset URL for cache busting
 function getAssetUrl($asset_path) {
-    $file_path = __DIR__ . '/../' . $asset_path;
+    // Ensure asset path starts with / for absolute path from document root
+    $clean_path = ltrim($asset_path, '/');
+    $file_path = __DIR__ . '/../' . $clean_path;
     $version = file_exists($file_path) ? filemtime($file_path) : time();
-    return $asset_path . '?v=' . $version;
+    return '/' . $clean_path . '?v=' . $version;
 }
 
 /**

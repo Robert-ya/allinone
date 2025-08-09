@@ -35,11 +35,10 @@
     <meta name="geo.region" content="US">
     <meta name="geo.placename" content="United States">
     <!-- Performance optimized resource loading -->
-    <link rel="preload" href="<?= getAssetUrl('/assets/style.min.css') ?>" as="style">
-    <link rel="preload" href="<?= getAssetUrl('/assets/main.min.js') ?>" as="script">
-    <link rel="stylesheet" href="<?= getAssetUrl('/assets/style.min.css') ?>">
-    <script src="<?= getAssetUrl('/assets/main.min.js') ?>" defer></script>
-    <script src="/assets/main.js" defer></script>
+    <link rel="preload" href="<?= getAssetUrl('assets/style.min.css') ?>" as="style">
+    <link rel="preload" href="<?= getAssetUrl('assets/main.min.js') ?>" as="script">
+    <link rel="stylesheet" href="<?= getAssetUrl('assets/style.min.css') ?>">
+    <script src="<?= getAssetUrl('assets/main.min.js') ?>" defer></script>
     <link rel="canonical" href="<?= getCanonicalUrl() ?>">
     <link rel="alternate" type="application/rss+xml" title="All In One Host Tools" href="<?= getStructuredDataUrl() ?>/rss.xml">
     

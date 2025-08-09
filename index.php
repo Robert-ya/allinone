@@ -253,6 +253,6 @@ include 'includes/header.php';
     <?php endif; ?>
 </main>
 
-<script src="/assets/main.js"></script>
+
 
 <?php include 'includes/footer.php'; ?>
