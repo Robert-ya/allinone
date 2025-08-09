@@ -1,0 +1,59 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#backgroundGradient)"/>
+  
+  <!-- Pattern overlay -->
+  <g opacity="0.1">
+    <circle cx="100" cy="100" r="50" fill="white"/>
+    <circle cx="1100" cy="530" r="60" fill="white"/>
+    <circle cx="200" cy="500" r="30" fill="white"/>
+    <circle cx="1000" cy="150" r="40" fill="white"/>
+  </g>
+  
+  <!-- Main content container -->
+  <rect x="100" y="100" width="1000" height="430" rx="20" fill="url(#cardGradient)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  
+  <!-- Logo -->
+  <g transform="translate(150, 150)">
+    <rect width="80" height="80" rx="20" fill="url(#backgroundGradient)" opacity="0.8"/>
+    <path d="M20 40h40M40 20l15 15-15 15" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="25" cy="40" r="3" fill="white"/>
+    <circle cx="40" cy="55" r="3" fill="white"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="280" y="200" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="white">
+    All In One Host
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="280" y="250" font-family="Arial, sans-serif" font-size="32" fill="rgba(255,255,255,0.9)">
+    72 Essential Online Web Development Tools
+  </text>
+  
+  <!-- Features list -->
+  <g transform="translate(280, 300)">
+    <text y="0" font-family="Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.8)">
+      🌐 DNS Tools  •  ⚡ Performance Testing  •  🔒 SSL & Security
+    </text>
+    <text y="40" font-family="Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.8)">
+      📈 SEO Analysis  •  💻 Development Tools  •  ♿ Accessibility Testing
+    </text>
+  </g>
+  
+  <!-- Bottom text -->
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+    Your comprehensive directory for web hosting, DNS, SSL, and development tools
+  </text>
+</svg>

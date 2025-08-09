@@ -22,7 +22,7 @@
         } elseif (!empty($category) && $category !== 'DNS Tools') {
             echo 'Browse ' . htmlspecialchars($category) . ' tools in our curated directory. Professional online tools for web development, hosting, and system administration.';
         } else {
-            echo 'All In One Host - Discover 72 essential online web tools for developers. DNS, SEO, performance testing, security scanning, accessibility testing, and development tools.';
+            echo 'All In One Host - 72 essential online web tools for developers. DNS, SEO, performance, security, accessibility tools.';
         }
     ?>">
     <meta name="keywords" content="web development tools, online tools, dns tools, seo tools, performance testing, ssl checker, accessibility testing, development utilities, hosting tools, security scanner, website validation, code formatter">
@@ -30,10 +30,10 @@
     <meta name="robots" content="index, follow">
     <meta name="rating" content="general">
     <meta name="distribution" content="global">
-    <link rel="preload" href="assets/style.css" as="style">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="preload" href="assets/main.js" as="script">
-    <script src="assets/main.js" defer></script>
+    <link rel="preload" href="assets/style.min.css" as="style">
+    <link rel="stylesheet" href="assets/style.min.css">
+    <link rel="preload" href="assets/main.min.js" as="script">
+    <script src="assets/main.min.js" defer></script>
     <link rel="canonical" href="<?= getCanonicalUrl() ?>">
     
     <!-- Structured Data JSON-LD -->
@@ -78,6 +78,12 @@
         }
     ?>">
     <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="<?= getStructuredDataUrl() ?>/assets/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="All In One Host - 72 Essential Online Web Development Tools">
+    <meta property="article:author" content="All In One Host">
+    <meta property="article:section" content="Web Development Tools">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -97,12 +103,15 @@
         } elseif (!empty($category) && $category !== 'DNS Tools') {
             echo 'Professional ' . htmlspecialchars($category) . ' tools for web development and system administration. All accessible online.';
         } else {
-            echo 'Essential online tools for developers: DNS, SEO, performance testing, security scanning, accessibility, and development utilities.';
+            echo 'Essential online tools for developers: DNS, SEO, performance, security, accessibility, development utilities.';
         }
     ?>">
+    <meta name="twitter:image" content="<?= getStructuredDataUrl() ?>/assets/og-image.svg">
+    <meta name="twitter:image:alt" content="All In One Host - 72 Essential Online Web Development Tools">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='url(%23brandGradient)'/><path d='M8 12h16M16 8l6 6-6 6' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/><circle cx='10' cy='12' r='1.5' fill='white'/><circle cx='16' cy='20' r='1.5' fill='white'/><defs><linearGradient id='brandGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea'/><stop offset='100%25' style='stop-color:%23764ba2'/></linearGradient></defs></svg>">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
 <body>
     <header class="site-header">
