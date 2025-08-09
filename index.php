@@ -115,22 +115,16 @@ include 'includes/header.php';
             </div>
         </div>
     <?php else: ?>
-        <?php if (!empty($category) && $category !== 'DNS Tools' || !empty($search)): ?>
+        <?php if (!empty($search)): ?>
         <!-- Breadcrumb Navigation -->
         <nav aria-label="Breadcrumb" class="breadcrumb">
             <ol class="breadcrumb-list">
                 <li class="breadcrumb-item">
                     <a href="?" title="Home - All In One Host">🏠 Home</a>
                 </li>
-                <?php if (!empty($category) && $category !== 'DNS Tools'): ?>
-                <li class="breadcrumb-item">
-                    <span aria-current="page"><?= htmlspecialchars($category) ?> Tools</span>
-                </li>
-                <?php elseif (!empty($search)): ?>
                 <li class="breadcrumb-item">
                     <span aria-current="page">Search: "<?= htmlspecialchars($search) ?>"</span>
                 </li>
-                <?php endif; ?>
             </ol>
         </nav>
         <?php endif; ?>
