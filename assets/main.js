@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Mobile menu toggle functionality
     if (elements.mobileMenuToggle && elements.navMenu) {
-        elements.mobileMenuToggle.addEventListener('click', function() {
+        console.log('Mobile menu elements found, attaching event listeners');
+        
+        elements.mobileMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Mobile menu toggle clicked');
             this.classList.toggle('active');
             elements.navMenu.classList.toggle('active');
         });
@@ -25,10 +30,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
-            if (!elements.mobileMenuToggle.contains(event.target) && !elements.navMenu.contains(event.target)) {
+            if (!elements.mobileMenuToggle.contains(event.target) && 
+                !elements.navMenu.contains(event.target)) {
                 elements.mobileMenuToggle.classList.remove('active');
                 elements.navMenu.classList.remove('active');
             }
+        });
+    } else {
+        console.log('Mobile menu elements not found:', {
+            toggle: !!elements.mobileMenuToggle,
+            menu: !!elements.navMenu
         });
     }
     
