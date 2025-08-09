@@ -182,8 +182,8 @@
                 </div>
             </button>
             <div class="nav-menu" id="navMenu">
-                <a href="/" class="nav-link <?= (!isset($_GET['page']) || $_GET['page'] === 'home') ? 'active' : '' ?>">Home</a>
-                <a href="/about" class="nav-link <?= ($_GET['page'] ?? '') === 'about' ? 'active' : '' ?>">About</a>
+                <a href="/" class="nav-link <?= (!isset($page) || $page === 'home') ? 'active' : '' ?>">Home</a>
+                <a href="/about" class="nav-link <?= ($page ?? '') === 'about' ? 'active' : '' ?>">About</a>
                 <form method="GET" action="" class="header-search-form">
                     <input type="text" name="search" placeholder="Search tools..." value="<?= htmlspecialchars($_GET['search'] ?? '') ?>" class="header-search-input">
                     <button type="submit" class="header-search-btn">
