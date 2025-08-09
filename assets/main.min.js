@@ -1,3 +1,24 @@
+// Global function for maximum browser compatibility
+function openTool(url, toolId) {
+    console.log('Opening tool with URL:', url);
+    
+    try {
+        // Primary method: window.open
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        
+        // Check if popup was blocked
+        if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+            console.warn('Popup blocked, using server redirect');
+            // Fallback: Server-side redirect
+            window.location.href = '/?tool=' + toolId;
+        }
+    } catch (error) {
+        console.error('Error opening tool:', error);
+        // Final fallback: Server-side redirect
+        window.location.href = '/?tool=' + toolId;
+    }
+}
+
 // Optimized search enhancement and mobile navigation
 document.addEventListener('DOMContentLoaded', function() {
     // Performance optimization: Cache DOM elements
@@ -79,11 +100,35 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(event) {
         const card = event.target.closest('.tool-card');
         if (card) {
+            event.preventDefault(); // Prevent any default action
             const url = card.dataset.url;
             const toolName = card.querySelector('.tool-name').textContent;
+            const toolId = card.dataset.toolId;
+            
             if (url) {
                 console.log('Tool clicked:', toolName);
-                window.open(url, '_blank', 'noopener,noreferrer');
+                
+                // Primary method: window.open
+                try {
+                    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                    
+                    // Fallback 1: Check if popup was blocked
+                    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                        console.warn('Popup blocked, trying alternative method');
+                        // Use location.href as fallback
+                        window.location.href = url;
+                    }
+                } catch (error) {
+                    console.error('Error opening tool:', error);
+                    
+                    // Fallback 2: Server-side redirect
+                    if (toolId) {
+                        window.location.href = '/?tool=' + toolId;
+                    } else {
+                        // Final fallback: direct navigation
+                        window.location.href = url;
+                    }
+                }
             }
         }
     });
