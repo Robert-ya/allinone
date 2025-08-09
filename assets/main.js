@@ -1,28 +1,74 @@
-// Global function for maximum browser compatibility
+// Enhanced function for cPanel hosting compatibility
 function openTool(url, toolId) {
     console.log('Opening tool with URL:', url);
     
+    // Method 1: Try window.open with immediate fallback check
     try {
-        // Primary method: window.open
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        const newWindow = window.open('', '_blank', 'noopener,noreferrer');
         
-        // Check if popup was blocked - but don't redirect current tab
-        if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
-            console.warn('Popup blocked - trying alternative methods');
-            
-            // Try creating a temporary link and clicking it
-            const tempLink = document.createElement('a');
-            tempLink.href = url;
-            tempLink.target = '_blank';
-            tempLink.rel = 'noopener noreferrer';
-            document.body.appendChild(tempLink);
-            tempLink.click();
-            document.body.removeChild(tempLink);
+        if (newWindow && !newWindow.closed) {
+            // Window opened successfully, navigate it
+            newWindow.location.href = url;
+            newWindow.focus();
+            console.log('Tool opened successfully via window.open');
+            return;
+        } else {
+            newWindow && newWindow.close();
         }
-    } catch (error) {
-        console.error('Error opening tool:', error);
+    } catch (e) {
+        console.warn('window.open failed:', e);
+    }
+    
+    // Method 2: Direct window.open with URL
+    try {
+        const directWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        if (directWindow && !directWindow.closed) {
+            directWindow.focus();
+            console.log('Tool opened via direct window.open');
+            return;
+        }
+    } catch (e) {
+        console.warn('Direct window.open failed:', e);
+    }
+    
+    // Method 3: Create and dispatch click event on link
+    try {
+        const tempLink = document.createElement('a');
+        tempLink.href = url;
+        tempLink.target = '_blank';
+        tempLink.rel = 'noopener noreferrer';
+        tempLink.style.display = 'none';
         
-        // Final fallback: Create and click a link element
+        document.body.appendChild(tempLink);
+        
+        // Dispatch actual click event for better compatibility
+        const clickEvent = new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true,
+            ctrlKey: false,
+            metaKey: false,
+            shiftKey: false,
+            button: 0
+        });
+        
+        tempLink.dispatchEvent(clickEvent);
+        
+        // Clean up after a delay
+        setTimeout(() => {
+            if (document.body.contains(tempLink)) {
+                document.body.removeChild(tempLink);
+            }
+        }, 100);
+        
+        console.log('Tool opened via synthetic click event');
+        return;
+    } catch (e) {
+        console.warn('Synthetic click failed:', e);
+    }
+    
+    // Method 4: Simple link click fallback
+    try {
         const fallbackLink = document.createElement('a');
         fallbackLink.href = url;
         fallbackLink.target = '_blank';
@@ -30,6 +76,11 @@ function openTool(url, toolId) {
         document.body.appendChild(fallbackLink);
         fallbackLink.click();
         document.body.removeChild(fallbackLink);
+        console.log('Tool opened via simple link click');
+    } catch (e) {
+        console.error('All methods failed:', e);
+        // Last resort: show alert with URL
+        alert('Please manually open: ' + url);
     }
 }
 
@@ -122,34 +173,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (url) {
                 console.log('Tool clicked:', toolName);
                 
-                // Primary method: window.open
-                try {
-                    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-                    
-                    // Fallback 1: Check if popup was blocked - but don't redirect current tab
-                    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
-                        console.warn('Popup blocked, trying link method');
-                        // Create a temporary link and click it instead of redirecting current tab
-                        const tempLink = document.createElement('a');
-                        tempLink.href = url;
-                        tempLink.target = '_blank';
-                        tempLink.rel = 'noopener noreferrer';
-                        document.body.appendChild(tempLink);
-                        tempLink.click();
-                        document.body.removeChild(tempLink);
-                    }
-                } catch (error) {
-                    console.error('Error opening tool:', error);
-                    
-                    // Fallback 2: Create and click a link element
-                    const fallbackLink = document.createElement('a');
-                    fallbackLink.href = url;
-                    fallbackLink.target = '_blank';
-                    fallbackLink.rel = 'noopener noreferrer';
-                    document.body.appendChild(fallbackLink);
-                    fallbackLink.click();
-                    document.body.removeChild(fallbackLink);
-                }
+                // Use the enhanced openTool function
+                openTool(url, toolId);
             }
         }
     });
