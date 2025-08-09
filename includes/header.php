@@ -129,7 +129,7 @@
     ?>">
     <meta name="twitter:description" content="<?php 
         if (isset($page) && $page === 'about') {
-            echo '72 curated online web tools for developers and hosting professionals. DNS, SEO, performance, security, and accessibility tools. No downloads required.';
+            echo 'Your comprehensive directory for web hosting,development and devops tools. 72 curated online tools across 13 categories. No downloads required.';
         } elseif (isset($category) && !empty($category) && $category !== 'DNS') {
             echo 'Professional ' . htmlspecialchars($category) . ' tools for web development and system administration. All accessible online instantly.';
         } else {
