@@ -18,8 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Mobile menu toggle clicked');
             const isActive = elements.navMenu.classList.contains('active');
             console.log('Menu was active:', isActive, 'Making it:', !isActive);
-            this.classList.toggle('active');
-            elements.navMenu.classList.toggle('active');
+            
+            if (isActive) {
+                this.classList.remove('active');
+                elements.navMenu.classList.remove('active');
+            } else {
+                this.classList.add('active');
+                elements.navMenu.classList.add('active');
+            }
             console.log('Menu classes after toggle:', elements.navMenu.className);
         });
         

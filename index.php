@@ -113,19 +113,6 @@ include 'includes/header.php';
             </div>
         </div>
     <?php else: ?>
-        <?php if (!empty($search)): ?>
-        <!-- Breadcrumb Navigation -->
-        <nav aria-label="Breadcrumb" class="breadcrumb">
-            <ol class="breadcrumb-list">
-                <li class="breadcrumb-item">
-                    <a href="?" title="Home - All In One Host">🏠 Home</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <span aria-current="page">Search: "<?= htmlspecialchars($search) ?>"</span>
-                </li>
-            </ol>
-        </nav>
-        <?php endif; ?>
         
         <!-- Hero Section -->
         <section class="hero">
