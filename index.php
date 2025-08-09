@@ -100,7 +100,7 @@ include 'includes/header.php';
         <!-- About Hero Section -->
         <section class="hero about-hero">
             <h1>About All In One Host</h1>
-            <p>72 essential tools for developers and system administrators</p>
+            <p>Your comprehensive directory for web hosting, development and devops tools</p>
         </section>
 
         <div class="about-layout">
@@ -178,7 +178,7 @@ include 'includes/header.php';
         <!-- Hero Section -->
         <section class="hero">
             <h1>All In One Host</h1>
-            <p>72 essential tools for developers and system administrators</p>
+            <p>Your comprehensive directory for web hosting, development and devops tools</p>
         </section>
 
         <div class="content-layout">
