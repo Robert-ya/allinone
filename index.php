@@ -15,11 +15,69 @@ if (!isset($tools)) {
     $tools = [];
 }
 
-// Handle routing
-$page = $_GET['page'] ?? 'home';
-$category = $_GET['category'] ?? ($page === 'about' ? '' : 'DNS'); // Default to DNS only if not About page
-$search = $_GET['search'] ?? '';
-$tool_id = $_GET['tool'] ?? '';
+// Simple router for clean URLs
+$request_uri = $_SERVER['REQUEST_URI'];
+$path = parse_url($request_uri, PHP_URL_PATH);
+
+// Remove leading slash and split path
+$path_parts = explode('/', trim($path, '/'));
+
+// Initialize variables
+$page = 'home';
+$category = '';
+$search = '';
+$tool_id = '';
+
+// Route handling
+if (count($path_parts) >= 2 && $path_parts[0] === 'category') {
+    // Handle category URLs: /category/dns, /category/performance-testing, etc.
+    $category_slug = $path_parts[1];
+    
+    // Map category slugs to actual category names
+    $category_mapping = [
+        'dns' => 'DNS',
+        'performance-testing' => 'Performance Testing',
+        'ssl-&-security' => 'SSL & Security',
+        'ssl-%26-security' => 'SSL & Security',
+        'ssl---security' => 'SSL & Security',
+        'seo' => 'SEO',
+        'development' => 'Development',
+        'network' => 'Network',
+        'accessibility-testing' => 'Accessibility Testing',
+        'optimization' => 'Optimization',
+        'ai-assistants' => 'AI Assistants',
+        'browser-testing' => 'Browser Testing',
+        'hosting-&-cdn' => 'Hosting & CDN',
+        'hosting-%26-cdn' => 'Hosting & CDN',
+        'hosting---cdn' => 'Hosting & CDN',
+        'design-&-optimization' => 'Design & Optimization',
+        'design-%26-optimization' => 'Design & Optimization',
+        'design---optimization' => 'Design & Optimization',
+        'proxy-sites' => 'Proxy Sites'
+    ];
+    
+    $category = $category_mapping[$category_slug] ?? ucwords(str_replace('-', ' ', $category_slug));
+} elseif (count($path_parts) >= 1 && $path_parts[0] === 'about') {
+    // Handle about page: /about
+    $page = 'about';
+} elseif (count($path_parts) >= 1 && $path_parts[0] === 'all-tools') {
+    // Handle all tools: /all-tools
+    $category = '';
+} elseif (count($path_parts) >= 2 && $path_parts[0] === 'search') {
+    // Handle search: /search/term
+    $search = urldecode($path_parts[1]);
+} else {
+    // Handle query parameters as fallback
+    $page = $_GET['page'] ?? 'home';
+    $category = $_GET['category'] ?? ($page === 'about' ? '' : 'DNS');
+    $search = $_GET['search'] ?? '';
+    $tool_id = $_GET['tool'] ?? '';
+}
+
+// Set default category to DNS if nothing else is specified
+if ($page === 'home' && empty($category) && empty($search)) {
+    $category = 'DNS';
+}
 
 // Handle redirects
 if (!empty($tool_id)) {

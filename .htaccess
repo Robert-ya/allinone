@@ -84,34 +84,34 @@
     RewriteRule ^(.*)$ %1 [R=301,L]
     
     # Handle specific category name conversions first (most specific rules first)
-    RewriteRule ^category/dns/?$ /?category=DNS [L,QSA]
-    RewriteRule ^category/ssl-&-security/?$ /?category=SSL+%26+Security [L,QSA]
-    RewriteRule ^category/ssl-%26-security/?$ /?category=SSL+%26+Security [L,QSA]
-    RewriteRule ^category/performance-testing/?$ /?category=Performance+Testing [L,QSA]
-    RewriteRule ^category/seo/?$ /?category=SEO [L,QSA]
-    RewriteRule ^category/development/?$ /?category=Development [L,QSA]
-    RewriteRule ^category/network/?$ /?category=Network [L,QSA]
-    RewriteRule ^category/accessibility-testing/?$ /?category=Accessibility+Testing [L,QSA]
-    RewriteRule ^category/optimization/?$ /?category=Optimization [L,QSA]
-    RewriteRule ^category/ai-assistants/?$ /?category=AI+Assistants [L,QSA]
-    RewriteRule ^category/browser-testing/?$ /?category=Browser+Testing [L,QSA]
-    RewriteRule ^category/hosting-&-cdn/?$ /?category=Hosting+%26+CDN [L,QSA]
-    RewriteRule ^category/hosting-%26-cdn/?$ /?category=Hosting+%26+CDN [L,QSA]
-    RewriteRule ^category/design-&-optimization/?$ /?category=Design+%26+Optimization [L,QSA]
-    RewriteRule ^category/design-%26-optimization/?$ /?category=Design+%26+Optimization [L,QSA]
-    RewriteRule ^category/proxy-sites/?$ /?category=Proxy+Sites [L,QSA]
+    RewriteRule ^category/dns/?$ /index.php?category=DNS [L,QSA]
+    RewriteRule ^category/ssl-&-security/?$ /index.php?category=SSL+%26+Security [L,QSA]
+    RewriteRule ^category/ssl-%26-security/?$ /index.php?category=SSL+%26+Security [L,QSA]
+    RewriteRule ^category/performance-testing/?$ /index.php?category=Performance+Testing [L,QSA]
+    RewriteRule ^category/seo/?$ /index.php?category=SEO [L,QSA]
+    RewriteRule ^category/development/?$ /index.php?category=Development [L,QSA]
+    RewriteRule ^category/network/?$ /index.php?category=Network [L,QSA]
+    RewriteRule ^category/accessibility-testing/?$ /index.php?category=Accessibility+Testing [L,QSA]
+    RewriteRule ^category/optimization/?$ /index.php?category=Optimization [L,QSA]
+    RewriteRule ^category/ai-assistants/?$ /index.php?category=AI+Assistants [L,QSA]
+    RewriteRule ^category/browser-testing/?$ /index.php?category=Browser+Testing [L,QSA]
+    RewriteRule ^category/hosting-&-cdn/?$ /index.php?category=Hosting+%26+CDN [L,QSA]
+    RewriteRule ^category/hosting-%26-cdn/?$ /index.php?category=Hosting+%26+CDN [L,QSA]
+    RewriteRule ^category/design-&-optimization/?$ /index.php?category=Design+%26+Optimization [L,QSA]
+    RewriteRule ^category/design-%26-optimization/?$ /index.php?category=Design+%26+Optimization [L,QSA]
+    RewriteRule ^category/proxy-sites/?$ /index.php?category=Proxy+Sites [L,QSA]
     
     # Clean URLs for all tools
-    RewriteRule ^all-tools/?$ /?category= [L,QSA]
+    RewriteRule ^all-tools/?$ /index.php?category= [L,QSA]
     
     # Clean URLs for search
-    RewriteRule ^search/([^/]+)/?$ /?search=$1 [L,QSA]
+    RewriteRule ^search/([^/]+)/?$ /index.php?search=$1 [L,QSA]
     
     # Clean URLs for about page
-    RewriteRule ^about/?$ /?page=about [L,QSA]
+    RewriteRule ^about/?$ /index.php?page=about [L,QSA]
     
     # Generic category handler (fallback for any other categories)
-    RewriteRule ^category/([^/]+)/?$ /?category=$1 [L,QSA]
+    RewriteRule ^category/([^/]+)/?$ /index.php?category=$1 [L,QSA]
 </IfModule>
 
 # Enable ETags for better caching
