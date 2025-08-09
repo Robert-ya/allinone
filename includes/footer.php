@@ -16,7 +16,7 @@
                         }
                         foreach ($footer_categories as $cat): 
                         ?>
-                            <li><a href="/category/<?= urlencode(strtolower(str_replace(' ', '-', $cat))) ?>" title="<?= htmlspecialchars($cat) ?> Tools"><?= htmlspecialchars($cat) ?> Tools</a></li>
+                            <li><a href="/category/<?= urlencode(strtolower(str_replace([' ', '&'], ['-', '-'], $cat))) ?>" title="<?= htmlspecialchars($cat) ?> Tools"><?= htmlspecialchars($cat) ?> Tools</a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>

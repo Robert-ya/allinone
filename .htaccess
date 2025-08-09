@@ -83,8 +83,23 @@
     RewriteCond %{REQUEST_URI} ^(.+)/$
     RewriteRule ^(.*)$ %1 [R=301,L]
     
-    # Clean URLs for categories
-    RewriteRule ^category/([^/]+)/?$ /?category=$1 [L,QSA]
+    # Handle specific category name conversions first (most specific rules first)
+    RewriteRule ^category/dns/?$ /?category=DNS [L,QSA]
+    RewriteRule ^category/ssl-&-security/?$ /?category=SSL+%26+Security [L,QSA]
+    RewriteRule ^category/ssl-%26-security/?$ /?category=SSL+%26+Security [L,QSA]
+    RewriteRule ^category/performance-testing/?$ /?category=Performance+Testing [L,QSA]
+    RewriteRule ^category/seo/?$ /?category=SEO [L,QSA]
+    RewriteRule ^category/development/?$ /?category=Development [L,QSA]
+    RewriteRule ^category/network/?$ /?category=Network [L,QSA]
+    RewriteRule ^category/accessibility-testing/?$ /?category=Accessibility+Testing [L,QSA]
+    RewriteRule ^category/optimization/?$ /?category=Optimization [L,QSA]
+    RewriteRule ^category/ai-assistants/?$ /?category=AI+Assistants [L,QSA]
+    RewriteRule ^category/browser-testing/?$ /?category=Browser+Testing [L,QSA]
+    RewriteRule ^category/hosting-&-cdn/?$ /?category=Hosting+%26+CDN [L,QSA]
+    RewriteRule ^category/hosting-%26-cdn/?$ /?category=Hosting+%26+CDN [L,QSA]
+    RewriteRule ^category/design-&-optimization/?$ /?category=Design+%26+Optimization [L,QSA]
+    RewriteRule ^category/design-%26-optimization/?$ /?category=Design+%26+Optimization [L,QSA]
+    RewriteRule ^category/proxy-sites/?$ /?category=Proxy+Sites [L,QSA]
     
     # Clean URLs for all tools
     RewriteRule ^all-tools/?$ /?category= [L,QSA]
@@ -95,15 +110,8 @@
     # Clean URLs for about page
     RewriteRule ^about/?$ /?page=about [L,QSA]
     
-    # Handle category name conversions
-    RewriteRule ^category/dns/?$ /?category=DNS [L,QSA]
-    RewriteRule ^category/ssl-security/?$ /?category=SSL+%26+Security [L,QSA]
-    RewriteRule ^category/performance-testing/?$ /?category=Performance+Testing [L,QSA]
-    RewriteRule ^category/seo/?$ /?category=SEO [L,QSA]
-    RewriteRule ^category/development/?$ /?category=Development [L,QSA]
-    RewriteRule ^category/network/?$ /?category=Network [L,QSA]
-    RewriteRule ^category/accessibility/?$ /?category=Accessibility [L,QSA]
-    RewriteRule ^category/optimization/?$ /?category=Optimization [L,QSA]
+    # Generic category handler (fallback for any other categories)
+    RewriteRule ^category/([^/]+)/?$ /?category=$1 [L,QSA]
 </IfModule>
 
 # Enable ETags for better caching

@@ -126,7 +126,7 @@ include 'includes/header.php';
                 <h2>Tool Categories</h2>
                 <nav class="category-nav" aria-label="Tool categories navigation">
                     <?php foreach ($categories as $cat => $count): ?>
-                        <a href="/category/<?= urlencode(strtolower(str_replace(' ', '-', $cat))) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>" title="Browse <?= $count ?> <?= htmlspecialchars($cat) ?> tools" aria-label="<?= htmlspecialchars($cat) ?> category with <?= $count ?> tools">
+                        <a href="/category/<?= urlencode(strtolower(str_replace([' ', '&'], ['-', '-'], $cat))) ?>" class="category-nav-item <?= $category === $cat ? 'active' : '' ?>" title="Browse <?= $count ?> <?= htmlspecialchars($cat) ?> tools" aria-label="<?= htmlspecialchars($cat) ?> category with <?= $count ?> tools">
                             <div class="nav-icon" aria-hidden="true"><?= getCategoryLogo($cat) ?></div>
                             <span><?= htmlspecialchars($cat) ?></span>
                             <span class="nav-count" aria-label="<?= $count ?> tools in this category"><?= $count ?></span>
