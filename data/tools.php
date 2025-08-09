@@ -1,10 +1,10 @@
 <?php
 $tools = [
-    // DNS Tools - Priority Category
+    // DNS - Priority Category
     [
         'id' => 'intodns',
         'name' => 'IntoDNS',
-        'category' => 'DNS Tools',
+        'category' => 'DNS',
         'description' => 'Comprehensive DNS health checker and domain configuration analyzer.',
         'url' => 'https://intodns.com',
         'tags' => ['free', 'dns', 'health check', 'configuration']
@@ -12,7 +12,7 @@ $tools = [
     [
         'id' => 'dnschecker-org',
         'name' => 'DNS Checker',
-        'category' => 'DNS Tools',
+        'category' => 'DNS',
         'description' => 'Global DNS propagation checker from multiple locations worldwide.',
         'url' => 'https://dnschecker.org',
         'tags' => ['free', 'dns', 'propagation', 'global']
@@ -20,7 +20,7 @@ $tools = [
     [
         'id' => 'mxtoolbox',
         'name' => 'MXToolbox',
-        'category' => 'DNS Tools',
+        'category' => 'DNS',
         'description' => 'Comprehensive DNS and email diagnostic tools including blacklist checking.',
         'url' => 'https://mxtoolbox.com',
         'tags' => ['dns', 'email', 'blacklist', 'diagnostic']
@@ -28,7 +28,7 @@ $tools = [
     [
         'id' => 'whois-lookup',
         'name' => 'Whois.com',
-        'category' => 'DNS Tools',
+        'category' => 'DNS',
         'description' => 'Domain registration information, ownership details, and expiration dates.',
         'url' => 'https://whois.com',
         'tags' => ['free', 'whois', 'domain', 'registration']
@@ -36,7 +36,7 @@ $tools = [
     [
         'id' => 'nslookup',
         'name' => 'NSLookup.io',
-        'category' => 'DNS Tools',
+        'category' => 'DNS',
         'description' => 'Online DNS lookup tool to find DNS records and IP addresses.',
         'url' => 'https://nslookup.io',
         'tags' => ['free', 'dns', 'lookup', 'records']
@@ -44,7 +44,7 @@ $tools = [
     [
         'id' => 'dig-web',
         'name' => 'Dig (Web Interface)',
-        'category' => 'DNS Tools',
+        'category' => 'DNS',
         'description' => 'Web-based DNS lookup tool similar to the dig command line utility.',
         'url' => 'https://toolbox.googleapps.com/apps/dig/',
         'tags' => ['free', 'dns', 'dig', 'google']
@@ -52,7 +52,7 @@ $tools = [
     [
         'id' => 'dns-stuff',
         'name' => 'DNS Stuff',
-        'category' => 'DNS Tools',
+        'category' => 'DNS',
         'description' => 'Complete DNS analysis and network tools for domain troubleshooting.',
         'url' => 'https://dnsstuff.com',
         'tags' => ['dns', 'analysis', 'network', 'troubleshooting']
@@ -159,11 +159,11 @@ $tools = [
         'tags' => ['free', 'security', 'headers', 'analysis']
     ],
 
-    // Network & Diagnostic Tools
+    // Network Network & Diagnostic Tools Diagnostic
     [
         'id' => 'ping-eu',
         'name' => 'Ping.eu',
-        'category' => 'Network Tools',
+        'category' => 'Network',
         'description' => 'Network diagnostic tools including ping, traceroute, port checker, DNS lookup.',
         'url' => 'https://ping.eu',
         'tags' => ['free', 'ping', 'traceroute', 'network', 'diagnostic']
@@ -171,7 +171,7 @@ $tools = [
     [
         'id' => 'downdetector',
         'name' => 'DownDetector',
-        'category' => 'Network Tools',
+        'category' => 'Network',
         'description' => 'Real-time status and outage reports for websites and online services.',
         'url' => 'https://downdetector.com',
         'tags' => ['free', 'outage', 'status', 'reports']
@@ -179,7 +179,7 @@ $tools = [
     [
         'id' => 'uptime-robot',
         'name' => 'UptimeRobot',
-        'category' => 'Network Tools',
+        'category' => 'Network',
         'description' => 'Free website uptime monitoring with SMS and email alerts for downtime.',
         'url' => 'https://uptimerobot.com',
         'tags' => ['free', 'uptime', 'monitoring', 'alerts']
@@ -187,7 +187,7 @@ $tools = [
     [
         'id' => 'can-i-use',
         'name' => 'Can I Use',
-        'category' => 'Network Tools',
+        'category' => 'Network',
         'description' => 'Check browser support for CSS properties, HTML5 features, and JavaScript APIs.',
         'url' => 'https://caniuse.com',
         'tags' => ['browser support', 'css', 'html5', 'compatibility']
@@ -195,7 +195,7 @@ $tools = [
     [
         'id' => 'speedtest-net',
         'name' => 'Speedtest.net',
-        'category' => 'Network Tools',
+        'category' => 'Network',
         'description' => 'Test your internet speed and network latency from global servers.',
         'url' => 'https://speedtest.net',
         'tags' => ['free', 'speed test', 'internet', 'bandwidth']
@@ -203,17 +203,17 @@ $tools = [
     [
         'id' => 'fast-com',
         'name' => 'Fast.com',
-        'category' => 'Network Tools',
+        'category' => 'Network',
         'description' => 'Netflix\'s simple internet speed test focused on video streaming performance.',
         'url' => 'https://fast.com',
         'tags' => ['free', 'speed test', 'netflix', 'streaming']
     ],
 
-    // Development Testing & Validation Tools
+    // Development Testing Development Testing & Validation Tools Validation
     [
         'id' => 'validator-w3',
         'name' => 'W3C Markup Validator',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Check markup validity of web documents in HTML, XHTML, and other formats.',
         'url' => 'https://validator.w3.org',
         'tags' => ['free', 'html', 'validation', 'w3c', 'standards']
@@ -221,7 +221,7 @@ $tools = [
     [
         'id' => 'css-validator',
         'name' => 'W3C CSS Validator',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Validate CSS stylesheets according to W3C standards and specifications.',
         'url' => 'https://jigsaw.w3.org/css-validator/',
         'tags' => ['free', 'css', 'validation', 'w3c', 'standards']
@@ -229,7 +229,7 @@ $tools = [
     [
         'id' => 'json-formatter',
         'name' => 'JSON Formatter',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Format, validate, and beautify JSON data with syntax highlighting.',
         'url' => 'https://jsonformatter.org',
         'tags' => ['json', 'formatter', 'validator', 'free']
@@ -237,7 +237,7 @@ $tools = [
     [
         'id' => 'regex101',
         'name' => 'Regex101',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Online regex tester, debugger with highlighting for PHP, PCRE, Python, and JavaScript.',
         'url' => 'https://regex101.com',
         'tags' => ['regex', 'tester', 'debugger', 'free']
@@ -297,7 +297,7 @@ $tools = [
     [
         'id' => 'tinypng',
         'name' => 'TinyPNG',
-        'category' => 'Optimization Tools',
+        'category' => 'Optimization',
         'description' => 'Smart PNG and JPEG compression service to reduce file sizes while maintaining quality.',
         'url' => 'https://tinypng.com',
         'tags' => ['free', 'compression', 'images', 'optimization']
@@ -305,7 +305,7 @@ $tools = [
     [
         'id' => 'wave',
         'name' => 'WAVE Web Accessibility',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Web accessibility evaluation tool that helps identify accessibility and WCAG errors.',
         'url' => 'https://wave.webaim.org',
         'tags' => ['free', 'accessibility', 'wcag', 'evaluation']
@@ -315,7 +315,7 @@ $tools = [
     [
         'id' => 'whatsmydns',
         'name' => "What's My DNS",
-        'category' => 'DNS Tools',
+        'category' => 'DNS',
         'description' => 'Global DNS propagation checker with clean interface and detailed worldwide results.',
         'url' => 'https://whatsmydns.net',
         'tags' => ['free', 'dns', 'propagation', 'global', 'checker']
@@ -323,7 +323,7 @@ $tools = [
     [
         'id' => 'dns-lookup',
         'name' => 'DNS Lookup',
-        'category' => 'DNS Tools',
+        'category' => 'DNS',
         'description' => 'Professional DNS record lookup tool with support for all record types.',
         'url' => 'https://dnslookup.org',
         'tags' => ['free', 'dns', 'records', 'lookup', 'professional']
@@ -362,7 +362,7 @@ $tools = [
     [
         'id' => 'codepen',
         'name' => 'CodePen',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Online code editor for HTML, CSS, and JavaScript with live preview.',
         'url' => 'https://codepen.io',
         'tags' => ['free', 'code editor', 'html', 'css', 'javascript']
@@ -370,7 +370,7 @@ $tools = [
     [
         'id' => 'jsbin',
         'name' => 'JS Bin',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Collaborative JavaScript debugging and testing environment.',
         'url' => 'https://jsbin.com',
         'tags' => ['free', 'javascript', 'debugging', 'testing', 'collaborative']
@@ -378,7 +378,7 @@ $tools = [
     [
         'id' => 'jsfiddle',
         'name' => 'JSFiddle',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Test and share JavaScript, CSS, HTML or CoffeeScript online.',
         'url' => 'https://jsfiddle.net',
         'tags' => ['free', 'javascript', 'testing', 'sharing', 'coffeescript']
@@ -386,7 +386,7 @@ $tools = [
     [
         'id' => 'reqbin',
         'name' => 'ReqBin',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Online API testing tool for REST, SOAP, and HTTP APIs.',
         'url' => 'https://reqbin.com',
         'tags' => ['free', 'api', 'testing', 'rest', 'soap', 'http']
@@ -396,7 +396,7 @@ $tools = [
     [
         'id' => 'isitdownrightnow',
         'name' => 'Is It Down Right Now',
-        'category' => 'Network Tools',
+        'category' => 'Network',
         'description' => 'Check if a website is down for everyone or just you.',
         'url' => 'https://isitdownrightnow.com',
         'tags' => ['free', 'website', 'status', 'down', 'checker']
@@ -406,7 +406,7 @@ $tools = [
     [
         'id' => 'compressor-io',
         'name' => 'Compressor.io',
-        'category' => 'Optimization Tools',
+        'category' => 'Optimization',
         'description' => 'Optimize and compress JPEG, PNG, SVG, GIF and WEBP images online.',
         'url' => 'https://compressor.io',
         'tags' => ['free', 'image', 'compression', 'optimization', 'webp']
@@ -414,7 +414,7 @@ $tools = [
     [
         'id' => 'kraken-io',
         'name' => 'Kraken.io',
-        'category' => 'Optimization Tools',
+        'category' => 'Optimization',
         'description' => 'Advanced image optimization and compression API and web interface.',
         'url' => 'https://kraken.io',
         'tags' => ['image', 'optimization', 'api', 'compression', 'advanced']
@@ -422,7 +422,7 @@ $tools = [
     [
         'id' => 'minify-js',
         'name' => 'JavaScript Minifier',
-        'category' => 'Optimization Tools',
+        'category' => 'Optimization',
         'description' => 'Minify and compress JavaScript code to reduce file size and load times.',
         'url' => 'https://javascript-minifier.com',
         'tags' => ['free', 'javascript', 'minify', 'compression', 'optimization']
@@ -485,7 +485,7 @@ $tools = [
     [
         'id' => 'codebeautify',
         'name' => 'CodeBeautify',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Multi-language code formatter and beautifier for CSS, HTML, JavaScript, JSON, and more.',
         'url' => 'https://codebeautify.org',
         'tags' => ['free', 'formatter', 'beautifier', 'css', 'html', 'javascript']
@@ -493,7 +493,7 @@ $tools = [
     [
         'id' => 'beautifier-io',
         'name' => 'Beautifier.io',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Advanced JavaScript and JSX beautifier with React support and customization options.',
         'url' => 'https://beautifier.io',
         'tags' => ['free', 'javascript', 'jsx', 'react', 'beautifier', 'formatter']
@@ -501,7 +501,7 @@ $tools = [
     [
         'id' => 'site24x7-html-beautifier',
         'name' => 'Site24x7 HTML Beautifier',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Professional HTML formatter that preserves comments and follows industry standards.',
         'url' => 'https://www.site24x7.com/tools/html-beautifier.html',
         'tags' => ['free', 'html', 'formatter', 'beautifier', 'professional']
@@ -509,7 +509,7 @@ $tools = [
     [
         'id' => 'w3c-link-checker',
         'name' => 'W3C Link Checker',
-        'category' => 'Development Tools',
+        'category' => 'Development',
         'description' => 'Official W3C tool to check links, anchors, and referenced content in web pages.',
         'url' => 'https://validator.w3.org/checklink',
         'tags' => ['free', 'links', 'validator', 'w3c', 'checker']
@@ -519,7 +519,7 @@ $tools = [
     [
         'id' => 'seobility',
         'name' => 'Seobility SEO Checker',
-        'category' => 'SEO Tools',
+        'category' => 'SEO',
         'description' => 'Comprehensive SEO analyzer checking 200+ criteria with prioritized improvement suggestions.',
         'url' => 'https://www.seobility.net/en/seocheck/',
         'tags' => ['free', 'seo', 'analyzer', 'comprehensive', 'audit']
@@ -527,7 +527,7 @@ $tools = [
     [
         'id' => 'seoptimer',
         'name' => 'SEOptimer',
-        'category' => 'SEO Tools',
+        'category' => 'SEO',
         'description' => 'Fast SEO audit tool analyzing 100+ data points with white-label reporting options.',
         'url' => 'https://www.seoptimer.com',
         'tags' => ['free', 'seo', 'audit', 'fast', 'reporting']
@@ -535,7 +535,7 @@ $tools = [
     [
         'id' => 'neil-patel-seo',
         'name' => 'Neil Patel SEO Analyzer',
-        'category' => 'SEO Tools',
+        'category' => 'SEO',
         'description' => 'Free SEO analyzer with step-by-step fix instructions and video tutorials.',
         'url' => 'https://neilpatel.com/seo-analyzer/',
         'tags' => ['free', 'seo', 'analyzer', 'tutorial', 'beginner-friendly']
@@ -543,7 +543,7 @@ $tools = [
     [
         'id' => 'seo-site-checkup',
         'name' => 'SEO Site Checkup',
-        'category' => 'SEO Tools',
+        'category' => 'SEO',
         'description' => 'Weekly SEO monitoring tool tracking 70+ variables with competitor analysis.',
         'url' => 'https://seositecheckup.com',
         'tags' => ['seo', 'monitoring', 'competitor', 'analysis', 'tracking']
@@ -551,7 +551,7 @@ $tools = [
     [
         'id' => 'rankmath-analyzer',
         'name' => 'Rank Math SEO Analyzer',
-        'category' => 'SEO Tools',
+        'category' => 'SEO',
         'description' => 'WordPress-focused SEO analysis tool generating downloadable PDF reports.',
         'url' => 'https://rankmath.com/tools/seo-analyzer/',
         'tags' => ['free', 'seo', 'wordpress', 'pdf', 'analyzer']
@@ -559,7 +559,7 @@ $tools = [
     [
         'id' => 'aioseo-analyzer',
         'name' => 'AIOSEO Analyzer',
-        'category' => 'SEO Tools',
+        'category' => 'SEO',
         'description' => 'WordPress SEO analyzer detecting critical errors with actionable insights.',
         'url' => 'https://aioseo.com/seo-analyzer/',
         'tags' => ['free', 'seo', 'wordpress', 'analyzer', 'insights']
@@ -597,7 +597,7 @@ $tools = [
     [
         'id' => 'testmysite-google',
         'name' => 'Think with Google Test My Site',
-        'category' => 'Network Tools',
+        'category' => 'Network',
         'description' => 'Google tool testing mobile site speed and providing revenue impact estimates.',
         'url' => 'https://testmysite.thinkwithgoogle.com',
         'tags' => ['free', 'google', 'mobile', 'speed', 'revenue']

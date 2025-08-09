@@ -47,18 +47,18 @@ function getCategories($tools) {
         $categories[$category]++;
     }
     
-    // Define priority order with DNS Tools at top
+    // Define priority order with DNS at top
     $categoryOrder = [
-        'DNS Tools',
+        'DNS',
         'Performance Testing', 
         'SSL & Security',
-        'Network Tools',
-        'SEO Tools',
+        'Network',
+        'SEO',
         'AI Assistants',
-        'Development Tools',
+        'Development',
         'Accessibility Testing',
         'Browser Testing',
-        'Optimization Tools',
+        'Optimization',
         'Hosting & CDN',
         'Design & Optimization',
         'Proxy Sites'
@@ -88,16 +88,16 @@ function getCategories($tools) {
  */
 function getCategoryIcon($category) {
     $icons = [
-        'DNS Tools' => '🌐',
+        'DNS' => '🌐',
         'Performance Testing' => '⚡',
         'SSL & Security' => '🔒',
-        'Network Tools' => '📊',
-        'SEO Tools' => '📈',
+        'Network' => '📊',
+        'SEO' => '📈',
         'AI Assistants' => '🤖',
-        'Development Tools' => '💻',
+        'Development' => '💻',
         'Accessibility Testing' => '♿',
         'Browser Testing' => '🌍',
-        'Optimization Tools' => '🚀',
+        'Optimization' => '🚀',
         'Hosting & CDN' => '☁️',
         'Design & Optimization' => '🎨',
         'Proxy Sites' => '🕵️'
