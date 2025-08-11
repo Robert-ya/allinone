@@ -142,11 +142,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Direct window.open approach
                 try {
-                    window.open(url, '_blank', 'noopener,noreferrer');
-                    console.log('Tool opened successfully');
+                    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                    if (newWindow) {
+                        console.log('Tool opened successfully');
+                    } else {
+                        console.log('Window.open blocked, using fallback');
+                        // Fallback: navigate current window
+                        window.location.href = url;
+                    }
                 } catch (e) {
                     console.log('Window.open failed, using fallback');
-                    // Fallback: navigate current window
                     window.location.href = url;
                 }
             }

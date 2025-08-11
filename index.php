@@ -216,7 +216,7 @@ include 'includes/header.php';
             <?php else: ?>
                 <div class="tools-grid">
                     <?php foreach ($filtered_tools as $tool): ?>
-                        <article class="tool-card" data-category="<?= htmlspecialchars($tool['category']) ?>" data-url="<?= htmlspecialchars($tool['url']) ?>" data-tool-id="<?= htmlspecialchars($tool['id']) ?>" onclick="window.open('<?= htmlspecialchars($tool['url']) ?>', '_blank', 'noopener,noreferrer')" style="cursor: pointer;" itemscope itemtype="https://schema.org/SoftwareApplication">
+                        <article class="tool-card" data-category="<?= htmlspecialchars($tool['category']) ?>" data-url="<?= htmlspecialchars($tool['url']) ?>" data-tool-id="<?= htmlspecialchars($tool['id']) ?>" style="cursor: pointer;" itemscope itemtype="https://schema.org/SoftwareApplication">
                             <header class="tool-header">
                                 <div class="tool-name-section">
                                     <div class="tool-logo" aria-hidden="true"><?= getToolLogo($tool['name']) ?></div>
