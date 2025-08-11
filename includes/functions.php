@@ -40,6 +40,18 @@ function getAssetUrl($asset_path) {
     return '/' . $clean_path . '?v=' . $version;
 }
 
+// Generate SRI hash for assets
+function getSriHash($asset_path) {
+    $clean_path = ltrim($asset_path, '/');
+    $file_path = __DIR__ . '/../' . $clean_path;
+    if (file_exists($file_path)) {
+        $content = file_get_contents($file_path);
+        $hash = base64_encode(hash('sha384', $content, true));
+        return 'sha384-' . $hash;
+    }
+    return '';
+}
+
 /**
  * Filter tools based on category and search term
  */

@@ -34,10 +34,10 @@
     <meta name="language" content="English">
     <meta name="geo.region" content="US">
     <meta name="geo.placename" content="United States">
-    <!-- Performance optimized resource loading -->
+    <!-- Performance optimized resource loading with SRI -->
     <link rel="preload" href="<?= getAssetUrl('assets/style.min.css') ?>" as="style">
     <link rel="preload" href="<?= getAssetUrl('assets/main.min.js') ?>" as="script">
-    <link rel="stylesheet" href="<?= getAssetUrl('assets/style.min.css') ?>">
+    <link rel="stylesheet" href="<?= getAssetUrl('assets/style.min.css') ?>" integrity="<?= getSriHash('assets/style.min.css') ?>" crossorigin="anonymous">
     <script>
         // Direct tool redirect handler - embedded to avoid 404 issues
         document.addEventListener('DOMContentLoaded', function() {
@@ -65,7 +65,7 @@
             });
         });
     </script>
-    <script src="<?= getAssetUrl('assets/main.min.js') ?>" defer></script>
+    <script src="<?= getAssetUrl('assets/main.min.js') ?>" defer integrity="<?= getSriHash('assets/main.min.js') ?>" crossorigin="anonymous"></script>
     <link rel="canonical" href="<?= getCanonicalUrl() ?>">
     <link rel="alternate" type="application/rss+xml" title="All In One Host Tools" href="<?= getStructuredDataUrl() ?>/rss.xml">
     
