@@ -161,6 +161,7 @@ AddDefaultCharset UTF-8
 # MIME types for better SEO
 <IfModule mod_mime.c>
     AddType application/javascript .js
+    AddType text/javascript .js
     AddType text/css .css
     AddType image/svg+xml .svg
     AddType application/json .json
@@ -168,6 +169,12 @@ AddDefaultCharset UTF-8
     AddType application/rss+xml .rss
     AddType application/atom+xml .atom
 </IfModule>
+
+# Force correct MIME type for JavaScript files
+<FilesMatch "\.js$">
+    ForceType application/javascript
+    Header set Content-Type "application/javascript; charset=utf-8"
+</FilesMatch>
 
 # Prevent access to sensitive files
 <FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|sql)$">
