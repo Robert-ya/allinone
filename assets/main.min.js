@@ -133,27 +133,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const card = event.target.closest('.tool-card');
         if (card) {
             event.preventDefault();
+            event.stopPropagation();
+            
             const url = card.dataset.url;
             const toolName = card.querySelector('.tool-name').textContent;
-            const toolId = card.dataset.toolId;
             
             if (url) {
                 console.log('Tool clicked:', toolName);
+                console.log('Opening URL:', url);
                 
-                // Direct window.open approach
-                try {
-                    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-                    if (newWindow) {
-                        console.log('Tool opened successfully');
-                    } else {
-                        console.log('Window.open blocked, using fallback');
-                        // Fallback: navigate current window
-                        window.location.href = url;
-                    }
-                } catch (e) {
-                    console.log('Window.open failed, using fallback');
-                    window.location.href = url;
-                }
+                // Simple direct approach
+                window.open(url, '_blank');
+                console.log('Tool redirect executed');
             }
         }
     });
