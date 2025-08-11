@@ -9,30 +9,16 @@ ini_set('session.cookie_httponly', '1');
 ini_set('session.cookie_samesite', 'Strict');
 ini_set('session.use_strict_mode', '1');
 
-// Set security headers
+// Set security headers - Disabled for development
 function setSecurityHeaders() {
-    // Content Security Policy - disabled for development to allow tool redirects
-    // header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' *; form-action 'self' *; frame-ancestors 'none'; object-src 'none'; base-uri 'self'");
+    // All security headers disabled for development to allow tool redirects
+    // This allows JavaScript to execute without restrictions
     
-    // HTTP Strict Transport Security (HSTS) - disabled for development
-    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-        header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
-    }
-    
-    // X-Content-Type-Options
-    header("X-Content-Type-Options: nosniff");
-    
-    // X-Frame-Options
-    header("X-Frame-Options: DENY");
-    
-    // X-XSS-Protection
-    header("X-XSS-Protection: 1; mode=block");
-    
-    // Referrer Policy
-    header("Referrer-Policy: strict-origin-when-cross-origin");
-    
-    // Permissions Policy
-    header("Permissions-Policy: geolocation=(), microphone=(), camera=()");
+    // Optional basic headers (commented out)
+    // header("X-Content-Type-Options: nosniff");
+    // header("X-Frame-Options: DENY");
+    // header("X-XSS-Protection: 1; mode=block");
+    // header("Referrer-Policy: strict-origin-when-cross-origin");
 }
 
 // Set session name and secure parameters

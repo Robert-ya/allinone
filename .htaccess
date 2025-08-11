@@ -37,22 +37,14 @@
     ExpiresByType application/json "access plus 1 hour"
 </IfModule>
 
-# Security headers
+# Security headers - Disabled for development
 <IfModule mod_headers.c>
-    # Prevent clickjacking
-    Header always set X-Frame-Options "DENY"
-    
-    # XSS Protection
-    Header always set X-XSS-Protection "1; mode=block"
-    
-    # MIME type sniffing prevention
-    Header always set X-Content-Type-Options "nosniff"
-    
-    # Referrer Policy
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    
-    # Content Security Policy - Relaxed for tool redirects
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' *; form-action 'self' *; frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+    # Basic security only
+    # Header always set X-Frame-Options "DENY"
+    # Header always set X-XSS-Protection "1; mode=block"  
+    # Header always set X-Content-Type-Options "nosniff"
+    # Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Header always set Content-Security-Policy "..."
     
     # Cache control for static assets with versioning support
     <filesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
