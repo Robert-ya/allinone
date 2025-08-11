@@ -38,7 +38,33 @@
     <link rel="preload" href="<?= getAssetUrl('assets/style.min.css') ?>" as="style">
     <link rel="preload" href="<?= getAssetUrl('assets/main.min.js') ?>" as="script">
     <link rel="stylesheet" href="<?= getAssetUrl('assets/style.min.css') ?>">
-    <script src="/assets/simple-redirect.js"></script>
+    <script>
+        // Direct tool redirect handler - embedded to avoid 404 issues
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Tool redirect handler loaded');
+            
+            // Add click handlers to all tool cards
+            const toolCards = document.querySelectorAll('.tool-card');
+            console.log('Found', toolCards.length, 'tool cards');
+            
+            toolCards.forEach(function(card) {
+                card.addEventListener('click', function(e) {
+                    const url = card.getAttribute('data-url');
+                    const name = card.querySelector('.tool-name').textContent;
+                    
+                    console.log('Tool clicked:', name, 'URL:', url);
+                    
+                    if (url) {
+                        window.open(url, '_blank');
+                        console.log('Tool opened:', url);
+                    }
+                });
+                
+                card.style.cursor = 'pointer';
+                card.setAttribute('title', 'Click to open ' + card.querySelector('.tool-name').textContent);
+            });
+        });
+    </script>
     <script src="<?= getAssetUrl('assets/main.min.js') ?>" defer></script>
     <link rel="canonical" href="<?= getCanonicalUrl() ?>">
     <link rel="alternate" type="application/rss+xml" title="All In One Host Tools" href="<?= getStructuredDataUrl() ?>/rss.xml">
