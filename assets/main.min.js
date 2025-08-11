@@ -1,86 +1,53 @@
-// Enhanced function for cPanel hosting compatibility
+// Simplified and more reliable function for opening tools
 function openTool(url, toolId) {
     console.log('Opening tool with URL:', url);
     
-    // Method 1: Try window.open with immediate fallback check
+    // Method 1: Direct window.open - most reliable
     try {
-        const newWindow = window.open('', '_blank', 'noopener,noreferrer');
-        
-        if (newWindow && !newWindow.closed) {
-            // Window opened successfully, navigate it
-            newWindow.location.href = url;
-            newWindow.focus();
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        if (newWindow) {
             console.log('Tool opened successfully via window.open');
-            return;
-        } else {
-            newWindow && newWindow.close();
+            return true;
         }
     } catch (e) {
         console.warn('window.open failed:', e);
     }
     
-    // Method 2: Direct window.open with URL
+    // Method 2: Create temporary link and click it
     try {
-        const directWindow = window.open(url, '_blank', 'noopener,noreferrer');
-        if (directWindow && !directWindow.closed) {
-            directWindow.focus();
-            console.log('Tool opened via direct window.open');
-            return;
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        
+        // Add to DOM temporarily for better compatibility
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        console.log('Tool opened via link click');
+        return true;
+    } catch (e) {
+        console.warn('Link click failed:', e);
+    }
+    
+    // Method 3: Fallback - copy URL to clipboard and show message
+    try {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(url).then(() => {
+                alert('URL copied to clipboard: ' + url + '\n\nPlease paste it in a new tab.');
+            }).catch(() => {
+                alert('Please manually open: ' + url);
+            });
+        } else {
+            alert('Please manually open: ' + url);
         }
-    } catch (e) {
-        console.warn('Direct window.open failed:', e);
-    }
-    
-    // Method 3: Create and dispatch click event on link
-    try {
-        const tempLink = document.createElement('a');
-        tempLink.href = url;
-        tempLink.target = '_blank';
-        tempLink.rel = 'noopener noreferrer';
-        tempLink.style.display = 'none';
-        
-        document.body.appendChild(tempLink);
-        
-        // Dispatch actual click event for better compatibility
-        const clickEvent = new MouseEvent('click', {
-            view: window,
-            bubbles: true,
-            cancelable: true,
-            ctrlKey: false,
-            metaKey: false,
-            shiftKey: false,
-            button: 0
-        });
-        
-        tempLink.dispatchEvent(clickEvent);
-        
-        // Clean up after a delay
-        setTimeout(() => {
-            if (document.body.contains(tempLink)) {
-                document.body.removeChild(tempLink);
-            }
-        }, 100);
-        
-        console.log('Tool opened via synthetic click event');
-        return;
-    } catch (e) {
-        console.warn('Synthetic click failed:', e);
-    }
-    
-    // Method 4: Simple link click fallback
-    try {
-        const fallbackLink = document.createElement('a');
-        fallbackLink.href = url;
-        fallbackLink.target = '_blank';
-        fallbackLink.rel = 'noopener noreferrer';
-        document.body.appendChild(fallbackLink);
-        fallbackLink.click();
-        document.body.removeChild(fallbackLink);
-        console.log('Tool opened via simple link click');
+        console.log('Tool URL provided as fallback');
+        return false;
     } catch (e) {
         console.error('All methods failed:', e);
-        // Last resort: show alert with URL
         alert('Please manually open: ' + url);
+        return false;
     }
 }
 
@@ -165,16 +132,19 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(event) {
         const card = event.target.closest('.tool-card');
         if (card) {
-            event.preventDefault(); // Prevent any default action
+            event.preventDefault();
+            event.stopPropagation();
+            
             const url = card.dataset.url;
             const toolName = card.querySelector('.tool-name').textContent;
-            const toolId = card.dataset.toolId;
             
             if (url) {
                 console.log('Tool clicked:', toolName);
+                console.log('Opening URL:', url);
                 
-                // Use the enhanced openTool function
-                openTool(url, toolId);
+                // Simple direct approach
+                window.open(url, '_blank');
+                console.log('Tool redirect executed');
             }
         }
     });
