@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php 
-        if (isset($page) && $page === 'about') {
+        // Define variables if not set to avoid undefined variable warnings
+        $page = $page ?? '';
+        $search = $search ?? '';
+        $category = $category ?? '';
+        $tools = $tools ?? [];
+        
+        if ($page === 'about') {
             echo 'About All In One Host - Web Development Tools Directory';
-        } elseif (isset($search) && !empty($search)) {
+        } elseif (!empty($search)) {
             echo 'Search: ' . htmlspecialchars($search) . ' - All In One Host';
-        } elseif (isset($category) && !empty($category) && $category !== 'DNS') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo htmlspecialchars($category) . ' Tools - All In One Host';
         } else {
             echo 'All In One Host - 72 Online Web Development Tools';
         }
     ?></title>
     <meta name="description" content="<?php 
-        if (isset($page) && $page === 'about') {
+        if ($page === 'about') {
             echo 'All In One Host - Your comprehensive directory for web hosting,development and devops tools. 72 curated online tools across 13 categories. No downloads required.';
-        } elseif (isset($search) && !empty($search)) {
+        } elseif (!empty($search)) {
             echo 'Find ' . htmlspecialchars($search) . ' tools in your comprehensive directory for web hosting,development and devops tools. 72 online tools across 13 categories.';
-        } elseif (isset($category) && !empty($category) && $category !== 'DNS') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo htmlspecialchars($category) . ' tools from your comprehensive directory for web hosting,development and devops. Professional online tools accessible instantly.';
         } else {
             echo 'All In One Host - Your comprehensive directory for web hosting,development and devops tools. 72 online tools across 13 specialized categories.';
@@ -76,7 +82,7 @@
         "@type": ["WebSite", "SoftwareApplication"],
         "name": "All In One Host",
         "alternateName": "All In One Host Tools Directory",
-        "description": "Your comprehensive directory for web hosting,development and devops tools. <?= isset($tools) ? count($tools) : 72 ?> essential online tools for professionals.",
+        "description": "Your comprehensive directory for web hosting,development and devops tools. <?= count($tools) ?: 72 ?> essential online tools for professionals.",
         "url": "<?= getStructuredDataUrl() ?>",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web Browser",
@@ -113,18 +119,18 @@
     <meta property="og:site_name" content="All In One Host">
     <meta property="og:url" content="<?= getCanonicalUrl() ?>">
     <meta property="og:title" content="<?php 
-        if (isset($page) && $page === 'about') {
+        if ($page === 'about') {
             echo 'About All In One Host - 72 Professional Online Web Development Tools Directory';
-        } elseif (isset($category) && !empty($category) && $category !== 'DNS') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo htmlspecialchars($category) . ' Tools - All In One Host Professional Directory';
         } else {
             echo 'All In One Host - 72 Essential Online Web Tools for Developers & System Administrators';
         }
     ?>">
     <meta property="og:description" content="<?php 
-        if (isset($page) && $page === 'about') {
+        if ($page === 'about') {
             echo 'Comprehensive directory of 72 curated online web tools for developers, system administrators, and hosting professionals. DNS, SEO, performance, security, accessibility testing. No downloads required.';
-        } elseif (isset($category) && !empty($category) && $category !== 'DNS') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo 'Professional ' . htmlspecialchars($category) . ' tools for web development, hosting, and system administration. All tools accessible online instantly.';
         } else {
             echo 'Discover 72 essential online web tools: DNS, SEO, performance testing, security scanning, accessibility testing, and development utilities.';
@@ -146,18 +152,18 @@
     <meta name="twitter:site" content="@allinonehost">
     <meta name="twitter:creator" content="@allinonehost">
     <meta name="twitter:title" content="<?php 
-        if (isset($page) && $page === 'about') {
+        if ($page === 'about') {
             echo 'About All In One Host - 72 Professional Online Web Development Tools';
-        } elseif (isset($category) && !empty($category) && $category !== 'DNS') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo htmlspecialchars($category) . ' Tools - All In One Host Professional Directory';
         } else {
             echo 'All In One Host - 72 Essential Online Web Tools for Developers';
         }
     ?>">
     <meta name="twitter:description" content="<?php 
-        if (isset($page) && $page === 'about') {
+        if ($page === 'about') {
             echo 'Your comprehensive directory for web hosting,development and devops tools. 72 curated online tools across 13 categories. No downloads required.';
-        } elseif (isset($category) && !empty($category) && $category !== 'DNS') {
+        } elseif (!empty($category) && $category !== 'DNS') {
             echo 'Professional ' . htmlspecialchars($category) . ' tools for web development and system administration. All accessible online instantly.';
         } else {
             echo 'Your comprehensive directory for web hosting,development and devops tools across 13 specialized categories.';
@@ -210,8 +216,8 @@
                 </div>
             </button>
             <div class="nav-menu" id="navMenu">
-                <a href="/" class="nav-link <?= (!isset($page) || $page === 'home') ? 'active' : '' ?>">Home</a>
-                <a href="/about" class="nav-link <?= ($page ?? '') === 'about' ? 'active' : '' ?>">About</a>
+                <a href="/" class="nav-link <?= ($page === '' || $page === 'home') ? 'active' : '' ?>">Home</a>
+                <a href="/about" class="nav-link <?= $page === 'about' ? 'active' : '' ?>">About</a>
                 <form method="GET" action="" class="header-search-form">
                     <input type="text" name="search" placeholder="Search tools..." value="<?= htmlspecialchars($_GET['search'] ?? '') ?>" class="header-search-input">
                     <button type="submit" class="header-search-btn">
