@@ -11,8 +11,8 @@ ini_set('session.use_strict_mode', '1');
 
 // Set security headers
 function setSecurityHeaders() {
-    // Content Security Policy - relaxed for tool redirects and JavaScript execution
-    header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' *; form-action 'self' *; frame-ancestors 'none'; object-src 'none'; base-uri 'self'");
+    // Content Security Policy - disabled for development to allow tool redirects
+    // header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' *; form-action 'self' *; frame-ancestors 'none'; object-src 'none'; base-uri 'self'");
     
     // HTTP Strict Transport Security (HSTS) - disabled for development
     if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {

@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(event) {
         const card = event.target.closest('.tool-card');
         if (card) {
+            event.preventDefault();
             const url = card.dataset.url;
             const toolName = card.querySelector('.tool-name').textContent;
             const toolId = card.dataset.toolId;
@@ -139,8 +140,15 @@ document.addEventListener('DOMContentLoaded', function() {
             if (url) {
                 console.log('Tool clicked:', toolName);
                 
-                // Use the enhanced openTool function
-                openTool(url, toolId);
+                // Direct window.open approach
+                try {
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                    console.log('Tool opened successfully');
+                } catch (e) {
+                    console.log('Window.open failed, using fallback');
+                    // Fallback: navigate current window
+                    window.location.href = url;
+                }
             }
         }
     });
