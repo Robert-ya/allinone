@@ -62,6 +62,9 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
+    # Allow direct access to assets (CSS, JS, images)
+    RewriteRule ^assets/(.*)$ - [L]
+    
     # Force HTTPS (when available) - Compatible with cPanel hosting
     RewriteCond %{HTTPS} off
     RewriteCond %{HTTP:X-Forwarded-Proto} !https
