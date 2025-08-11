@@ -179,59 +179,7 @@ function handleToolRedirect($tool_id, $tools) {
     exit;
 }
 
-/**
- * Sanitize input data
- */
-function sanitizeInput($data) {
-    if (is_array($data)) {
-        return array_map('sanitizeInput', $data);
-    }
-    return htmlspecialchars(strip_tags(trim($data)), ENT_QUOTES, 'UTF-8');
-}
 
-/**
- * Generate a unique ID for new tools
- */
-function generateToolId($name) {
-    return strtolower(preg_replace('/[^a-zA-Z0-9]/', '-', $name));
-}
-
-/**
- * Add a new tool (for admin functionality)
- */
-function addTool($data) {
-    // This is a simplified version - in a real application,
-    // you would save to a database or file
-    $new_tool = [
-        'id' => generateToolId($data['name']),
-        'name' => sanitizeInput($data['name']),
-        'category' => !empty($data['new_category']) ? sanitizeInput($data['new_category']) : sanitizeInput($data['category']),
-        'description' => sanitizeInput($data['description']),
-        'url' => filter_var($data['url'], FILTER_VALIDATE_URL),
-        'tags' => array_map('trim', explode(',', sanitizeInput($data['tags'])))
-    ];
-    
-    // Log the addition
-    error_log("New tool added: " . json_encode($new_tool));
-    
-    return $new_tool;
-}
-
-/**
- * Edit an existing tool (for admin functionality)
- */
-function editTool($data) {
-    // Implementation would depend on storage method
-    error_log("Tool edited: {$data['tool_id']}");
-}
-
-/**
- * Delete a tool (for admin functionality)
- */
-function deleteTool($tool_id) {
-    // Implementation would depend on storage method
-    error_log("Tool deleted: {$tool_id}");
-}
 
 /**
  * Check if URL is accessible

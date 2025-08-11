@@ -22,10 +22,7 @@ DNS tools are prioritized at the top of categories, including integrations like 
 - **Responsive Design:** Flexible layouts using flexbox and modern CSS techniques.
 - **Color System:** Consistent color palette using hex codes for grays (`#f8fafc`, `#e5e7eb`, `#1f2937`).
 
-## Authentication UI
-- **Admin Login:** Dedicated, centered login form styled like a card.
-- **Session Management:** Logout button included in admin header for easy session control.
-- **Access Control:** Separate admin styling indicates role-based interface differentiation.
+
 
 ## Navigation Structure
 - **Sticky Header:** Navigation bar with sticky positioning and shadow for improved UX.

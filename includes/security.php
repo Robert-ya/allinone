@@ -52,10 +52,7 @@ function startSecureSession() {
     }
 }
 
-// Generate CSRF token field
-function csrf_token_field() {
-    return '<input type="hidden" name="csrf_token" value="' . htmlspecialchars($_SESSION['csrf_token'] ?? '') . '">';
-}
+
 
 // Verify CSRF token
 function verify_csrf_token($token) {
