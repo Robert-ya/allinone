@@ -165,7 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(event) {
         const card = event.target.closest('.tool-card');
         if (card) {
-            event.preventDefault(); // Prevent any default action
             const url = card.dataset.url;
             const toolName = card.querySelector('.tool-name').textContent;
             const toolId = card.dataset.toolId;

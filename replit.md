@@ -6,6 +6,7 @@
 
 ### Recent Changes (August 2025)
 - **Migration Completed**: Successfully migrated from Replit Agent to Replit environment with full PHP 8.2 compatibility
+- **Tool Redirect Fix**: Fixed conflicting click handlers that prevented tool cards from opening external websites - removed duplicate onclick attributes and optimized JavaScript event delegation
 - **Enhanced Tool Redirects**: Implemented advanced multi-method tool opening system specifically optimized for cPanel hosting environments with 4 fallback methods
 - **Deployment Ready**: Created comprehensive cPanel deployment guide and optimized asset paths for production hosting
 - **Fixed Default Homepage**: Updated homepage to always show DNS tools by default and maintain consistent header across all pages
