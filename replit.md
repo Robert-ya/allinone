@@ -47,21 +47,18 @@ Updated tagline: "Your comprehensive directory for web hosting,development and d
 ## System Architecture
 
 ### Frontend Architecture
-- **CSS Organization**: Modular stylesheet approach with separate files for public (`style.css`) and admin (`admin.css`) interfaces
+- **CSS Organization**: Modular stylesheet approach with main stylesheet (`style.css`) for the public interface
 - **Design System**: Consistent use of CSS custom properties and modern design tokens
 - **Typography**: System font stack using `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto` for cross-platform consistency
 - **Layout Strategy**: Container-based max-width layouts (1200px) with responsive padding
 
 ### Styling Patterns
 - **Reset Approach**: Universal box-sizing reset with margin/padding normalization
-- **Component-Based CSS**: Modular class naming convention (`.admin-container`, `.login-form`, `.site-header`)
+- **Component-Based CSS**: Modular class naming convention (`.tool-card`, `.category-filter`, `.site-header`)
 - **Responsive Design**: Flexible layouts using flexbox and modern CSS techniques
 - **Color System**: Consistent color palette using hex values for grays (#f8fafc, #e5e7eb, #1f2937)
 
-### Authentication UI
-- **Admin Login**: Dedicated login form with centered layout and card-style design
-- **Session Management**: Logout button implementation in admin header
-- **Access Control**: Separate admin styling suggests role-based interface differentiation
+
 
 ### Navigation Structure
 - **Sticky Header**: Position sticky navigation with shadow effects for enhanced UX

@@ -9,16 +9,17 @@ ini_set('session.cookie_httponly', '1');
 ini_set('session.cookie_samesite', 'Strict');
 ini_set('session.use_strict_mode', '1');
 
-// Set security headers - Disabled for development
+// Set security headers - Carefully configured to maintain tool redirect functionality
 function setSecurityHeaders() {
-    // All security headers disabled for development to allow tool redirects
-    // This allows JavaScript to execute without restrictions
+    // Basic security headers that don't interfere with tool redirects
+    header("X-Content-Type-Options: nosniff");
+    header("X-Frame-Options: DENY");
+    header("X-XSS-Protection: 1; mode=block");
+    header("Referrer-Policy: strict-origin-when-cross-origin");
     
-    // Optional basic headers (commented out)
-    // header("X-Content-Type-Options: nosniff");
-    // header("X-Frame-Options: DENY");
-    // header("X-XSS-Protection: 1; mode=block");
-    // header("Referrer-Policy: strict-origin-when-cross-origin");
+    // CSP with frame-ancestors directive instead of X-Frame-Options for better control
+    // Allows inline scripts needed for tool redirects while maintaining security
+    header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' *; form-action 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'");
 }
 
 // Set session name and secure parameters
@@ -51,10 +52,7 @@ function startSecureSession() {
     }
 }
 
-// Generate CSRF token field
-function csrf_token_field() {
-    return '<input type="hidden" name="csrf_token" value="' . htmlspecialchars($_SESSION['csrf_token'] ?? '') . '">';
-}
+
 
 // Verify CSRF token
 function verify_csrf_token($token) {
