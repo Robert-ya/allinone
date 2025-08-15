@@ -95,6 +95,14 @@ $tools = [
         'tags' => ['free', 'ssl', 'security', 'https', 'certificate']
     ],
     [
+        'id' => 'ssl-shopper',
+        'name' => 'SSL Shopper SSL Checker',
+        'category' => 'SSL & Security',
+        'description' => 'Fast SSL certificate checker to diagnose installation problems and verify SSL configurations.',
+        'url' => 'https://www.sslshopper.com/ssl-checker.html',
+        'tags' => ['free', 'ssl', 'certificate', 'checker', 'verification']
+    ],
+    [
         'id' => 'whynopadlock',
         'name' => 'Why No Padlock?',
         'category' => 'SSL & Security',
