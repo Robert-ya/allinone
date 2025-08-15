@@ -332,11 +332,11 @@ $tools = [
         'tags' => ['free', 'javascript', 'minify', 'compression', 'optimization']
     ],
 
-    // Additional Browser Testing
+    // Additional Proxy Tools
     [
         'id' => 'browserling',
         'name' => 'Browserling',
-        'category' => 'Browser Testing',
+        'category' => 'Proxy Sites',
         'description' => 'Live interactive cross-browser testing on real browsers in the cloud.',
         'url' => 'https://browserling.com',
         'tags' => ['browser testing', 'cross-browser', 'live', 'cloud', 'interactive']
