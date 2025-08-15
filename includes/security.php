@@ -3,8 +3,13 @@
  * Security headers and configurations
  */
 
-// Set secure session settings - adjusted for development
-ini_set('session.cookie_secure', '0'); // Allow HTTP in development
+// Detect if running on HTTPS
+$isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || 
+           $_SERVER['SERVER_PORT'] == 443 || 
+           (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+
+// Set secure session settings - dynamically based on HTTPS
+ini_set('session.cookie_secure', $isHttps ? '1' : '0');
 ini_set('session.cookie_httponly', '1');
 ini_set('session.cookie_samesite', 'Strict');
 ini_set('session.use_strict_mode', '1');
@@ -24,14 +29,21 @@ function setSecurityHeaders() {
 
 // Set session name and secure parameters
 function startSecureSession() {
-    session_name('SECURE_SESSION_ID');
+    // Detect HTTPS within function as well
+    $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || 
+               $_SERVER['SERVER_PORT'] == 443 || 
+               (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
     
-    // Configure session parameters
+    // Use secure cookie prefix when on HTTPS
+    $sessionName = $isHttps ? '__Secure-SESSION_ID' : 'SESSION_ID';
+    session_name($sessionName);
+    
+    // Configure session parameters with proper security
     session_set_cookie_params([
         'lifetime' => 3600, // 1 hour
         'path' => '/',
         'domain' => $_SERVER['HTTP_HOST'] ?? '',
-        'secure' => false, // Allow HTTP in development
+        'secure' => $isHttps, // Enable secure flag on HTTPS
         'httponly' => true,
         'samesite' => 'Strict'
     ]);
