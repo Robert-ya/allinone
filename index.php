@@ -38,7 +38,6 @@ if (count($path_parts) >= 2 && $path_parts[0] === 'category') {
     
     // Map category slugs to actual category names
     $category_mapping = [
-        'dns' => 'DNS',
         'performance-testing' => 'Performance Testing',
         'ssl-&-security' => 'SSL & Security',
         'ssl-%26-security' => 'SSL & Security',

@@ -1,62 +1,5 @@
 <?php
 $tools = [
-    // DNS - Priority Category
-    [
-        'id' => 'intodns',
-        'name' => 'IntoDNS',
-        'category' => 'DNS',
-        'description' => 'Comprehensive DNS health checker and domain configuration analyzer.',
-        'url' => 'https://intodns.com',
-        'tags' => ['free', 'dns', 'health check', 'configuration']
-    ],
-    [
-        'id' => 'dnschecker-org',
-        'name' => 'DNS Checker',
-        'category' => 'DNS',
-        'description' => 'Global DNS propagation checker from multiple locations worldwide.',
-        'url' => 'https://dnschecker.org',
-        'tags' => ['free', 'dns', 'propagation', 'global']
-    ],
-    [
-        'id' => 'mxtoolbox',
-        'name' => 'MXToolbox',
-        'category' => 'DNS',
-        'description' => 'Comprehensive DNS and email diagnostic tools including blacklist checking.',
-        'url' => 'https://mxtoolbox.com',
-        'tags' => ['dns', 'email', 'blacklist', 'diagnostic']
-    ],
-    [
-        'id' => 'whois-lookup',
-        'name' => 'Whois.com',
-        'category' => 'DNS',
-        'description' => 'Domain registration information, ownership details, and expiration dates.',
-        'url' => 'https://whois.com',
-        'tags' => ['free', 'whois', 'domain', 'registration']
-    ],
-    [
-        'id' => 'nslookup',
-        'name' => 'NSLookup.io',
-        'category' => 'DNS',
-        'description' => 'Online DNS lookup tool to find DNS records and IP addresses.',
-        'url' => 'https://nslookup.io',
-        'tags' => ['free', 'dns', 'lookup', 'records']
-    ],
-    [
-        'id' => 'dig-web',
-        'name' => 'Dig (Web Interface)',
-        'category' => 'DNS',
-        'description' => 'Web-based DNS lookup tool similar to the dig command line utility.',
-        'url' => 'https://toolbox.googleapps.com/apps/dig/',
-        'tags' => ['free', 'dns', 'dig', 'google']
-    ],
-    [
-        'id' => 'dns-stuff',
-        'name' => 'DNS Stuff',
-        'category' => 'DNS',
-        'description' => 'Complete DNS analysis and network tools for domain troubleshooting.',
-        'url' => 'https://dnsstuff.com',
-        'tags' => ['dns', 'analysis', 'network', 'troubleshooting']
-    ],
 
     // Performance & Speed Testing
     [
@@ -75,47 +18,7 @@ $tools = [
         'url' => 'https://developers.google.com/speed/pagespeed/insights/',
         'tags' => ['free', 'google', 'performance', 'mobile', 'seo']
     ],
-    [
-        'id' => 'webpagetest',
-        'name' => 'WebPageTest',
-        'category' => 'Performance Testing',
-        'description' => 'Free website speed test from multiple global locations using real browsers.',
-        'url' => 'https://webpagetest.org',
-        'tags' => ['free', 'speed test', 'global', 'real browsers']
-    ],
 
-    [
-        'id' => 'google-speed-test',
-        'name' => 'Google Speed Test',
-        'category' => 'Performance Testing',
-        'description' => 'Test your internet speed and website loading times with Google infrastructure.',
-        'url' => 'https://speed.google.com',
-        'tags' => ['free', 'google', 'speed test', 'internet']
-    ],
-    [
-        'id' => 'tools-pingdom',
-        'name' => 'Pingdom Tools',
-        'category' => 'Performance Testing',
-        'description' => 'Free website speed test tool by Pingdom with performance insights.',
-        'url' => 'https://tools.pingdom.com',
-        'tags' => ['free', 'speed test', 'performance', 'insights']
-    ],
-    [
-        'id' => 'lighthouse',
-        'name' => 'Lighthouse',
-        'category' => 'Performance Testing',
-        'description' => 'Google Lighthouse automated tool for improving web page quality.',
-        'url' => 'https://developers.google.com/web/tools/lighthouse',
-        'tags' => ['free', 'google', 'lighthouse', 'quality', 'seo']
-    ],
-    [
-        'id' => 'keycdn-speed',
-        'name' => 'KeyCDN Speed Test',
-        'category' => 'Performance Testing',
-        'description' => 'Website speed test from 14 global locations with detailed reports.',
-        'url' => 'https://tools.keycdn.com/speed',
-        'tags' => ['free', 'speed test', 'global', 'cdn']
-    ],
 
     // SSL & Security Tools
     [
@@ -125,14 +28,6 @@ $tools = [
         'description' => 'Deep analysis of SSL/TLS configuration and security grade for websites.',
         'url' => 'https://www.ssllabs.com/ssltest/',
         'tags' => ['free', 'ssl', 'security', 'https', 'certificate']
-    ],
-    [
-        'id' => 'sslchecker',
-        'name' => 'SSL Checker',
-        'category' => 'SSL & Security',
-        'description' => 'Free SSL certificate checker and verification tool for websites.',
-        'url' => 'https://sslchecker.com',
-        'tags' => ['free', 'ssl', 'certificate', 'checker', 'verification']
     ],
     [
         'id' => 'whynopadlock',
@@ -169,44 +64,12 @@ $tools = [
         'tags' => ['free', 'ping', 'traceroute', 'network', 'diagnostic']
     ],
     [
-        'id' => 'downdetector',
-        'name' => 'DownDetector',
-        'category' => 'Network',
-        'description' => 'Real-time status and outage reports for websites and online services.',
-        'url' => 'https://downdetector.com',
-        'tags' => ['free', 'outage', 'status', 'reports']
-    ],
-    [
-        'id' => 'uptime-robot',
-        'name' => 'UptimeRobot',
-        'category' => 'Network',
-        'description' => 'Free website uptime monitoring with SMS and email alerts for downtime.',
-        'url' => 'https://uptimerobot.com',
-        'tags' => ['free', 'uptime', 'monitoring', 'alerts']
-    ],
-    [
         'id' => 'can-i-use',
         'name' => 'Can I Use',
         'category' => 'Network',
         'description' => 'Check browser support for CSS properties, HTML5 features, and JavaScript APIs.',
         'url' => 'https://caniuse.com',
         'tags' => ['browser support', 'css', 'html5', 'compatibility']
-    ],
-    [
-        'id' => 'speedtest-net',
-        'name' => 'Speedtest.net',
-        'category' => 'Network',
-        'description' => 'Test your internet speed and network latency from global servers.',
-        'url' => 'https://speedtest.net',
-        'tags' => ['free', 'speed test', 'internet', 'bandwidth']
-    ],
-    [
-        'id' => 'fast-com',
-        'name' => 'Fast.com',
-        'category' => 'Network',
-        'description' => 'Netflix\'s simple internet speed test focused on video streaming performance.',
-        'url' => 'https://fast.com',
-        'tags' => ['free', 'speed test', 'netflix', 'streaming']
     ],
 
     // Development Testing Development Testing & Validation Tools Validation
@@ -253,14 +116,6 @@ $tools = [
         'tags' => ['ai', 'chatbot', 'openai', 'conversation', 'coding']
     ],
     [
-        'id' => 'claude',
-        'name' => 'Claude',
-        'category' => 'AI Assistants',
-        'description' => 'AI assistant by Anthropic for helpful, harmless, and honest conversations.',
-        'url' => 'https://claude.ai',
-        'tags' => ['ai', 'anthropic', 'assistant', 'helpful', 'conversation']
-    ],
-    [
         'id' => 'gemini',
         'name' => 'Google Gemini',
         'category' => 'AI Assistants',
@@ -275,14 +130,6 @@ $tools = [
         'description' => 'AI-powered search engine that provides accurate answers with real-time sources.',
         'url' => 'https://perplexity.ai',
         'tags' => ['ai', 'search', 'sources', 'research', 'answers']
-    ],
-    [
-        'id' => 'deepseek',
-        'name' => 'DeepSeek',
-        'category' => 'AI Assistants',
-        'description' => 'Advanced AI model focused on reasoning and mathematical problem-solving.',
-        'url' => 'https://chat.deepseek.com',
-        'tags' => ['ai', 'reasoning', 'math', 'problem-solving', 'deepseek']
     ],
     [
         'id' => 'grok',
@@ -311,23 +158,6 @@ $tools = [
         'tags' => ['free', 'accessibility', 'wcag', 'evaluation']
     ],
 
-    // Additional DNS Tools
-    [
-        'id' => 'whatsmydns',
-        'name' => "What's My DNS",
-        'category' => 'DNS',
-        'description' => 'Global DNS propagation checker with clean interface and detailed worldwide results.',
-        'url' => 'https://whatsmydns.net',
-        'tags' => ['free', 'dns', 'propagation', 'global', 'checker']
-    ],
-    [
-        'id' => 'dns-lookup',
-        'name' => 'DNS Lookup',
-        'category' => 'DNS',
-        'description' => 'Professional DNS record lookup tool with support for all record types.',
-        'url' => 'https://dnslookup.org',
-        'tags' => ['free', 'dns', 'records', 'lookup', 'professional']
-    ],
 
     // Additional Performance Testing
     [
@@ -360,14 +190,6 @@ $tools = [
 
     // Additional Development Tools
     [
-        'id' => 'codepen',
-        'name' => 'CodePen',
-        'category' => 'Development',
-        'description' => 'Online code editor for HTML, CSS, and JavaScript with live preview.',
-        'url' => 'https://codepen.io',
-        'tags' => ['free', 'code editor', 'html', 'css', 'javascript']
-    ],
-    [
         'id' => 'jsbin',
         'name' => 'JS Bin',
         'category' => 'Development',
@@ -393,14 +215,6 @@ $tools = [
     ],
 
     // Additional Network Tools
-    [
-        'id' => 'isitdownrightnow',
-        'name' => 'Is It Down Right Now',
-        'category' => 'Network',
-        'description' => 'Check if a website is down for everyone or just you.',
-        'url' => 'https://isitdownrightnow.com',
-        'tags' => ['free', 'website', 'status', 'down', 'checker']
-    ],
 
     // Additional Optimization Tools
     [
@@ -410,14 +224,6 @@ $tools = [
         'description' => 'Optimize and compress JPEG, PNG, SVG, GIF and WEBP images online.',
         'url' => 'https://compressor.io',
         'tags' => ['free', 'image', 'compression', 'optimization', 'webp']
-    ],
-    [
-        'id' => 'kraken-io',
-        'name' => 'Kraken.io',
-        'category' => 'Optimization',
-        'description' => 'Advanced image optimization and compression API and web interface.',
-        'url' => 'https://kraken.io',
-        'tags' => ['image', 'optimization', 'api', 'compression', 'advanced']
     ],
     [
         'id' => 'minify-js',
@@ -436,14 +242,6 @@ $tools = [
         'description' => 'Live interactive cross-browser testing on real browsers in the cloud.',
         'url' => 'https://browserling.com',
         'tags' => ['browser testing', 'cross-browser', 'live', 'cloud', 'interactive']
-    ],
-    [
-        'id' => 'lambdatest',
-        'name' => 'LambdaTest',
-        'category' => 'Browser Testing',
-        'description' => 'Cross browser testing cloud platform for testing websites across browsers.',
-        'url' => 'https://lambdatest.com',
-        'tags' => ['browser testing', 'cross-browser', 'cloud', 'automated', 'responsive']
     ],
 
 
@@ -567,14 +365,6 @@ $tools = [
 
     // Additional Performance Testing Tools
     [
-        'id' => 'total-validator',
-        'name' => 'Total Validator',
-        'category' => 'Performance Testing',
-        'description' => 'Comprehensive validator testing HTML, CSS, accessibility, broken links, and spelling.',
-        'url' => 'https://totalvalidator.com',
-        'tags' => ['validator', 'html', 'css', 'accessibility', 'links']
-    ],
-    [
         'id' => 'validbot',
         'name' => 'ValidBot',
         'category' => 'Performance Testing',
@@ -593,17 +383,6 @@ $tools = [
         'tags' => ['security', 'vulnerability', 'scanner', 'sqli', 'xss']
     ],
 
-    // Additional Network Tools
-    [
-        'id' => 'testmysite-google',
-        'name' => 'Think with Google Test My Site',
-        'category' => 'Network',
-        'description' => 'Google tool testing mobile site speed and providing revenue impact estimates.',
-        'url' => 'https://testmysite.thinkwithgoogle.com',
-        'tags' => ['free', 'google', 'mobile', 'speed', 'revenue']
-    ],
-
-    // Additional Accessibility Tools
 ];
 
 ?>
