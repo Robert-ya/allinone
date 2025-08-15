@@ -153,6 +153,39 @@ function getCategoryLogo($category) {
             <path d="M9.5 9.5l5 5M14.5 9.5l-5 5" stroke="#6366F1" stroke-width="1" stroke-linecap="round"/>
         </svg>',
         
+'DNS' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#1E40AF" stroke-width="2" fill="#DBEAFE"/>
+            <circle cx="12" cy="12" r="3" stroke="#1E40AF" stroke-width="2"/>
+            <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="#1E40AF" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="6" r="1" fill="#1E40AF"/>
+            <circle cx="18" cy="12" r="1" fill="#1E40AF"/>
+            <circle cx="12" cy="18" r="1" fill="#1E40AF"/>
+            <circle cx="6" cy="12" r="1" fill="#1E40AF"/>
+        </svg>',
+        'Network' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#7C3AED" stroke-width="2" fill="#F5F3FF"/>
+            <circle cx="12" cy="12" r="2" fill="#7C3AED"/>
+            <circle cx="8" cy="8" r="1.5" stroke="#7C3AED" stroke-width="1" fill="#F5F3FF"/>
+            <circle cx="16" cy="8" r="1.5" stroke="#7C3AED" stroke-width="1" fill="#F5F3FF"/>
+            <circle cx="8" cy="16" r="1.5" stroke="#7C3AED" stroke-width="1" fill="#F5F3FF"/>
+            <circle cx="16" cy="16" r="1.5" stroke="#7C3AED" stroke-width="1" fill="#F5F3FF"/>
+            <path d="M10 10l4 4M14 10l-4 4M10 14h4M12 10v4" stroke="#7C3AED" stroke-width="1" stroke-linecap="round"/>
+        </svg>',
+        'SEO' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#059669" stroke-width="2" fill="#ECFDF5"/>
+            <path d="M16 8l-6 6-2-2" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="1" fill="#059669"/>
+            <path d="M7 7l10 10M17 7l-10 10" stroke="#10B981" stroke-width="0.5" stroke-linecap="round" opacity="0.3"/>
+            <circle cx="19" cy="5" r="1" fill="#059669"/>
+            <circle cx="5" cy="19" r="1" fill="#059669"/>
+        </svg>',
+        'Development' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="14" rx="2" stroke="#DC2626" stroke-width="2" fill="#FEF2F2"/>
+            <circle cx="6" cy="8" r="1" fill="#DC2626"/>
+            <circle cx="9" cy="8" r="1" fill="#DC2626"/>
+            <circle cx="12" cy="8" r="1" fill="#DC2626"/>
+            <path d="M6 12l2 2-2 2M10 16h4" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>',
         'SEO Tools' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="10" stroke="#059669" stroke-width="2" fill="#ECFDF5"/>
             <path d="M16 8l-6 6-2-2" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
