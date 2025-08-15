@@ -604,22 +604,6 @@ $tools = [
     ],
 
     // Additional Accessibility Tools
-    [
-        'id' => 'axe-devtools',
-        'name' => 'axe DevTools',
-        'category' => 'Accessibility Testing',
-        'description' => 'Fast accessibility testing engine with browser extensions for automated and manual testing.',
-        'url' => 'https://deque.com/axe/devtools/',
-        'tags' => ['accessibility', 'browser-extension', 'automated', 'manual', 'testing']
-    ],
-    [
-        'id' => 'siteimprove-checker',
-        'name' => 'Siteimprove Accessibility Checker',
-        'category' => 'Accessibility Testing',
-        'description' => 'Browser extension providing real-time accessibility feedback and validation.',
-        'url' => 'https://siteimprove.com/integrations/browser-extensions/',
-        'tags' => ['accessibility', 'browser-extension', 'real-time', 'validation']
-    ]
 ];
 
 ?>
